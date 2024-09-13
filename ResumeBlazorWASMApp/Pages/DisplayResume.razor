@@ -1,0 +1,31 @@
+﻿@page "/resume"
+@using UglyToad.PdfPig
+@using UglyToad.PdfPig.Content
+<h3>DisplayResume</h3>
+
+<p>@DisplayTextFromPDF()</p>
+
+@code {
+    public static string DisplayTextFromPDF()
+    {
+        string relativePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "FaceResume.pdf");
+        string fullDocument = string.Empty;
+        try
+        {
+            using (PdfDocument document = PdfDocument.Open(relativePath))
+            {
+
+                foreach(Page page in document.GetPages())
+                {
+                    fullDocument += page;
+                }
+
+            }
+            return fullDocument;
+        }
+        catch
+        {
+            throw new FileNotFoundException();
+        }
+    }
+}
