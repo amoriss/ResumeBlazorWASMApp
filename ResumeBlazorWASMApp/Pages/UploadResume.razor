@@ -2,6 +2,8 @@
 @using UglyToad.PdfPig
 @using UglyToad.PdfPig.Content
 @using System.Net
+@using ResumeBlazorWASMApp.Models
+@using ResumeBlazorWASMApp.Services
 @inject HttpClient Http
 @inject Blazored.LocalStorage.ILocalStorageService LocalStorage
 
@@ -12,10 +14,16 @@
 {
     <p>@_resumeText</p>
 }
-
+<br/>
+<h2>Back-End Skills: </h2>
+@if (_backEndSkills.UsesAspnet)
+{
+    <p>Uses ASP.NET </p>
+}
 
 @code {
     private string? _resumeText;
+    private BackEndSkills _backEndSkills = new BackEndSkills();
 
     protected override async Task OnInitializedAsync()
     {
@@ -29,6 +37,9 @@
         await file.OpenReadStream().ReadAsync(buffer);
 
         _resumeText = await ReadPdfText(buffer);
+
+        SkillsFinder.FindBackEndSkillsFromResume(_resumeText, _backEndSkills);
+
 
         /////storing PDF to local storage as Base64 string
         // string base64Pdf = Convert.ToBase64String(buffer);
