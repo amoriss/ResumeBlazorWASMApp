@@ -1065,3 +1065,8 @@ C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0\refint\ResumeBlazorWASMApp.dll
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0\ResumeBlazorWASMApp.pdb
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0\ref\ResumeBlazorWASMApp.dll
+C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\bin\Debug\net8.0\wwwroot\_framework\Blazored.LocalStorage.wasm
+C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\bin\Debug\net8.0\wwwroot\_framework\Blazored.LocalStorage.wasm.gz
+C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\bin\Debug\net8.0\Blazored.LocalStorage.dll
+C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0\webcil\Blazored.LocalStorage.wasm
+C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0\compressed\q287s6jmzk.gz

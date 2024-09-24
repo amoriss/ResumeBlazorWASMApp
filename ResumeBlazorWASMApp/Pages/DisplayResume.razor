@@ -22,5 +22,36 @@
             resumeText = e.Message;
         }
     }
+    // private async Task LoadFile(InputFileChangeEventArgs e)
+    // {
+    //     IBrowserFile file = e.File; //getting file
+    //     byte[] buffer = new byte[file.Size];
+    //     await file.OpenReadStream().ReadAsync(buffer);
+    //     _pdfText = await ReadPdfText(buffer);
+    // }
+
+    // private async Task<string> ReadPdfText(byte[] pdfData)
+    // {
+    //     try
+    //     {
+    //         using (MemoryStream stream = new MemoryStream(pdfData))
+    //         {
+    //             using (PdfDocument document = PdfDocument.Open(stream))
+    //             {
+    //                 string pageText = string.Empty;
+    //                 foreach (Page page in document.GetPages())
+    //                 {
+    //                     pageText += page.Text.ToLower();
+    //                 }
+    //
+    //                 return pageText;
+    //             }
+    //         }
+    //     }
+    //     catch (Exception e)
+    //     {
+    //         return $"{e.Message}";
+    //     }
+    // }
 
 }
