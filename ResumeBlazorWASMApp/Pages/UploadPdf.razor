@@ -2,10 +2,10 @@
 @using UglyToad.PdfPig
 @using UglyToad.PdfPig.Content
 @using Microsoft.AspNetCore.Components.Forms
-@using System.IO;
+@inject HttpClient Http
 
 <h3>Upload PDF</h3>
-<input type="file" @onchange="LoadFile" accept=".pdf"/>
+<button @onclick="ReadPdf">Read PDF</button>
 @* <button @onclick="UploadPdf">Upload PDF</button> *@
 
 <p>@_pdfText</p>
@@ -13,36 +13,59 @@
 @code {
     private string? _pdfText;
     
-    private async Task LoadFile(InputFileChangeEventArgs e)
-    {
-        IBrowserFile file = e.File; //getting file
-        byte[] buffer = new byte[file.Size];
-        await file.OpenReadStream().ReadAsync(buffer);
-        _pdfText = await ReadPdfText(buffer);
-    }
+    // private async Task LoadFile(InputFileChangeEventArgs e)
+    // {
+    //     IBrowserFile file = e.File; //getting file
+    //     byte[] buffer = new byte[file.Size];
+    //     await file.OpenReadStream().ReadAsync(buffer);
+    //     _pdfText = await ReadPdfText(buffer);
+    // }
 
-    private async Task<string> ReadPdfText(byte[] pdfData)
+    // private async Task<string> ReadPdfText(byte[] pdfData)
+    // {
+    //     try
+    //     {
+    //         using (MemoryStream stream = new MemoryStream(pdfData))
+    //         {
+    //             using (PdfDocument document = PdfDocument.Open(stream))
+    //             {
+    //                 string pageText = string.Empty;
+    //                 foreach (Page page in document.GetPages())
+    //                 {
+    //                     pageText += page.Text.ToLower();
+    //                 }
+    //
+    //                 return pageText;
+    //             }
+    //         }
+    //     }
+    //     catch (Exception e)
+    //     {
+    //         return $"{e.Message}";
+    //     }
+    // }
+
+    private async Task ReadPdf()
     {
-        try
+        var response = await Http.GetAsync("Data/FakeResume.pdf");
+
+        if (response.IsSuccessStatusCode)
         {
-            using (MemoryStream stream = new MemoryStream(pdfData))
+            var stream = await response.Content.ReadAsStreamAsync();
+            var document = PdfDocument.Open(stream);
+            
+            foreach (Page page in document.GetPages())
             {
-                using (PdfDocument document = PdfDocument.Open(stream))
-                {
-                    string pageText = string.Empty;
-                    foreach (Page page in document.GetPages())
-                    {
-                        pageText += page.Text.ToLower();
-                    }
-
-                    return pageText;
-                }
+                _pdfText += page.Text.ToLower();
             }
+            
         }
-        catch (Exception e)
+        else
         {
-            return $"{e.Message}";
+            _pdfText = "Error reading PDF document";
         }
+        
+        
     }
 
 }
