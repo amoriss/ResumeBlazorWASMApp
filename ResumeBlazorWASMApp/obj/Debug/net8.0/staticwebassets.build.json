@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "J01GbYO/5GRO7F5Bcfx7Oz8txiwO8/i5OyQ3iCaPecU=",
+  "Hash": "ZcDDaSXNjQlbVcKqfNY5nnIj+ZYF9OYgPhT45W8OGCg=",
   "Source": "ResumeBlazorWASMApp",
   "BasePath": "/",
   "Mode": "Root",
@@ -53,6 +53,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\amori\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly\\8.0.8\\build\\net8.0\\blazor.webassembly.js"
+    },
+    {
+      "Identity": "C:\\Users\\amori\\Original\\ResumeBlazorWASMApp\\ResumeBlazorWASMApp\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Blazored.LocalStorage.wasm",
+      "SourceId": "ResumeBlazorWASMApp",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\amori\\Original\\ResumeBlazorWASMApp\\ResumeBlazorWASMApp\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Blazored.LocalStorage.wasm",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "WasmResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\amori\\Original\\ResumeBlazorWASMApp\\ResumeBlazorWASMApp\\obj\\Debug\\net8.0\\webcil\\Blazored.LocalStorage.wasm"
     },
     {
       "Identity": "C:\\Users\\amori\\Original\\ResumeBlazorWASMApp\\ResumeBlazorWASMApp\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js",
@@ -7007,6 +7026,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\amori\\Original\\ResumeBlazorWASMApp\\ResumeBlazorWASMApp\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Runtime.Serialization.Xml.wasm"
+    },
+    {
+      "Identity": "C:\\Users\\amori\\Original\\ResumeBlazorWASMApp\\ResumeBlazorWASMApp\\obj\\Debug\\net8.0\\compressed\\q287s6jmzk.gz",
+      "SourceId": "ResumeBlazorWASMApp",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\amori\\Original\\ResumeBlazorWASMApp\\ResumeBlazorWASMApp\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Blazored.LocalStorage.wasm.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\amori\\Original\\ResumeBlazorWASMApp\\ResumeBlazorWASMApp\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Blazored.LocalStorage.wasm",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\amori\\Original\\ResumeBlazorWASMApp\\ResumeBlazorWASMApp\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Blazored.LocalStorage.wasm"
     },
     {
       "Identity": "C:\\Users\\amori\\Original\\ResumeBlazorWASMApp\\ResumeBlazorWASMApp\\obj\\Debug\\net8.0\\compressed\\q3fpevowwk.gz",
