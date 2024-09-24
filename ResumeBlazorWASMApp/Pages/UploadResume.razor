@@ -1,0 +1,52 @@
+﻿@page "/upload-resume"
+@using UglyToad.PdfPig
+@using UglyToad.PdfPig.Content
+@using System.Net
+@inject HttpClient Http
+@inject Blazored.LocalStorage.ILocalStorageService LocalStorage
+
+<h3>Upload PDF</h3>
+<InputFile OnChange="LoadFile"></InputFile>
+
+<p>@_resumeText</p>
+
+@code {
+    private string? _resumeText;
+
+    protected override async Task OnInitializedAsync()
+    {
+      _resumeText = await LocalStorage.GetItemAsync<string>("storedPdf");
+    }
+    private async Task LoadFile(InputFileChangeEventArgs e)
+    {
+        IBrowserFile file = e.File; //getting file
+        byte[] buffer = new byte[file.Size];
+        await file.OpenReadStream().ReadAsync(buffer);
+        _resumeText= await ReadPdfText(buffer);
+    }
+
+    private async Task<string> ReadPdfText(byte[] pdfData)
+    {
+        try
+        {
+            using (MemoryStream stream = new MemoryStream(pdfData))
+            {
+                using (PdfDocument document = PdfDocument.Open(stream))
+                {
+                    string pageText = string.Empty;
+                    foreach (Page page in document.GetPages())
+                    {
+                        pageText += page.Text.ToLower();
+                    }
+    
+                    return pageText;
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            return $"{e.Message}";
+        }
+    }
+
+}
