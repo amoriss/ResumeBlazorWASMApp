@@ -8,7 +8,11 @@
 <h3>Upload PDF</h3>
 <InputFile OnChange="LoadFile"></InputFile>
 
-<p>@_resumeText</p>
+@if (!string.IsNullOrEmpty(_resumeText))
+{
+    <p>@_resumeText</p>
+}
+
 
 @code {
     private string? _resumeText;
