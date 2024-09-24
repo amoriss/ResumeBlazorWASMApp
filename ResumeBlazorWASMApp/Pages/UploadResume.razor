@@ -15,14 +15,22 @@
 
     protected override async Task OnInitializedAsync()
     {
-      _resumeText = await LocalStorage.GetItemAsync<string>("storedPdf");
+        _resumeText = await LocalStorage.GetItemAsync<string>("storedPdf");
     }
+
     private async Task LoadFile(InputFileChangeEventArgs e)
     {
         IBrowserFile file = e.File; //getting file
         byte[] buffer = new byte[file.Size];
         await file.OpenReadStream().ReadAsync(buffer);
-        _resumeText= await ReadPdfText(buffer);
+
+        _resumeText = await ReadPdfText(buffer);
+
+        /////storing PDF to local storage as Base64 string
+        // string base64Pdf = Convert.ToBase64String(buffer);
+        // await LocalStorage.SetItemAsStringAsync("storedPdf", base64Pdf);
+
+        await LocalStorage.SetItemAsStringAsync("storedPdf", _resumeText);
     }
 
     private async Task<string> ReadPdfText(byte[] pdfData)
@@ -38,7 +46,7 @@
                     {
                         pageText += page.Text.ToLower();
                     }
-    
+
                     return pageText;
                 }
             }
