@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "FmjecEbYqvQUUknvzb76FSisgMLraJYjSt6vMATj5f5azd86rs1Y4AavZ7H55FXGLDyQG1PK6x6pImpYlwsBCA==",
+  "dgSpecHash": "UGL01bmCKMVes7i7KhudOzi+eUlRCS6tFekWjrOVXu9tirj5X0Xt1Gt/oXPGClyCkJszoHSZyhkR2sjKOb1kRg==",
   "success": true,
   "projectFilePath": "C:\\Users\\amori\\Original\\ResumeBlazorWASMApp\\ResumeBlazorWASMApp\\ResumeBlazorWASMApp.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\amori\\.nuget\\packages\\blazored.localstorage\\4.5.0\\blazored.localstorage.4.5.0.nupkg.sha512",
     "C:\\Users\\amori\\.nuget\\packages\\microsoft.aspnetcore.authorization\\8.0.8\\microsoft.aspnetcore.authorization.8.0.8.nupkg.sha512",
     "C:\\Users\\amori\\.nuget\\packages\\microsoft.aspnetcore.components\\8.0.8\\microsoft.aspnetcore.components.8.0.8.nupkg.sha512",
     "C:\\Users\\amori\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\8.0.8\\microsoft.aspnetcore.components.analyzers.8.0.8.nupkg.sha512",
