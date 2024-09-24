@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "0SMTEXE3Cy1TAgKzZFGXZADb40CULbzY21LYkUTd3Mg=",
+  "Hash": "J01GbYO/5GRO7F5Bcfx7Oz8txiwO8/i5OyQ3iCaPecU=",
   "Source": "ResumeBlazorWASMApp",
   "BasePath": "/",
   "Mode": "Root",
@@ -8128,6 +8128,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Identity": "C:\\Users\\amori\\Original\\ResumeBlazorWASMApp\\ResumeBlazorWASMApp\\wwwroot\\Data\\FakeResume.pdf",
+      "SourceId": "ResumeBlazorWASMApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\amori\\Original\\ResumeBlazorWASMApp\\ResumeBlazorWASMApp\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "Data/FakeResume.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Data\\FakeResume.pdf"
     },
     {
       "Identity": "C:\\Users\\amori\\Original\\ResumeBlazorWASMApp\\ResumeBlazorWASMApp\\wwwroot\\favicon.png",

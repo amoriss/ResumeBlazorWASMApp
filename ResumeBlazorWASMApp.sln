@@ -5,6 +5,8 @@ VisualStudioVersion = 17.10.35122.118
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResumeBlazorWASMApp", "ResumeBlazorWASMApp\ResumeBlazorWASMApp.csproj", "{BCBA2CDB-3F29-42AE-A5C4-8AA97EE1CF41}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResumeAPI", "ResumeAPI\ResumeAPI.csproj", "{718B8559-A0C3-4919-B64C-259FB2795826}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{BCBA2CDB-3F29-42AE-A5C4-8AA97EE1CF41}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BCBA2CDB-3F29-42AE-A5C4-8AA97EE1CF41}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BCBA2CDB-3F29-42AE-A5C4-8AA97EE1CF41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{718B8559-A0C3-4919-B64C-259FB2795826}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{718B8559-A0C3-4919-B64C-259FB2795826}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{718B8559-A0C3-4919-B64C-259FB2795826}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{718B8559-A0C3-4919-B64C-259FB2795826}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

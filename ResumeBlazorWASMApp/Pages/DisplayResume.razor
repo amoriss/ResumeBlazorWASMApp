@@ -1,31 +1,26 @@
 ﻿@page "/resume"
 @using UglyToad.PdfPig
 @using UglyToad.PdfPig.Content
+@inject HttpClient Http
+
 <h3>DisplayResume</h3>
 
-<p>@DisplayTextFromPDF()</p>
+<p>@resumeText</p>
 
 @code {
-    public static string DisplayTextFromPDF()
+    private string resumeText;
+
+    protected override async Task OnInitializedAsync()
     {
-        string relativePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "FaceResume.pdf");
-        string fullDocument = string.Empty;
         try
         {
-            using (PdfDocument document = PdfDocument.Open(relativePath))
-            {
-
-                foreach(Page page in document.GetPages())
-                {
-                    fullDocument += page;
-                }
-
-            }
-            return fullDocument;
+            resumeText = await Http.GetStringAsync("api/pdf/resume");
         }
-        catch
+        catch (Exception e)
         {
-            throw new FileNotFoundException();
+
+            resumeText = e.Message;
         }
     }
+
 }
