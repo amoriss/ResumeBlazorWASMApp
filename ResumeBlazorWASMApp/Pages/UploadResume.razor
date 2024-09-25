@@ -18,12 +18,41 @@
 <h2>Back-End Skills: </h2>
 @if (_backEndSkills.UsesAspnet)
 {
-    <p>Uses ASP.NET </p>
+    <p>ASP.NET </p>
+}
+@if (_backEndSkills.UsesCSharp)
+{
+    <p>C#</p>
+}
+@if (_backEndSkills.UsesVisualStudio)
+{
+    <p>Visual Studio</p>
+}
+@if (_backEndSkills.UsesSql)
+{
+    <p>SQL</p>
+}
+
+<br/>
+<h2>Front-End Skills: </h2>
+
+@if (_frontEndSkills.UsesReact)
+{
+    <p>React</p>
+}
+@if (_frontEndSkills.UsesJavaScript)
+{
+    <p>JavaScript</p>
+}
+@if (_frontEndSkills.UsesCss)
+{
+    <p>CSS</p>
 }
 
 @code {
     private string? _resumeText;
     private BackEndSkills _backEndSkills = new BackEndSkills();
+    private FrontEndSkills _frontEndSkills = new FrontEndSkills();
 
     protected override async Task OnInitializedAsync()
     {
@@ -39,6 +68,7 @@
         _resumeText = await ReadPdfText(buffer);
 
         SkillsFinder.FindBackEndSkillsFromResume(_resumeText, _backEndSkills);
+        SkillsFinder.FindFrontEndSkillsFromResume(_resumeText, _frontEndSkills);
 
 
         /////storing PDF to local storage as Base64 string
