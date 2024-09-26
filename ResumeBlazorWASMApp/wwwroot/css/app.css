@@ -101,3 +101,10 @@ a, .btn-link {
 code {
     color: #c02d76;
 }
+
+.success-box {
+    background-color: #20cc20;
+    color: white;
+    border-radius: 15px;
+    font-weight: bold;
+}
