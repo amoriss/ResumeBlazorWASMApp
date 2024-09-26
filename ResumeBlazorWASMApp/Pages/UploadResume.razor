@@ -18,64 +18,66 @@
 @* { *@
 @*     <p>@_resumeText</p> *@
 @* } *@
-<br/>
+
 @if (_pdfScanned)
 {
-    <div class="back-end-skills">
-        <h2>Back-End Skills: </h2>
-        @if (_backEndSkills.UsesAspnet)
-        {
-            <p>ASP.NET </p>
-        }
+    <div class="skills-container">
+        <div class="back-end-skills">
+            <h2>Back-End Skills: </h2>
+            @if (_backEndSkills.UsesAspnet)
+            {
+                <p>ASP.NET </p>
+            }
 
-        @if (_backEndSkills.UsesCSharp)
-        {
-            <p>C#</p>
-        }
+            @if (_backEndSkills.UsesCSharp)
+            {
+                <p>C#</p>
+            }
 
-        @if (_backEndSkills.UsesVisualStudio)
-        {
-            <p>Visual Studio</p>
-        }
+            @if (_backEndSkills.UsesVisualStudio)
+            {
+                <p>Visual Studio</p>
+            }
 
-        @if (_backEndSkills.UsesSql)
-        {
-            <p>SQL</p>
-        }
-    </div>
-    
-    <div class="front-end-skills">
-        <h2>Front-End Skills: </h2>
+            @if (_backEndSkills.UsesSql)
+            {
+                <p>SQL</p>
+            }
+        </div>
 
-        @if (_frontEndSkills.UsesReact)
-        {
-            <p>React</p>
-        }
+        <div class="front-end-skills">
+            <h2>Front-End Skills: </h2>
 
-        @if (_frontEndSkills.UsesJavaScript)
-        {
-            <p>JavaScript</p>
-        }
+            @if (_frontEndSkills.UsesReact)
+            {
+                <p>React</p>
+            }
 
-        @if (_frontEndSkills.UsesCss)
+            @if (_frontEndSkills.UsesJavaScript)
+            {
+                <p>JavaScript</p>
+            }
+
+            @if (_frontEndSkills.UsesCss)
+            {
+                <p>CSS</p>
+            }
+        </div>
+        
+
+
+        @if (_backEndSkills.UsesAspnet && _backEndSkills.UsesCSharp && _backEndSkills.UsesSql && _frontEndSkills.UsesReact)
         {
-            <p>CSS</p>
+            <div class="success-box">
+                <h2>Candidate is eligible</h2>
+            </div>
+            @* <Alert Color="Color.Success"> *@
+            @*     <h4>This candidate is eligible</h4> *@
+            @* </Alert> *@
         }
+        
     </div>
 }
-<br/>
-
-@if (_backEndSkills.UsesAspnet && _backEndSkills.UsesCSharp && _backEndSkills.UsesSql && _frontEndSkills.UsesReact)
-{
-    <div class="success-box">
-        <h2>Candidate is eligible</h2>
-    </div>
-    @* <Alert Color="Color.Success"> *@
-    @*     <h4>This candidate is eligible</h4> *@
-    @* </Alert> *@
-}
-
-
 @code {
     private string? _resumeText;
     private BackEndSkills _backEndSkills = new BackEndSkills();
@@ -132,4 +134,3 @@
 
 }
 
-}
