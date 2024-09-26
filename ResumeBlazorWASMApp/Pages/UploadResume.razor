@@ -11,7 +11,7 @@
 
 @if (!_pdfScanned)
 {
-    <h3>Upload PDF Document</h3>
+    <h3>Candidate Form</h3>
 }
 <EditForm Model="_candidate" OnValidSubmit="HandleValidSubmit">
     <DataAnnotationsValidator/>
@@ -138,9 +138,11 @@
         IBrowserFile file = e.File; //getting file
         byte[] buffer = new byte[file.Size];
         await file.OpenReadStream().ReadAsync(buffer);
-
         _resumeText = await ReadPdfText(buffer);
+    }
 
+    private async Task ScanResume()
+    {
         SkillsFinder.FindBackEndSkillsFromResume(_resumeText, _backEndSkills);
         SkillsFinder.FindFrontEndSkillsFromResume(_resumeText, _frontEndSkills);
 
@@ -179,6 +181,7 @@
     private async Task HandleValidSubmit()
     {
         await AddEligibleCandidate();
+        await ScanResume();
         eligibleCandidates = await LocalStorage.GetItemAsync<List<Candidate>>("eligibleCandidates") ?? new List<Candidate>();
     }
 
