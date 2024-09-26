@@ -2,17 +2,40 @@
 @using UglyToad.PdfPig
 @using UglyToad.PdfPig.Content
 @using System.Net
+@using Microsoft.AspNetCore.Components.Forms;
 @using ResumeBlazorWASMApp.Models
 @using ResumeBlazorWASMApp.Services
 @inject HttpClient Http
 @inject Blazored.LocalStorage.ILocalStorageService LocalStorage
-@using Blazorise
+
 
 @if (!_pdfScanned)
 {
     <h3>Upload PDF Document</h3>
 }
-<InputFile OnChange="LoadFile"></InputFile>
+<EditForm Model="_candidate" OnValidSubmit="HandleValidSubmit">
+    <DataAnnotationsValidator/>
+    <ValidationSummary/>
+    <div>
+        <label>First Name:</label>
+        <InputText @bind-Value="_candidate.FirstName" required/>
+    </div>
+    <div>
+        <label>Last Name:</label>
+        <InputText @bind-Value="_candidate.LastName" required/>
+    </div>
+    <div>
+        <label>Email:</label>
+        <InputText @bind-Value="_candidate.Email" required/>
+    </div>
+
+    <div>
+        <label>Upload Resume PDF:</label>
+        <InputFile OnChange="LoadFile"></InputFile>
+    </div>
+    <button type="submit">Submit</button>
+</EditForm>
+
 
 @* @if (!string.IsNullOrEmpty(_resumeText)) *@
 @* { *@
@@ -63,7 +86,6 @@
                 <p>CSS</p>
             }
         </div>
-        
 
 
         @if (_backEndSkills.UsesAspnet && _backEndSkills.UsesCSharp && _backEndSkills.UsesSql && _frontEndSkills.UsesReact)
@@ -75,14 +97,25 @@
             @*     <h4>This candidate is eligible</h4> *@
             @* </Alert> *@
         }
-        
+
     </div>
 }
+
+<h3>All Eligible Candidates:</h3>
+<ul>
+    @foreach (var candidate in eligibleCandidates)
+    {
+        <li>@candidate.FirstName @candidate.LastName | Email: @candidate.Email</li>
+    }
+</ul>
+
 @code {
     private string? _resumeText;
     private BackEndSkills _backEndSkills = new BackEndSkills();
     private FrontEndSkills _frontEndSkills = new FrontEndSkills();
     private bool _pdfScanned;
+    private Candidate _candidate = new Candidate();
+    private List<Candidate> eligibleCandidates = new List<Candidate>();
 
     protected override async Task OnInitializedAsync()
     {
@@ -132,5 +165,20 @@
         }
     }
 
-}
+    private async Task HandleValidSubmit()
+    {
+        await AddEligibleCandidate();
+    }
 
+    private async Task AddEligibleCandidate()
+    {
+        var candidates = await LocalStorage.GetItemAsync<List<Candidate>>("eligibleCandidates");
+        if (candidates != null)
+        {
+            candidates.Add(_candidate);
+            await LocalStorage.SetItemAsync("eligibleCandidates", candidates);
+            eligibleCandidates = candidates;
+        }
+    }
+
+}

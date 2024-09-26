@@ -124,14 +124,23 @@ code {
 .back-end-skills {
     background-color: #ffff3b;
 }
+/*.back-end-skills:hover {*/
+/*    background-color: #a6a602;*/
+/*}*/
 
 .front-end-skills {
     background-color: #63b1fc;
 }
+/*.front-end-skills:hover {*/
+/*    background-color: #4545b9;*/
+/*}*/
 
 .success-box {
     background-color: #7cf67c;
 }
+/*.success-box:hover {*/
+/*    background-color: green;*/
+/*}*/
 
 .skills-container {
     display: flex;
