@@ -6,24 +6,79 @@
 @using ResumeBlazorWASMApp.Services
 @inject HttpClient Http
 @inject Blazored.LocalStorage.ILocalStorageService LocalStorage
+@using Blazorise
 
-<h3>Upload PDF</h3>
+@if (!_pdfScanned)
+{
+    <h3>Upload PDF Document</h3>
+}
 <InputFile OnChange="LoadFile"></InputFile>
 
-@if (!string.IsNullOrEmpty(_resumeText))
-{
-    <p>@_resumeText</p>
-}
+@* @if (!string.IsNullOrEmpty(_resumeText)) *@
+@* { *@
+@*     <p>@_resumeText</p> *@
+@* } *@
 <br/>
-<h2>Back-End Skills: </h2>
-@if (_backEndSkills.UsesAspnet)
+@if (_pdfScanned)
 {
-    <p>Uses ASP.NET </p>
+    <h2>Back-End Skills: </h2>
+    @if (_backEndSkills.UsesAspnet)
+    {
+        <p>ASP.NET </p>
+    }
+
+    @if (_backEndSkills.UsesCSharp)
+    {
+        <p>C#</p>
+    }
+
+    @if (_backEndSkills.UsesVisualStudio)
+    {
+        <p>Visual Studio</p>
+    }
+
+    @if (_backEndSkills.UsesSql)
+    {
+        <p>SQL</p>
+    }
+
+    <br/>
+
+    <h2>Front-End Skills: </h2>
+
+    @if (_frontEndSkills.UsesReact)
+    {
+        <p>React</p>
+    }
+
+    @if (_frontEndSkills.UsesJavaScript)
+    {
+        <p>JavaScript</p>
+    }
+
+    @if (_frontEndSkills.UsesCss)
+    {
+        <p>CSS</p>
+    }
 }
+
+@if (_backEndSkills.UsesAspnet && _backEndSkills.UsesCSharp && _backEndSkills.UsesSql && _frontEndSkills.UsesReact)
+{
+    
+        <h2 style="background-color: limegreen; border-radius: 15px; display: inline;">Candidate is eligible</h2>
+    
+    @* <Alert Color="Color.Success"> *@
+    @*     <h4>This candidate is eligible</h4> *@
+    @* </Alert> *@
+}
+
+
 
 @code {
     private string? _resumeText;
     private BackEndSkills _backEndSkills = new BackEndSkills();
+    private FrontEndSkills _frontEndSkills = new FrontEndSkills();
+    private bool _pdfScanned;
 
     protected override async Task OnInitializedAsync()
     {
@@ -39,8 +94,9 @@
         _resumeText = await ReadPdfText(buffer);
 
         SkillsFinder.FindBackEndSkillsFromResume(_resumeText, _backEndSkills);
+        SkillsFinder.FindFrontEndSkillsFromResume(_resumeText, _frontEndSkills);
 
-
+        _pdfScanned = true;
         /////storing PDF to local storage as Base64 string
         // string base64Pdf = Convert.ToBase64String(buffer);
         // await LocalStorage.SetItemAsStringAsync("storedPdf", base64Pdf);
