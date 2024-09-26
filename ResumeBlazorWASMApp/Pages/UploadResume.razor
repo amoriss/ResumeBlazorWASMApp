@@ -21,57 +21,59 @@
 <br/>
 @if (_pdfScanned)
 {
-    <h2>Back-End Skills: </h2>
-    @if (_backEndSkills.UsesAspnet)
-    {
-        <p>ASP.NET </p>
-    }
+    <div class="back-end-skills">
+        <h2>Back-End Skills: </h2>
+        @if (_backEndSkills.UsesAspnet)
+        {
+            <p>ASP.NET </p>
+        }
 
-    @if (_backEndSkills.UsesCSharp)
-    {
-        <p>C#</p>
-    }
+        @if (_backEndSkills.UsesCSharp)
+        {
+            <p>C#</p>
+        }
 
-    @if (_backEndSkills.UsesVisualStudio)
-    {
-        <p>Visual Studio</p>
-    }
+        @if (_backEndSkills.UsesVisualStudio)
+        {
+            <p>Visual Studio</p>
+        }
 
-    @if (_backEndSkills.UsesSql)
-    {
-        <p>SQL</p>
-    }
+        @if (_backEndSkills.UsesSql)
+        {
+            <p>SQL</p>
+        }
+    </div>
+    
+    <div class="front-end-skills">
+        <h2>Front-End Skills: </h2>
 
-    <br/>
+        @if (_frontEndSkills.UsesReact)
+        {
+            <p>React</p>
+        }
 
-    <h2>Front-End Skills: </h2>
+        @if (_frontEndSkills.UsesJavaScript)
+        {
+            <p>JavaScript</p>
+        }
 
-    @if (_frontEndSkills.UsesReact)
-    {
-        <p>React</p>
-    }
-
-    @if (_frontEndSkills.UsesJavaScript)
-    {
-        <p>JavaScript</p>
-    }
-
-    @if (_frontEndSkills.UsesCss)
-    {
-        <p>CSS</p>
-    }
+        @if (_frontEndSkills.UsesCss)
+        {
+            <p>CSS</p>
+        }
+    </div>
 }
+<br/>
 
 @if (_backEndSkills.UsesAspnet && _backEndSkills.UsesCSharp && _backEndSkills.UsesSql && _frontEndSkills.UsesReact)
 {
-    
-        <h2 style="background-color: limegreen; border-radius: 15px; display: inline;">Candidate is eligible</h2>
-    
+    <div class="success-box">
+        <h2>Candidate is eligible</h2>
+    </div>
     @* <Alert Color="Color.Success"> *@
     @*     <h4>This candidate is eligible</h4> *@
     @* </Alert> *@
 }
-
 
 
 @code {
@@ -127,5 +129,7 @@
             return $"{e.Message}";
         }
     }
+
+}
 
 }

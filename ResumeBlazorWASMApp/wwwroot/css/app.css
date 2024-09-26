@@ -102,9 +102,46 @@ code {
     color: #c02d76;
 }
 
+/*.success-box {*/
+/*    background-color: #20cc20;*/
+/*    color: white;*/
+/*    border-radius: 15px;*/
+/*    font-weight: bold;*/
+/*}*/
+.back-end-skills {
+    box-sizing: border-box;
+    position: relative;
+    padding: 16px;
+    background-color: #ffff3b;
+    text-align: center;
+    border-radius: 10px;
+    margin: 60px;
+    display:inline-block;
+    max-width: 600px;
+    justify-content: center;
+}
+
+.front-end-skills {
+    box-sizing: border-box;
+    position: relative;
+    padding: 16px;
+    background-color: #63b1fc;
+    text-align: center;
+    border-radius: 10px;
+    margin: 60px;
+    display:inline-block;
+    max-width: 600px;
+    justify-content: center;
+}
 .success-box {
-    background-color: #20cc20;
-    color: white;
-    border-radius: 15px;
-    font-weight: bold;
+    box-sizing: border-box;
+    position: relative;
+    padding: 16px;
+    background-color: #7cf67c;
+    text-align: center;
+    border-radius: 10px;
+    margin: 60px;
+    display:inline-block;
+    max-width: 600px;
+    justify-content: center;
 }
