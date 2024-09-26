@@ -113,6 +113,7 @@
         @foreach (var candidate in eligibleCandidates)
         {
             <li>@candidate.FirstName @candidate.LastName | Email: @candidate.Email</li>
+            <Button type="button" @onclick="() => DeleteEligibleCandidate(candidate)">Delete</Button>
         }
     }
 
@@ -188,4 +189,16 @@
         await LocalStorage.SetItemAsync("eligibleCandidates", candidates);
     }
 
+    private async Task DeleteEligibleCandidate(Candidate candidateToDelete)
+    {
+        var candidates = await LocalStorage.GetItemAsync<List<Candidate>>("eligibleCandidates");
+        if (candidates != null)
+        {
+            candidates.Remove(candidateToDelete);
+        }
+        await LocalStorage.SetItemAsync("eligibleCandidates", candidates);
+        eligibleCandidates = await LocalStorage.GetItemAsync<List<Candidate>>("eligibleCandidates") ?? new List<Candidate>();
+    }
+
 }
+
