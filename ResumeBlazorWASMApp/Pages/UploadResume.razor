@@ -88,7 +88,7 @@
         </div>
 
 
-        @if (_backEndSkills.UsesAspnet && _backEndSkills.UsesCSharp && _backEndSkills.UsesSql && _frontEndSkills.UsesReact)
+        @if (_backEndSkills is { UsesAspnet: true, UsesCSharp: true, UsesSql: true } && _frontEndSkills.UsesReact)
         {
             <div class="success-box">
                 <h2>Candidate is eligible</h2>
@@ -103,10 +103,19 @@
 
 <h3>All Eligible Candidates:</h3>
 <ul>
-    @foreach (var candidate in eligibleCandidates)
+
+    @if (eligibleCandidates == null || !eligibleCandidates.Any())
     {
-        <li>@candidate.FirstName @candidate.LastName | Email: @candidate.Email</li>
+        <li>No eligible candidates found.</li>
     }
+    else
+    {
+        @foreach (var candidate in eligibleCandidates)
+        {
+            <li>@candidate.FirstName @candidate.LastName | Email: @candidate.Email</li>
+        }
+    }
+
 </ul>
 
 @code {
@@ -114,12 +123,13 @@
     private BackEndSkills _backEndSkills = new BackEndSkills();
     private FrontEndSkills _frontEndSkills = new FrontEndSkills();
     private bool _pdfScanned;
-    private Candidate _candidate = new Candidate();
-    private List<Candidate> eligibleCandidates = new List<Candidate>();
+    private readonly Candidate _candidate = new Candidate();
+    private List<Candidate>? eligibleCandidates = new List<Candidate>();
 
     protected override async Task OnInitializedAsync()
     {
         _resumeText = await LocalStorage.GetItemAsync<string>("storedPdf");
+        eligibleCandidates = await LocalStorage.GetItemAsync<List<Candidate>>("eligibleCandidates") ?? new List<Candidate>();
     }
 
     private async Task LoadFile(InputFileChangeEventArgs e)
@@ -168,17 +178,14 @@
     private async Task HandleValidSubmit()
     {
         await AddEligibleCandidate();
+        eligibleCandidates = await LocalStorage.GetItemAsync<List<Candidate>>("eligibleCandidates") ?? new List<Candidate>();
     }
 
     private async Task AddEligibleCandidate()
     {
-        var candidates = await LocalStorage.GetItemAsync<List<Candidate>>("eligibleCandidates");
-        if (candidates != null)
-        {
-            candidates.Add(_candidate);
-            await LocalStorage.SetItemAsync("eligibleCandidates", candidates);
-            eligibleCandidates = candidates;
-        }
+        var candidates = await LocalStorage.GetItemAsync<List<Candidate>>("eligibleCandidates") ?? new List<Candidate>();
+        candidates.Add(_candidate);
+        await LocalStorage.SetItemAsync("eligibleCandidates", candidates);
     }
 
 }
