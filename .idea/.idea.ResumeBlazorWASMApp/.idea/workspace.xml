@@ -12,7 +12,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ed9572de-9ed5-472a-b015-834410ad7647" name="Changes" comment="" />
+    <list default="true" id="ed9572de-9ed5-472a-b015-834410ad7647" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ResumeBlazorWASMApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ResumeBlazorWASMApp/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ResumeAPI/obj/Debug/net8.0/ResumeAPI.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ResumeAPI/obj/Debug/net8.0/ResumeAPI.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ResumeAPI/obj/Debug/net8.0/ResumeAPI.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ResumeAPI/obj/Debug/net8.0/ResumeAPI.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ResumeAPI/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ResumeAPI/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ResumeBlazorWASMApp/bin/Debug/net8.0/ResumeBlazorWASMApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ResumeBlazorWASMApp/bin/Debug/net8.0/ResumeBlazorWASMApp.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ResumeBlazorWASMApp/bin/Debug/net8.0/ResumeBlazorWASMApp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ResumeBlazorWASMApp/bin/Debug/net8.0/ResumeBlazorWASMApp.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ResumeBlazorWASMApp/bin/Debug/net8.0/wwwroot/_framework/ResumeBlazorWASMApp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ResumeBlazorWASMApp/bin/Debug/net8.0/wwwroot/_framework/ResumeBlazorWASMApp.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ResumeBlazorWASMApp/bin/Debug/net8.0/wwwroot/_framework/ResumeBlazorWASMApp.pdb.gz" beforeDir="false" afterPath="$PROJECT_DIR$/ResumeBlazorWASMApp/bin/Debug/net8.0/wwwroot/_framework/ResumeBlazorWASMApp.pdb.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ResumeBlazorWASMApp/bin/Debug/net8.0/wwwroot/_framework/ResumeBlazorWASMApp.wasm" beforeDir="false" afterPath="$PROJECT_DIR$/ResumeBlazorWASMApp/bin/Debug/net8.0/wwwroot/_framework/ResumeBlazorWASMApp.wasm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ResumeBlazorWASMApp/bin/Debug/net8.0/wwwroot/_framework/ResumeBlazorWASMApp.wasm.gz" beforeDir="false" afterPath="$PROJECT_DIR$/ResumeBlazorWASMApp/bin/Debug/net8.0/wwwroot/_framework/ResumeBlazorWASMApp.wasm.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ResumeBlazorWASMApp/bin/Debug/net8.0/wwwroot/_framework/blazor.boot.json" beforeDir="false" afterPath="$PROJECT_DIR$/ResumeBlazorWASMApp/bin/Debug/net8.0/wwwroot/_framework/blazor.boot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ResumeBlazorWASMApp/bin/Debug/net8.0/wwwroot/_framework/blazor.boot.json.gz" beforeDir="false" afterPath="$PROJECT_DIR$/ResumeBlazorWASMApp/bin/Debug/net8.0/wwwroot/_framework/blazor.boot.json.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/Debug/net8.0/ResumeBlazorWASMApp.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/Debug/net8.0/ResumeBlazorWASMApp.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/Debug/net8.0/ResumeBlazorWASMApp.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/Debug/net8.0/ResumeBlazorWASMApp.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/Debug/net8.0/ResumeBlazorWASMApp.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/Debug/net8.0/ResumeBlazorWASMApp.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/Debug/net8.0/ResumeBlazorWASMApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/Debug/net8.0/ResumeBlazorWASMApp.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/Debug/net8.0/ResumeBlazorWASMApp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/Debug/net8.0/ResumeBlazorWASMApp.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/Debug/net8.0/ResumeBlazorWASMApp.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/Debug/net8.0/ResumeBlazorWASMApp.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/Debug/net8.0/blazor.boot.json" beforeDir="false" afterPath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/Debug/net8.0/blazor.boot.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/Debug/net8.0/compressed/0hmilvfugo.gz" beforeDir="false" afterPath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/Debug/net8.0/compressed/0hmilvfugo.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/Debug/net8.0/compressed/fveyapdap7.gz" beforeDir="false" afterPath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/Debug/net8.0/compressed/fveyapdap7.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/Debug/net8.0/compressed/p11gcn12ee.gz" beforeDir="false" afterPath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/Debug/net8.0/compressed/p11gcn12ee.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/Debug/net8.0/ref/ResumeBlazorWASMApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/Debug/net8.0/ref/ResumeBlazorWASMApp.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/Debug/net8.0/refint/ResumeBlazorWASMApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/Debug/net8.0/refint/ResumeBlazorWASMApp.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/Debug/net8.0/tmp-webcil/ResumeBlazorWASMApp.wasm" beforeDir="false" afterPath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/Debug/net8.0/tmp-webcil/ResumeBlazorWASMApp.wasm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/Debug/net8.0/webcil/ResumeBlazorWASMApp.wasm" beforeDir="false" afterPath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/Debug/net8.0/webcil/ResumeBlazorWASMApp.wasm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/rider.project.restore.info" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,27 +61,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.ResumeBlazorWASMApp: http.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.ResumeBlazorWASMApp: http.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\amori\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
-      "C:\\Users\\amori\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
-      "C:\\Users\\amori\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\amori\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\amori\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\amori\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.ResumeBlazorWASMApp: http">
     <configuration name="ResumeAPI: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/ResumeAPI/ResumeAPI.csproj" />
@@ -145,6 +173,14 @@
         <option name="Build" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue=".NET Launch Settings Profile.ResumeAPI: IIS Express" />
+      <item itemvalue=".NET Launch Settings Profile.ResumeAPI: http" />
+      <item itemvalue=".NET Launch Settings Profile.ResumeAPI: https" />
+      <item itemvalue=".NET Launch Settings Profile.ResumeBlazorWASMApp: IIS Express" />
+      <item itemvalue=".NET Launch Settings Profile.ResumeBlazorWASMApp: http" />
+      <item itemvalue=".NET Launch Settings Profile.ResumeBlazorWASMApp: https" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
