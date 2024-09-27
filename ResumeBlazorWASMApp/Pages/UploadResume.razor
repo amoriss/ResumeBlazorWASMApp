@@ -1,0 +1,136 @@
+﻿@page "/upload-resume"
+@using UglyToad.PdfPig
+@using UglyToad.PdfPig.Content
+@using System.Net
+@using ResumeBlazorWASMApp.Models
+@using ResumeBlazorWASMApp.Services
+@inject HttpClient Http
+@inject Blazored.LocalStorage.ILocalStorageService LocalStorage
+@using Blazorise
+
+@if (!_pdfScanned)
+{
+    <h3>Upload PDF Document</h3>
+}
+<InputFile OnChange="LoadFile"></InputFile>
+
+@* @if (!string.IsNullOrEmpty(_resumeText)) *@
+@* { *@
+@*     <p>@_resumeText</p> *@
+@* } *@
+
+@if (_pdfScanned)
+{
+    <div class="skills-container">
+        <div class="back-end-skills">
+            <h2>Back-End Skills: </h2>
+            @if (_backEndSkills.UsesAspnet)
+            {
+                <p>ASP.NET </p>
+            }
+
+            @if (_backEndSkills.UsesCSharp)
+            {
+                <p>C#</p>
+            }
+
+            @if (_backEndSkills.UsesVisualStudio)
+            {
+                <p>Visual Studio</p>
+            }
+
+            @if (_backEndSkills.UsesSql)
+            {
+                <p>SQL</p>
+            }
+        </div>
+
+        <div class="front-end-skills">
+            <h2>Front-End Skills: </h2>
+
+            @if (_frontEndSkills.UsesReact)
+            {
+                <p>React</p>
+            }
+
+            @if (_frontEndSkills.UsesJavaScript)
+            {
+                <p>JavaScript</p>
+            }
+
+            @if (_frontEndSkills.UsesCss)
+            {
+                <p>CSS</p>
+            }
+        </div>
+        
+
+
+        @if (_backEndSkills.UsesAspnet && _backEndSkills.UsesCSharp && _backEndSkills.UsesSql && _frontEndSkills.UsesReact)
+        {
+            <div class="success-box">
+                <h2>Candidate is eligible</h2>
+            </div>
+            @* <Alert Color="Color.Success"> *@
+            @*     <h4>This candidate is eligible</h4> *@
+            @* </Alert> *@
+        }
+        
+    </div>
+}
+@code {
+    private string? _resumeText;
+    private BackEndSkills _backEndSkills = new BackEndSkills();
+    private FrontEndSkills _frontEndSkills = new FrontEndSkills();
+    private bool _pdfScanned;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _resumeText = await LocalStorage.GetItemAsync<string>("storedPdf");
+    }
+
+    private async Task LoadFile(InputFileChangeEventArgs e)
+    {
+        IBrowserFile file = e.File; //getting file
+        byte[] buffer = new byte[file.Size];
+        await file.OpenReadStream().ReadAsync(buffer);
+
+        _resumeText = await ReadPdfText(buffer);
+
+        SkillsFinder.FindBackEndSkillsFromResume(_resumeText, _backEndSkills);
+        SkillsFinder.FindFrontEndSkillsFromResume(_resumeText, _frontEndSkills);
+
+        _pdfScanned = true;
+        /////storing PDF to local storage as Base64 string
+        // string base64Pdf = Convert.ToBase64String(buffer);
+        // await LocalStorage.SetItemAsStringAsync("storedPdf", base64Pdf);
+
+        await LocalStorage.SetItemAsStringAsync("storedPdf", _resumeText);
+    }
+
+    private async Task<string> ReadPdfText(byte[] pdfData)
+    {
+        try
+        {
+            using (MemoryStream stream = new MemoryStream(pdfData))
+            {
+                using (PdfDocument document = PdfDocument.Open(stream))
+                {
+                    string pageText = string.Empty;
+                    foreach (Page page in document.GetPages())
+                    {
+                        pageText += page.Text.ToLower();
+                    }
+
+                    return pageText;
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            return $"{e.Message}";
+        }
+    }
+
+}
+

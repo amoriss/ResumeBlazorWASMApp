@@ -1,9 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "FmjecEbYqvQUUknvzb76FSisgMLraJYjSt6vMATj5f5azd86rs1Y4AavZ7H55FXGLDyQG1PK6x6pImpYlwsBCA==",
+  "dgSpecHash": "1LJ/+Hg1bJYMKtjWkbNuEo0zsZjgeG9qdGU5CugKylKqnnpCtDhsi/0iVpjmQN81EGtR+YsNb1a04gR/Od0S6w==",
   "success": true,
   "projectFilePath": "C:\\Users\\amori\\Original\\ResumeBlazorWASMApp\\ResumeBlazorWASMApp\\ResumeBlazorWASMApp.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\amori\\.nuget\\packages\\blazored.localstorage\\4.5.0\\blazored.localstorage.4.5.0.nupkg.sha512",
+    "C:\\Users\\amori\\.nuget\\packages\\blazorise\\1.6.1\\blazorise.1.6.1.nupkg.sha512",
+    "C:\\Users\\amori\\.nuget\\packages\\blazorise.bootstrap\\1.6.1\\blazorise.bootstrap.1.6.1.nupkg.sha512",
+    "C:\\Users\\amori\\.nuget\\packages\\blazorise.bootstrap5\\1.6.1\\blazorise.bootstrap5.1.6.1.nupkg.sha512",
+    "C:\\Users\\amori\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\blazorise.icons.fontawesome.1.6.1.nupkg.sha512",
+    "C:\\Users\\amori\\.nuget\\packages\\blazorise.licensing\\1.2.0\\blazorise.licensing.1.2.0.nupkg.sha512",
     "C:\\Users\\amori\\.nuget\\packages\\microsoft.aspnetcore.authorization\\8.0.8\\microsoft.aspnetcore.authorization.8.0.8.nupkg.sha512",
     "C:\\Users\\amori\\.nuget\\packages\\microsoft.aspnetcore.components\\8.0.8\\microsoft.aspnetcore.components.8.0.8.nupkg.sha512",
     "C:\\Users\\amori\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\8.0.8\\microsoft.aspnetcore.components.analyzers.8.0.8.nupkg.sha512",

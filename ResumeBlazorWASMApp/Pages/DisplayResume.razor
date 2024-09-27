@@ -1,31 +1,66 @@
-﻿@page "/resume"
+﻿@page "/display-pdf"
 @using UglyToad.PdfPig
 @using UglyToad.PdfPig.Content
-<h3>DisplayResume</h3>
+@using Microsoft.AspNetCore.Components.Forms
+@inject HttpClient Http
+@inject Blazored.LocalStorage.ILocalStorageService LocalStorage
 
-<p>@DisplayTextFromPDF()</p>
+<h3>Upload PDF</h3>
+<button @onclick="ReadPdf">Read PDF</button>
+@* <button @onclick="UploadPdf">Upload PDF</button> *@
+
+
+@* <p>@_pdfText</p> *@
+<iframe src="data:application/pdf;base64,@_pdfText" width="100%" height="600px"></iframe>
 
 @code {
-    public static string DisplayTextFromPDF()
+    private string? _pdfText;
+    private string? _pdfBase64;
+
+    protected override async Task OnInitializedAsync()
     {
-        string relativePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "FaceResume.pdf");
-        string fullDocument = string.Empty;
-        try
+        _pdfText = await RetrieveFromLocalStorage();
+    }
+
+
+    private async Task ReadPdf()
+    {
+        var response = await Http.GetAsync("Data/FakeResume.pdf");
+
+        if (response.IsSuccessStatusCode)
         {
-            using (PdfDocument document = PdfDocument.Open(relativePath))
-            {
+            //read PDF into memory stream
+            var stream = await response.Content.ReadAsStreamAsync();
+            var memoryStream = new MemoryStream();
+            await stream.CopyToAsync(memoryStream);
+            
+            //convert byte array to Base64 string
+            byte[] pdfBytes = memoryStream.ToArray();
+            string base64String = Convert.ToBase64String(pdfBytes);
 
-                foreach(Page page in document.GetPages())
-                {
-                    fullDocument += page;
-                }
+            //store in local storage
+            await LocalStorage.SetItemAsStringAsync("storedPdf", base64String);
 
-            }
-            return fullDocument;
+            _pdfText = base64String;
+            // //read PDF text
+            // memoryStream.Position = 0; //read from beginning of the stream
+            // var document = PdfDocument.Open(memoryStream);
+            //
+            // foreach (Page page in document.GetPages())
+            // {
+            //     _pdfText += page.Text.ToLower();
+            // }
         }
-        catch
+        else
         {
-            throw new FileNotFoundException();
+            _pdfText = "Error reading PDF document";
         }
     }
+
+    private async Task<string?> RetrieveFromLocalStorage()
+    {
+        return await LocalStorage.GetItemAsync<string>("storedPdf");
+    }
+
+
 }

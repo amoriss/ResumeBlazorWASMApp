@@ -41,6 +41,26 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Blazored.LocalStorage": {
+              "target": "Package",
+              "version": "[4.5.0, )"
+            },
+            "Blazorise": {
+              "target": "Package",
+              "version": "[1.6.1, )"
+            },
+            "Blazorise.Bootstrap": {
+              "target": "Package",
+              "version": "[1.6.1, )"
+            },
+            "Blazorise.Bootstrap5": {
+              "target": "Package",
+              "version": "[1.6.1, )"
+            },
+            "Blazorise.Icons.FontAwesome": {
+              "target": "Package",
+              "version": "[1.6.1, )"
+            },
             "Microsoft.AspNetCore.Components.WebAssembly": {
               "target": "Package",
               "version": "[8.0.8, )"
