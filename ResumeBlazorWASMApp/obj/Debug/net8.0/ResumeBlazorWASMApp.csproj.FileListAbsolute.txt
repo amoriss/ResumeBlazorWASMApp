@@ -1,7 +1,15 @@
+C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0\ResumeBlazorWASMApp.csproj.AssemblyReference.cache
+C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0\ResumeBlazorWASMApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0\ResumeBlazorWASMApp.AssemblyInfoInputs.cache
+C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0\ResumeBlazorWASMApp.AssemblyInfo.cs
+C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0\ResumeBlazorWASMApp.csproj.CoreCompileInputs.cache
+C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0\ResumeBlazorWASMApp.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0\ResumeBlazorWASMApp.sourcelink.json
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\bin\Debug\net8.0\wwwroot\_framework\blazor.boot.json
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\bin\Debug\net8.0\wwwroot\_framework\blazor.webassembly.js
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\bin\Debug\net8.0\wwwroot\_framework\Blazored.LocalStorage.wasm
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\bin\Debug\net8.0\wwwroot\_framework\Blazorise.Bootstrap.wasm
+C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\bin\Debug\net8.0\wwwroot\_framework\Blazorise.Bootstrap5.wasm
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\bin\Debug\net8.0\wwwroot\_framework\Blazorise.Icons.FontAwesome.wasm
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\bin\Debug\net8.0\wwwroot\_framework\Blazorise.Licensing.wasm
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\bin\Debug\net8.0\wwwroot\_framework\Blazorise.wasm
@@ -362,6 +370,7 @@ C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\bin\Debug\net8.0
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\bin\Debug\net8.0\wwwroot\_framework\System.Net.NameResolution.wasm.gz
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\bin\Debug\net8.0\wwwroot\_framework\System.Reflection.Emit.wasm.gz
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\bin\Debug\net8.0\wwwroot\_framework\System.Text.Encoding.wasm.gz
+C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\bin\Debug\net8.0\wwwroot\_framework\Blazorise.Bootstrap5.wasm.gz
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\bin\Debug\net8.0\wwwroot\_framework\UglyToad.PdfPig.DocumentLayoutAnalysis.wasm.gz
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\bin\Debug\net8.0\wwwroot\_framework\Microsoft.Extensions.FileProviders.Abstractions.wasm.gz
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\bin\Debug\net8.0\wwwroot\_framework\System.IO.Pipelines.wasm.gz
@@ -436,6 +445,7 @@ C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\bin\Debug\net8.0
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\bin\Debug\net8.0\Blazored.LocalStorage.dll
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\bin\Debug\net8.0\Blazorise.dll
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\bin\Debug\net8.0\Blazorise.Bootstrap.dll
+C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\bin\Debug\net8.0\Blazorise.Bootstrap5.dll
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\bin\Debug\net8.0\Blazorise.Icons.FontAwesome.dll
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\bin\Debug\net8.0\Blazorise.Licensing.dll
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\bin\Debug\net8.0\Microsoft.AspNetCore.Authorization.dll
@@ -645,16 +655,10 @@ C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\bin\Debug\net8.0
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\bin\Debug\net8.0\icudt_CJK.dat
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\bin\Debug\net8.0\icudt_EFIGS.dat
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\bin\Debug\net8.0\icudt_no_CJK.dat
-C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0\ResumeBlazorWASMApp.csproj.AssemblyReference.cache
-C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0\ResumeBlazorWASMApp.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0\ResumeBlazorWASMApp.AssemblyInfoInputs.cache
-C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0\ResumeBlazorWASMApp.AssemblyInfo.cs
-C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0\ResumeBlazorWASMApp.csproj.CoreCompileInputs.cache
-C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0\ResumeBlazorWASMApp.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0\ResumeBlazorWASMApp.sourcelink.json
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0\webcil\Blazored.LocalStorage.wasm
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0\webcil\Blazorise.wasm
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0\webcil\Blazorise.Bootstrap.wasm
+C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0\webcil\Blazorise.Bootstrap5.wasm
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0\webcil\Blazorise.Icons.FontAwesome.wasm
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0\webcil\Blazorise.Licensing.wasm
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0\webcil\Microsoft.AspNetCore.Authorization.wasm
@@ -873,6 +877,7 @@ C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0\compressed\q287s6jmzk.gz
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0\compressed\r288pdc5jt.gz
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0\compressed\f57wth6eab.gz
+C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0\compressed\nmf0ua66ja.gz
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0\compressed\av2e6afx0z.gz
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0\compressed\46srnd06in.gz
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0\compressed\sjsgr569o9.gz
@@ -1092,9 +1097,5 @@ C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0\ref\ResumeBlazorWASMApp.dll
 <<<<<<< HEAD
 =======
-C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\bin\Debug\net8.0\wwwroot\_framework\Blazorise.Bootstrap5.wasm
-C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\bin\Debug\net8.0\wwwroot\_framework\Blazorise.Bootstrap5.wasm.gz
-C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\bin\Debug\net8.0\Blazorise.Bootstrap5.dll
-C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0\webcil\Blazorise.Bootstrap5.wasm
-C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0\compressed\nmf0ua66ja.gz
 >>>>>>> e99ca5a98fc29c7126c177d3ec845c655cc85b1f
+>>>>>>> 71b2b2a64a1c4a49663fa6c42d5f9c0365c84da7
