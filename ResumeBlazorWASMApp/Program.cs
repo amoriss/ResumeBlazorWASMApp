@@ -9,7 +9,6 @@ using Blazorise.Icons.FontAwesome;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.Services.AddBlazoredLocalStorage();
-builder.Services.AddBlazoredLocalStorage();
 // builder.Services
 //     .AddBlazorise(options =>
 //     {

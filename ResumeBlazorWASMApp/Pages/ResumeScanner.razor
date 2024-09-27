@@ -1,42 +1,18 @@
-﻿@page "/upload-resume"
+﻿@page "/resume-scanner"
 @using UglyToad.PdfPig
 @using UglyToad.PdfPig.Content
 @using System.Net
-@using Microsoft.AspNetCore.Components.Forms;
 @using ResumeBlazorWASMApp.Models
 @using ResumeBlazorWASMApp.Services
 @inject HttpClient Http
 @inject Blazored.LocalStorage.ILocalStorageService LocalStorage
-
+@using Blazorise
 
 @if (!_pdfScanned)
 {
-    <h3 style="text-align: center">Candidate Form</h3>
+    <h3>Upload PDF Document</h3>
 }
-<div class="form-container">
-<EditForm Model="_candidate" OnValidSubmit="HandleValidSubmit">
-    <DataAnnotationsValidator/>
-    <ValidationSummary/>
-    <div class="form-group">
-        <label>First Name:</label>
-        <InputText @bind-Value="_candidate.FirstName" required/>
-    </div>
-    <div class="form-group">
-        <label>Last Name:</label>
-        <InputText @bind-Value="_candidate.LastName" required/>
-    </div>
-    <div class="form-group">
-        <label>Email:</label>
-        <InputText @bind-Value="_candidate.Email" required/>
-    </div>
-
-    <div>
-        <label>Upload Resume PDF:</label>
-        <InputFile OnChange="LoadFile"></InputFile>
-    </div>
-    <button type="submit" class="submit-button">Submit</button>
-</EditForm>
-</div>
+<InputFile OnChange="LoadFile"></InputFile>
 
 @* @if (!string.IsNullOrEmpty(_resumeText)) *@
 @* { *@
@@ -87,9 +63,10 @@
                 <p>CSS</p>
             }
         </div>
+        
 
 
-        @if (_backEndSkills is { UsesAspnet: true, UsesCSharp: true, UsesSql: true } && _frontEndSkills.UsesReact)
+        @if (_backEndSkills.UsesAspnet && _backEndSkills.UsesCSharp && _backEndSkills.UsesSql && _frontEndSkills.UsesReact)
         {
             <div class="success-box">
                 <h2>Candidate is eligible</h2>
@@ -98,41 +75,18 @@
             @*     <h4>This candidate is eligible</h4> *@
             @* </Alert> *@
         }
-        <h3>Would you like to submit another candidate</h3>
-        <button @onclick="ClearForm">Yes</button>
+        
     </div>
 }
-
-<h3>All Eligible Candidates:</h3>
-<ul>
-
-    @if (eligibleCandidates == null || !eligibleCandidates.Any())
-    {
-        <li>No eligible candidates found.</li>
-    }
-    else
-    {
-        @foreach (var candidate in eligibleCandidates)
-        {
-            <li>@candidate.FirstName @candidate.LastName | Email: @candidate.Email</li>
-            <Button type="button" @onclick="() => DeleteEligibleCandidate(candidate)">Delete</Button>
-        }
-    }
-
-</ul>
-
 @code {
     private string? _resumeText;
     private BackEndSkills _backEndSkills = new BackEndSkills();
     private FrontEndSkills _frontEndSkills = new FrontEndSkills();
     private bool _pdfScanned;
-    private readonly Candidate _candidate = new Candidate();
-    private List<Candidate>? eligibleCandidates = new List<Candidate>();
 
     protected override async Task OnInitializedAsync()
     {
         _resumeText = await LocalStorage.GetItemAsync<string>("storedPdf");
-        eligibleCandidates = await LocalStorage.GetItemAsync<List<Candidate>>("eligibleCandidates") ?? new List<Candidate>();
     }
 
     private async Task LoadFile(InputFileChangeEventArgs e)
@@ -140,11 +94,9 @@
         IBrowserFile file = e.File; //getting file
         byte[] buffer = new byte[file.Size];
         await file.OpenReadStream().ReadAsync(buffer);
-        _resumeText = await ReadPdfText(buffer);
-    }
 
-    private async Task ScanResume()
-    {
+        _resumeText = await ReadPdfText(buffer);
+
         SkillsFinder.FindBackEndSkillsFromResume(_resumeText, _backEndSkills);
         SkillsFinder.FindFrontEndSkillsFromResume(_resumeText, _frontEndSkills);
 
@@ -178,43 +130,6 @@
         {
             return $"{e.Message}";
         }
-    }
-
-    private async Task HandleValidSubmit()
-    {
-        await AddEligibleCandidate();
-        await ScanResume();
-        eligibleCandidates = await LocalStorage.GetItemAsync<List<Candidate>>("eligibleCandidates") ?? new List<Candidate>();
-    }
-
-    private async Task AddEligibleCandidate()
-    {
-        var candidates = await LocalStorage.GetItemAsync<List<Candidate>>("eligibleCandidates") ?? new List<Candidate>();
-        candidates.Add(_candidate);
-        await LocalStorage.SetItemAsync("eligibleCandidates", candidates);
-    }
-
-    private async Task DeleteEligibleCandidate(Candidate candidateToDelete)
-    {
-        var candidates = await LocalStorage.GetItemAsync<List<Candidate>>("eligibleCandidates");
-        if (candidates != null)
-        {
-            candidates.Remove(candidateToDelete);
-        }
-        await LocalStorage.SetItemAsync("eligibleCandidates", candidates);
-        eligibleCandidates = await LocalStorage.GetItemAsync<List<Candidate>>("eligibleCandidates") ?? new List<Candidate>();
-    }
-
-    private Task ClearForm()
-    {
-        _candidate.FirstName = string.Empty;
-        _candidate.LastName = string.Empty;
-        _candidate.Email = string.Empty;
-        _backEndSkills = new BackEndSkills();
-        _frontEndSkills = new FrontEndSkills();
-        _pdfScanned = false;
-        _resumeText = string.Empty;
-        return Task.CompletedTask;
     }
 
 }
