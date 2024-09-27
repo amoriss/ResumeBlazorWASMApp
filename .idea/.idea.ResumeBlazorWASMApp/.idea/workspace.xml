@@ -12,35 +12,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ed9572de-9ed5-472a-b015-834410ad7647" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ResumeBlazorWASMApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ResumeBlazorWASMApp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ResumeAPI/obj/Debug/net8.0/ResumeAPI.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ResumeAPI/obj/Debug/net8.0/ResumeAPI.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ResumeAPI/obj/Debug/net8.0/ResumeAPI.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ResumeAPI/obj/Debug/net8.0/ResumeAPI.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ResumeAPI/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ResumeAPI/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ResumeBlazorWASMApp/bin/Debug/net8.0/ResumeBlazorWASMApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ResumeBlazorWASMApp/bin/Debug/net8.0/ResumeBlazorWASMApp.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ResumeBlazorWASMApp/bin/Debug/net8.0/ResumeBlazorWASMApp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ResumeBlazorWASMApp/bin/Debug/net8.0/ResumeBlazorWASMApp.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ResumeBlazorWASMApp/bin/Debug/net8.0/wwwroot/_framework/ResumeBlazorWASMApp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ResumeBlazorWASMApp/bin/Debug/net8.0/wwwroot/_framework/ResumeBlazorWASMApp.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ResumeBlazorWASMApp/bin/Debug/net8.0/wwwroot/_framework/ResumeBlazorWASMApp.pdb.gz" beforeDir="false" afterPath="$PROJECT_DIR$/ResumeBlazorWASMApp/bin/Debug/net8.0/wwwroot/_framework/ResumeBlazorWASMApp.pdb.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ResumeBlazorWASMApp/bin/Debug/net8.0/wwwroot/_framework/ResumeBlazorWASMApp.wasm" beforeDir="false" afterPath="$PROJECT_DIR$/ResumeBlazorWASMApp/bin/Debug/net8.0/wwwroot/_framework/ResumeBlazorWASMApp.wasm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ResumeBlazorWASMApp/bin/Debug/net8.0/wwwroot/_framework/ResumeBlazorWASMApp.wasm.gz" beforeDir="false" afterPath="$PROJECT_DIR$/ResumeBlazorWASMApp/bin/Debug/net8.0/wwwroot/_framework/ResumeBlazorWASMApp.wasm.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ResumeBlazorWASMApp/bin/Debug/net8.0/wwwroot/_framework/blazor.boot.json" beforeDir="false" afterPath="$PROJECT_DIR$/ResumeBlazorWASMApp/bin/Debug/net8.0/wwwroot/_framework/blazor.boot.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ResumeBlazorWASMApp/bin/Debug/net8.0/wwwroot/_framework/blazor.boot.json.gz" beforeDir="false" afterPath="$PROJECT_DIR$/ResumeBlazorWASMApp/bin/Debug/net8.0/wwwroot/_framework/blazor.boot.json.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/Debug/net8.0/ResumeBlazorWASMApp.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/Debug/net8.0/ResumeBlazorWASMApp.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/Debug/net8.0/ResumeBlazorWASMApp.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/Debug/net8.0/ResumeBlazorWASMApp.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/Debug/net8.0/ResumeBlazorWASMApp.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/Debug/net8.0/ResumeBlazorWASMApp.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/Debug/net8.0/ResumeBlazorWASMApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/Debug/net8.0/ResumeBlazorWASMApp.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/Debug/net8.0/ResumeBlazorWASMApp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/Debug/net8.0/ResumeBlazorWASMApp.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/Debug/net8.0/ResumeBlazorWASMApp.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/Debug/net8.0/ResumeBlazorWASMApp.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/Debug/net8.0/blazor.boot.json" beforeDir="false" afterPath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/Debug/net8.0/blazor.boot.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/Debug/net8.0/compressed/0hmilvfugo.gz" beforeDir="false" afterPath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/Debug/net8.0/compressed/0hmilvfugo.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/Debug/net8.0/compressed/fveyapdap7.gz" beforeDir="false" afterPath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/Debug/net8.0/compressed/fveyapdap7.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/Debug/net8.0/compressed/p11gcn12ee.gz" beforeDir="false" afterPath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/Debug/net8.0/compressed/p11gcn12ee.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/Debug/net8.0/ref/ResumeBlazorWASMApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/Debug/net8.0/ref/ResumeBlazorWASMApp.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/Debug/net8.0/refint/ResumeBlazorWASMApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/Debug/net8.0/refint/ResumeBlazorWASMApp.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/Debug/net8.0/tmp-webcil/ResumeBlazorWASMApp.wasm" beforeDir="false" afterPath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/Debug/net8.0/tmp-webcil/ResumeBlazorWASMApp.wasm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/Debug/net8.0/webcil/ResumeBlazorWASMApp.wasm" beforeDir="false" afterPath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/Debug/net8.0/webcil/ResumeBlazorWASMApp.wasm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ResumeBlazorWASMApp/obj/rider.project.restore.info" afterDir="false" />
-    </list>
+    <list default="true" id="ed9572de-9ed5-472a-b015-834410ad7647" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -196,6 +168,7 @@
       <workItem from="1727299015579" duration="6290000" />
       <workItem from="1727323846467" duration="2600000" />
       <workItem from="1727374869452" duration="13655000" />
+      <workItem from="1727468356199" duration="594000" />
     </task>
     <servers />
   </component>
