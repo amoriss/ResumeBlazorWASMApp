@@ -1064,3 +1064,4 @@ C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0\compressed\rdgpzc97ue.gz
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0\compressed\9rnbnhkbtb.gz
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0\compressed\p5u3av9hjv.gz
+C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0\ResumeBlazorWASMApp.sourcelink.json
