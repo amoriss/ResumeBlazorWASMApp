@@ -6,6 +6,7 @@ public class Candidate
     public string LastName { get; set; }
     public string Email { get; set; }
     public string PdfResume { get; set; }
+    public bool IsResumeVisible { get; set; }
     public BackEndSkills BackEndSkills { get; set; } = new BackEndSkills();
     public FrontEndSkills FrontEndSkills { get; set; } = new FrontEndSkills();
     public override bool Equals(object obj)

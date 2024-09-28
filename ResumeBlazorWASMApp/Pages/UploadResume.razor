@@ -136,6 +136,11 @@
         {
             <li>@candidate.FirstName @candidate.LastName | Email: @candidate.Email</li>
             <Button type="button" class="submit-button" @onclick="() => DeleteEligibleCandidate(candidate)">Delete</Button>
+            <Button type="button" class="submit-button" @onclick="() => ViewResume(candidate)">ViewResume</Button>
+            @if (candidate.IsResumeVisible)
+            {
+                <iframe src="data:application/pdf;base64,@candidate.PdfResume" width="600" height="400"></iframe>
+            }
         }
     }
 
@@ -152,8 +157,9 @@
 
     protected override async Task OnInitializedAsync()
     {
-        _resumeText = await LocalStorage.GetItemAsync<string>("storedPdf");
+       // _resumeText = await LocalStorage.GetItemAsync<string>("storedPdf");
         eligibleCandidates = await LocalStorage.GetItemAsync<List<Candidate>>("eligibleCandidates") ?? new List<Candidate>();
+       // _candidate.PdfResume = await RetrieveFromLocalStorage();
     }
 
     private async Task LoadFile(InputFileChangeEventArgs e)
@@ -161,9 +167,27 @@
         IBrowserFile file = e.File; //getting file
         if (file.Name.EndsWith(".pdf"))
         {
-            byte[] buffer = new byte[file.Size];
-            await file.OpenReadStream().ReadAsync(buffer);
-            _resumeText = await ReadPdfText(buffer);
+            //read PDF into memory stream
+            //var stream = file.ContentType;
+            var memoryStream = new MemoryStream();
+            await file.OpenReadStream().CopyToAsync(memoryStream);
+            
+            byte[] pdfBytes = memoryStream.ToArray();
+            string base64String = Convert.ToBase64String(pdfBytes);
+            
+            _candidate.PdfResume = base64String;
+            _resumeText = await ReadPdfText(pdfBytes);
+            await LocalStorage.SetItemAsStringAsync("storedPdf", base64String);
+
+           
+            
+            // byte[] buffer = new byte[file.Size];
+            // await file.OpenReadStream().ReadAsync(buffer);
+            // string base64Pdf = Convert.ToBase64String(buffer);
+            // _candidate.PdfResume = base64Pdf;
+            // await LocalStorage.SetItemAsStringAsync("storedPdf", base64Pdf);
+            // _resumeText = await ReadPdfText(buffer);
+           
         }
     }
 
@@ -265,4 +289,14 @@
         return Task.CompletedTask;
     }
 
+    private void ViewResume(Candidate candidate)
+    {
+        candidate.IsResumeVisible = !candidate.IsResumeVisible;
+    }
+    // private async Task<string?> RetrieveFromLocalStorage()
+    // {
+    //     return await LocalStorage.GetItemAsync<string>("storedPdf");
+    // }
+
+    
 }
