@@ -14,28 +14,28 @@
     <h3 style="text-align: center">Candidate Form</h3>
 }
 <div class="form-container">
-<EditForm Model="_candidate" OnValidSubmit="HandleValidSubmit">
-    <DataAnnotationsValidator/>
-    <ValidationSummary/>
-    <div class="form-group">
-        <label>First Name:</label>
-        <InputText @bind-Value="_candidate.FirstName" required/>
-    </div>
-    <div class="form-group">
-        <label>Last Name:</label>
-        <InputText @bind-Value="_candidate.LastName" required/>
-    </div>
-    <div class="form-group">
-        <label>Email:</label>
-        <InputText @bind-Value="_candidate.Email" required/>
-    </div>
+    <EditForm Model="_candidate" OnValidSubmit="HandleValidSubmit">
+        <DataAnnotationsValidator/>
+        <ValidationSummary/>
+        <div class="form-group">
+            <label>First Name:</label>
+            <InputText @bind-Value="_candidate.FirstName" required/>
+        </div>
+        <div class="form-group">
+            <label>Last Name:</label>
+            <InputText @bind-Value="_candidate.LastName" required/>
+        </div>
+        <div class="form-group">
+            <label>Email:</label>
+            <InputText @bind-Value="_candidate.Email" required/>
+        </div>
 
-    <div>
-        <label>Upload Resume PDF:</label>
-        <InputFile OnChange="LoadFile"></InputFile>
-    </div>
-    <button type="submit" class="submit-button">Submit</button>
-</EditForm>
+        <div>
+            <label>Upload Resume PDF:</label>
+            <InputFile OnChange="LoadFile" accept=".pdf"></InputFile>
+        </div>
+        <button type="submit" class="submit-button">Submit</button>
+    </EditForm>
 </div>
 
 @* @if (!string.IsNullOrEmpty(_resumeText)) *@
@@ -98,6 +98,19 @@
             @*     <h4>This candidate is eligible</h4> *@
             @* </Alert> *@
         }
+        else //if (_backEndSkills is { UsesAspnet: false, UsesCSharp: false, UsesSql: false } && _frontEndSkills.UsesReact is false)
+        {
+            <h2>Candidate is not eligible</h2>
+        }
+
+        @* @if (_backEndSkills is { UsesAspnet: false, UsesCSharp: false, UsesSql: false }) *@
+        @* { *@
+        @*     <h2>Candidate has no relevant back-end skills</h2> *@
+        @* } *@
+        @* @if (_frontEndSkills is { UsesReact: false, UsesCss: false, UsesJavaScript: false }) *@
+        @* { *@
+        @*     <h2>Candidate has no relevant front-end skills</h2> *@
+        @* } *@
         <h3>Would you like to submit another candidate?</h3>
         <button @onclick="ClearForm">Yes</button>
     </div>
@@ -138,15 +151,20 @@
     private async Task LoadFile(InputFileChangeEventArgs e)
     {
         IBrowserFile file = e.File; //getting file
-        byte[] buffer = new byte[file.Size];
-        await file.OpenReadStream().ReadAsync(buffer);
-        _resumeText = await ReadPdfText(buffer);
+        if (file.Name.EndsWith(".pdf"))
+        {
+            byte[] buffer = new byte[file.Size];
+            await file.OpenReadStream().ReadAsync(buffer);
+            _resumeText = await ReadPdfText(buffer);
+        }
     }
 
     private async Task ScanResume()
     {
         SkillsFinder.FindBackEndSkillsFromResume(_resumeText, _backEndSkills);
         SkillsFinder.FindFrontEndSkillsFromResume(_resumeText, _frontEndSkills);
+        _candidate.BackEndSkills = _backEndSkills;
+        _candidate.FrontEndSkills = _frontEndSkills;
 
         _pdfScanned = true;
         /////storing PDF to local storage as Base64 string
@@ -190,7 +208,11 @@
     private async Task AddEligibleCandidate()
     {
         var candidates = await LocalStorage.GetItemAsync<List<Candidate>>("eligibleCandidates") ?? new List<Candidate>();
-        candidates.Add(_candidate);
+        @if (_candidate.BackEndSkills.UsesAspnet && _candidate.BackEndSkills.UsesCSharp && _candidate.BackEndSkills.UsesSql && _candidate.FrontEndSkills.UsesReact)
+        {
+            candidates.Add(_candidate);
+        }
+
         await LocalStorage.SetItemAsync("eligibleCandidates", candidates);
     }
 
@@ -201,6 +223,7 @@
         {
             candidates.Remove(candidateToDelete);
         }
+
         await LocalStorage.SetItemAsync("eligibleCandidates", candidates);
         eligibleCandidates = await LocalStorage.GetItemAsync<List<Candidate>>("eligibleCandidates") ?? new List<Candidate>();
     }
