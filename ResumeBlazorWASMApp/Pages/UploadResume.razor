@@ -100,7 +100,9 @@
         }
         else //if (_backEndSkills is { UsesAspnet: false, UsesCSharp: false, UsesSql: false } && _frontEndSkills.UsesReact is false)
         {
-            <h2>Candidate is not eligible</h2>
+            <div class="red-box">
+                <h2>Candidate is not eligible</h2>
+            </div>
         }
 
         @* @if (_backEndSkills is { UsesAspnet: false, UsesCSharp: false, UsesSql: false }) *@
@@ -112,7 +114,12 @@
         @*     <h2>Candidate has no relevant front-end skills</h2> *@
         @* } *@
         <h3>Would you like to submit another candidate?</h3>
-        <button @onclick="ClearForm">Yes</button>
+        <button class="submit-button" @onclick="ClearFormYes">Yes</button>
+        <button class="submit-button" @onclick="ClearFormNo">No</button>
+        @if (_showThankYouMessage)
+        {
+            <h2><em>Thank you</em></h2>
+        }
     </div>
 }
 
@@ -128,7 +135,7 @@
         @foreach (var candidate in eligibleCandidates)
         {
             <li>@candidate.FirstName @candidate.LastName | Email: @candidate.Email</li>
-            <Button type="button" @onclick="() => DeleteEligibleCandidate(candidate)">Delete</Button>
+            <Button type="button" class="submit-button" @onclick="() => DeleteEligibleCandidate(candidate)">Delete</Button>
         }
     }
 
@@ -141,6 +148,7 @@
     private bool _pdfScanned;
     private readonly Candidate _candidate = new Candidate();
     private List<Candidate>? eligibleCandidates = new List<Candidate>();
+    private bool _showThankYouMessage = false;
 
     protected override async Task OnInitializedAsync()
     {
@@ -165,6 +173,7 @@
         SkillsFinder.FindFrontEndSkillsFromResume(_resumeText, _frontEndSkills);
         _candidate.BackEndSkills = _backEndSkills;
         _candidate.FrontEndSkills = _frontEndSkills;
+        _candidate.PdfResume = _resumeText;
 
         _pdfScanned = true;
         /////storing PDF to local storage as Base64 string
@@ -200,8 +209,8 @@
 
     private async Task HandleValidSubmit()
     {
-        await AddEligibleCandidate();
         await ScanResume();
+        await AddEligibleCandidate();
         eligibleCandidates = await LocalStorage.GetItemAsync<List<Candidate>>("eligibleCandidates") ?? new List<Candidate>();
     }
 
@@ -228,7 +237,7 @@
         eligibleCandidates = await LocalStorage.GetItemAsync<List<Candidate>>("eligibleCandidates") ?? new List<Candidate>();
     }
 
-    private Task ClearForm()
+    private Task ClearFormYes()
     {
         _candidate.FirstName = string.Empty;
         _candidate.LastName = string.Empty;
@@ -237,8 +246,23 @@
         _frontEndSkills = new FrontEndSkills();
         _pdfScanned = false;
         _resumeText = string.Empty;
+        _showThankYouMessage = false; //don't show thank you message
+        StateHasChanged();
+        return Task.CompletedTask;
+    }
+
+    private Task ClearFormNo()
+    {
+        _candidate.FirstName = string.Empty;
+        _candidate.LastName = string.Empty;
+        _candidate.Email = string.Empty;
+        _backEndSkills = new BackEndSkills();
+        _frontEndSkills = new FrontEndSkills();
+        _pdfScanned = false;
+        _resumeText = string.Empty;
+        _showThankYouMessage = true; //show thank you message
+        StateHasChanged();
         return Task.CompletedTask;
     }
 
 }
-

@@ -109,10 +109,10 @@ code {
 /*    font-weight: bold;*/
 /*}*/
 
-.front-end-skills, .back-end-skills, .success-box {
+.front-end-skills, .back-end-skills, .success-box, .red-box {
     box-sizing: border-box;
     position: relative;
-    padding: 16px;
+    padding: 15px;
     text-align: center;
     border-radius: 10px;
     margin: 30px;
@@ -141,6 +141,10 @@ code {
     background-color: #7cf67c;
 }
 
+.red-box {
+    background-color: red;
+}
+
 /*.success-box:hover {*/
 /*    background-color: green;*/
 /*}*/
@@ -161,9 +165,12 @@ code {
 
 }
 
+
 .form-group {
     margin-bottom: 15px;
     border-radius: 25px;
+    justify-content: center;
+    align-items: center;
 }
 
 label {
@@ -187,6 +194,7 @@ input[type="file"] {
     outline: none;
     box-shadow: none;
 }
+
 input[type="file"] {
     border: none;
     outline: none;
