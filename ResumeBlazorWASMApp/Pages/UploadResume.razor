@@ -33,10 +33,15 @@
         <div>
             <label>Upload Resume PDF:</label>
             <InputFile OnChange="LoadFile" accept=".pdf"></InputFile>
+            @if (_isLoading)
+            {
+                <h2>Document is Loading</h2>
+            }
         </div>
         <button type="submit" class="submit-button">Submit</button>
     </EditForm>
 </div>
+
 
 @* @if (!string.IsNullOrEmpty(_resumeText)) *@
 @* { *@
@@ -118,7 +123,9 @@
         <button class="submit-button" @onclick="ClearFormNo">No</button>
         @if (_showThankYouMessage)
         {
-            <h2><em>Thank you</em></h2>
+            <h2>
+                <em>Thank you</em>
+            </h2>
         }
     </div>
 }
@@ -126,21 +133,32 @@
 <h3>All Eligible Candidates:</h3>
 <ul>
 
-    @if (eligibleCandidates == null || !eligibleCandidates.Any())
+    @if (_eligibleCandidates == null || !_eligibleCandidates.Any())
     {
         <li>No eligible candidates found.</li>
     }
     else
     {
-        @foreach (var candidate in eligibleCandidates)
+        @foreach (var candidate in _eligibleCandidates)
         {
-            <li>@candidate.FirstName @candidate.LastName | Email: @candidate.Email</li>
+            <div class="candidate-card">
+                <li>@candidate.FirstName @candidate.LastName</li>
+                <li>@candidate.Email</li>
             <Button type="button" class="submit-button" @onclick="() => DeleteEligibleCandidate(candidate)">Delete</Button>
             <Button type="button" class="submit-button" @onclick="() => ViewResume(candidate)">ViewResume</Button>
             @if (candidate.IsResumeVisible)
             {
-                <iframe src="data:application/pdf;base64,@candidate.PdfResume" width="600" height="400"></iframe>
+                @* <iframe src="data:application/pdf;base64,@candidate.PdfResume" width="600" height="400"></iframe> *@
+                <iframe src="data:application/pdf;base64,@_candidate.PdfResume" width="600" height="400" style="border: none;"></iframe>
+                //<iframe src="data:application/pdf;base64,@candidate.PdfResume" width="100%" height="600px"></iframe>
             }
+
+            <Button type="button" class="submit-button" @onclick="() => ToggleFavorite(candidate)">Favorite</Button>
+            @if (candidate.IsFavorited)
+            {
+                <li class="success-box">Is Favorite</li>
+            }
+            </div>
         }
     }
 
@@ -152,14 +170,15 @@
     private FrontEndSkills _frontEndSkills = new FrontEndSkills();
     private bool _pdfScanned;
     private readonly Candidate _candidate = new Candidate();
-    private List<Candidate>? eligibleCandidates = new List<Candidate>();
-    private bool _showThankYouMessage = false;
+    private List<Candidate>? _eligibleCandidates = new List<Candidate>();
+    private bool _showThankYouMessage;
+    private bool _isLoading;
 
     protected override async Task OnInitializedAsync()
     {
-       // _resumeText = await LocalStorage.GetItemAsync<string>("storedPdf");
-        eligibleCandidates = await LocalStorage.GetItemAsync<List<Candidate>>("eligibleCandidates") ?? new List<Candidate>();
-       // _candidate.PdfResume = await RetrieveFromLocalStorage();
+        // _resumeText = await LocalStorage.GetItemAsync<string>("storedPdf");
+        _eligibleCandidates = await LocalStorage.GetItemAsync<List<Candidate>>("eligibleCandidates") ?? new List<Candidate>();
+        // _candidate.PdfResume = await RetrieveFromLocalStorage();
     }
 
     private async Task LoadFile(InputFileChangeEventArgs e)
@@ -167,27 +186,26 @@
         IBrowserFile file = e.File; //getting file
         if (file.Name.EndsWith(".pdf"))
         {
+            _isLoading = true;
             //read PDF into memory stream
             //var stream = file.ContentType;
             var memoryStream = new MemoryStream();
             await file.OpenReadStream().CopyToAsync(memoryStream);
-            
+
             byte[] pdfBytes = memoryStream.ToArray();
             string base64String = Convert.ToBase64String(pdfBytes);
-            
+            _isLoading = false;
             _candidate.PdfResume = base64String;
             _resumeText = await ReadPdfText(pdfBytes);
-            await LocalStorage.SetItemAsStringAsync("storedPdf", base64String);
+            await LocalStorage.SetItemAsStringAsync("storedPdf", _candidate.PdfResume);
 
-           
-            
+
             // byte[] buffer = new byte[file.Size];
             // await file.OpenReadStream().ReadAsync(buffer);
             // string base64Pdf = Convert.ToBase64String(buffer);
             // _candidate.PdfResume = base64Pdf;
             // await LocalStorage.SetItemAsStringAsync("storedPdf", base64Pdf);
             // _resumeText = await ReadPdfText(buffer);
-           
         }
     }
 
@@ -235,7 +253,7 @@
     {
         await ScanResume();
         await AddEligibleCandidate();
-        eligibleCandidates = await LocalStorage.GetItemAsync<List<Candidate>>("eligibleCandidates") ?? new List<Candidate>();
+        _eligibleCandidates = await LocalStorage.GetItemAsync<List<Candidate>>("eligibleCandidates") ?? new List<Candidate>();
     }
 
     private async Task AddEligibleCandidate()
@@ -258,7 +276,7 @@
         }
 
         await LocalStorage.SetItemAsync("eligibleCandidates", candidates);
-        eligibleCandidates = await LocalStorage.GetItemAsync<List<Candidate>>("eligibleCandidates") ?? new List<Candidate>();
+        _eligibleCandidates = await LocalStorage.GetItemAsync<List<Candidate>>("eligibleCandidates") ?? new List<Candidate>();
     }
 
     private Task ClearFormYes()
@@ -293,10 +311,16 @@
     {
         candidate.IsResumeVisible = !candidate.IsResumeVisible;
     }
-    // private async Task<string?> RetrieveFromLocalStorage()
-    // {
-    //     return await LocalStorage.GetItemAsync<string>("storedPdf");
-    // }
 
-    
+    private async Task ToggleFavorite(Candidate candidate)
+    {
+        candidate.IsFavorited = !candidate.IsFavorited;
+        Console.WriteLine($"{candidate.FirstName} {candidate.LastName}");
+        Console.WriteLine($"{candidate.IsFavorited}");
+        // var candidates = await LocalStorage.GetItemAsync<List<Candidate>>("eligibleCandidates");
+        // await LocalStorage.SetItemAsync("eligibleCandidates", candidates);
+        // _eligibleCandidates = candidates;
+    }
+
+
 }

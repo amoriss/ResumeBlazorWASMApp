@@ -9,6 +9,7 @@ public class Candidate
     public bool IsResumeVisible { get; set; }
     public BackEndSkills BackEndSkills { get; set; } = new BackEndSkills();
     public FrontEndSkills FrontEndSkills { get; set; } = new FrontEndSkills();
+    public bool IsFavorited { get; set; }
     public override bool Equals(object obj)
     {
         if (obj is Candidate other)

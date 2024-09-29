@@ -221,3 +221,27 @@ input:focus, textarea:focus, select:focus {
 .submit-button:hover {
     background-color: #184d83;
 }
+.unfavorite-button {
+    margin-top: 20px;
+    background-color: #e8357a;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    padding: 10px 30px;
+    align-items: center;
+}
+
+.candidate-card {
+    background-color: #e9ecf3;
+    border: 2px solid black;
+    padding: 20px;
+    width: 800px;
+    border-radius: 15px;
+}
+.candidate-card:hover {
+    border-color: orange;
+}
+li {
+    font-size: larger;
+    list-style: none;
+}
