@@ -233,7 +233,7 @@ input:focus, textarea:focus, select:focus {
 
 .candidate-card {
     background-color: #e9ecf3;
-    border: 2px solid black;
+    border: 4px solid black;
     padding: 20px;
     width: 800px;
     border-radius: 15px;

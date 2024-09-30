@@ -6,9 +6,11 @@ using Blazorise;
 using Blazorise.Bootstrap;
 using Blazorise.Bootstrap5;
 using Blazorise.Icons.FontAwesome;
+using ResumeBlazorWASMApp.Services;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.Services.AddBlazoredLocalStorage();
+builder.Services.AddSingleton<CandidateService>();
 // builder.Services
 //     .AddBlazorise(options =>
 //     {
