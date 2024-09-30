@@ -130,6 +130,9 @@
     </div>
 }
 
+<h3>Filter Candidates by First Name</h3>
+<InputText @bind-Value="_filterFirstName" placeholder="Enter first name"></InputText>
+<button @onclick="FilterCandidates">Filter</button>
 <h3>All Eligible Candidates:</h3>
 <ul>
 
@@ -139,7 +142,7 @@
     }
     else
     {
-        @foreach (var candidate in _eligibleCandidates)
+        @foreach (var candidate in _filteredCandidates)
         {
             <div class="candidate-card">
                 <li>@candidate.FirstName @candidate.LastName</li>
@@ -173,12 +176,15 @@
     private List<Candidate>? _eligibleCandidates = new List<Candidate>();
     private bool _showThankYouMessage;
     private bool _isLoading;
+    private string? _filterFirstName;
+    private List<Candidate> _filteredCandidates = new List<Candidate>();
 
     protected override async Task OnInitializedAsync()
     {
         // _resumeText = await LocalStorage.GetItemAsync<string>("storedPdf");
         _eligibleCandidates = await LocalStorage.GetItemAsync<List<Candidate>>("eligibleCandidates") ?? new List<Candidate>();
         // _candidate.PdfResume = await RetrieveFromLocalStorage();
+        _filteredCandidates = _eligibleCandidates;
     }
 
     private async Task LoadFile(InputFileChangeEventArgs e)
@@ -317,9 +323,16 @@
         candidate.IsFavorited = !candidate.IsFavorited;
         Console.WriteLine($"{candidate.FirstName} {candidate.LastName}");
         Console.WriteLine($"{candidate.IsFavorited}");
-        // var candidates = await LocalStorage.GetItemAsync<List<Candidate>>("eligibleCandidates");
-        // await LocalStorage.SetItemAsync("eligibleCandidates", candidates);
-        // _eligibleCandidates = candidates;
+    }
+
+    private void FilterCandidates()
+    {
+        if (string.IsNullOrEmpty(_filterFirstName))
+        {
+            _filteredCandidates = _eligibleCandidates;
+        }
+        _filteredCandidates = _eligibleCandidates.Where(can => can.FirstName.Contains(_filterFirstName.ToLower())).ToList();
+        StateHasChanged();
     }
 
 
