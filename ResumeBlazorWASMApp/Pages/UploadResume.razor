@@ -132,7 +132,9 @@
 
 <h3>Filter Candidates by First Name</h3>
 <InputText @bind-Value="_filterFirstName" placeholder="Enter first name"></InputText>
-<button @onclick="FilterCandidates">Filter</button>
+<button @onclick="FilterCandidatesByFirstName">Filter</button>
+<InputText @bind-Value="_filterLastName" placeholder="Enter last name"></InputText>
+<button @onclick="FilterCandidatesByLastName">Filter</button>
 <h3>All Eligible Candidates:</h3>
 <ul>
 
@@ -177,6 +179,7 @@
     private bool _showThankYouMessage;
     private bool _isLoading;
     private string? _filterFirstName;
+    private string? _filterLastName;
     private List<Candidate> _filteredCandidates = new List<Candidate>();
 
     protected override async Task OnInitializedAsync()
@@ -325,7 +328,7 @@
         Console.WriteLine($"{candidate.IsFavorited}");
     }
 
-    private void FilterCandidates()
+    private void FilterCandidatesByFirstName()
     {
         if (string.IsNullOrEmpty(_filterFirstName))
         {
@@ -333,6 +336,16 @@
         }
         _filteredCandidates = _eligibleCandidates.Where(can => can.FirstName.Contains(_filterFirstName.ToLower())).ToList();
         StateHasChanged();
+    }
+
+    private void FilterCandidatesByLastName()
+    {
+        if (string.IsNullOrEmpty(_filterLastName))
+        {
+            _filteredCandidates = _eligibleCandidates;
+        }
+
+        _filteredCandidates = _eligibleCandidates.Where(can => can.LastName.Contains(_filterLastName.ToLower())).ToList();
     }
 
 
