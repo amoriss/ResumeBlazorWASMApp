@@ -1,143 +1,12 @@
-﻿@page "/upload-resume"
-@using UglyToad.PdfPig
-@using UglyToad.PdfPig.Content
-@using System.Net
-@using Microsoft.AspNetCore.Components.Forms;
-@using ResumeBlazorWASMApp.Models
+﻿@page "/all-resumes"
 @using ResumeBlazorWASMApp.Services
-@inject HttpClient Http
 @inject Blazored.LocalStorage.ILocalStorageService LocalStorage
+@using UglyToad.PdfPig
+@using ResumeBlazorWASMApp.Models
+@using UglyToad.PdfPig.Content
 @inject CandidateService CandidateService
 
-
-@if (!_pdfScanned)
-{
-    <h3 style="text-align: center">Candidate Form</h3>
-}
-<div class="form-container">
-    <EditForm Model="_candidate" OnSubmit="HandleSubmit">
-        <DataAnnotationsValidator/>
-        <ValidationSummary/>
-        <div class="form-group">
-            <label>First Name:</label>
-            <InputText @bind-Value="_candidate.FirstName" required/>
-        </div>
-        <div class="form-group">
-            <label>Last Name:</label>
-            <InputText @bind-Value="_candidate.LastName" required/>
-        </div>
-        <div class="form-group">
-            <label>Email:</label>
-            <InputText @bind-Value="_candidate.Email" required/>
-        </div>
-
-        <div>
-            <label>Upload Resume PDF:</label>
-            <InputFile OnChange="LoadFile" accept=".pdf"></InputFile>
-            @if (_isLoading)
-            {
-                <h2>Document is Loading</h2>
-            }
-            @if (!string.IsNullOrEmpty(_uploadErrorMessage))
-            {
-                <h2>
-                    <em class="red-box">@_uploadErrorMessage</em>
-                </h2>
-            }
-        </div>
-        <button type="submit" class="submit-button">Submit</button>
-    </EditForm>
-</div>
-
-
-@* @if (!string.IsNullOrEmpty(_resumeText)) *@
-@* { *@
-@*     <p>@_resumeText</p> *@
-@* } *@
-
-@if (_pdfScanned)
-{
-    <div class="skills-container">
-        <div class="back-end-skills">
-            <h2>Back-End Skills: </h2>
-            @if (_backEndSkills.UsesAspnet)
-            {
-                <p>ASP.NET </p>
-            }
-
-            @if (_backEndSkills.UsesCSharp)
-            {
-                <p>C#</p>
-            }
-
-            @if (_backEndSkills.UsesVisualStudio)
-            {
-                <p>Visual Studio</p>
-            }
-
-            @if (_backEndSkills.UsesSql)
-            {
-                <p>SQL</p>
-            }
-        </div>
-
-        <div class="front-end-skills">
-            <h2>Front-End Skills: </h2>
-
-            @if (_frontEndSkills.UsesReact)
-            {
-                <p>React</p>
-            }
-
-            @if (_frontEndSkills.UsesJavaScript)
-            {
-                <p>JavaScript</p>
-            }
-
-            @if (_frontEndSkills.UsesCss)
-            {
-                <p>CSS</p>
-            }
-        </div>
-
-
-        @if (_backEndSkills is { UsesAspnet: true, UsesCSharp: true, UsesSql: true } && _frontEndSkills.UsesReact)
-        {
-            <div class="success-box">
-                <h2>Candidate is eligible</h2>
-            </div>
-            @* <Alert Color="Color.Success"> *@
-            @*     <h4>This candidate is eligible</h4> *@
-            @* </Alert> *@
-        }
-        else //if (_backEndSkills is { UsesAspnet: false, UsesCSharp: false, UsesSql: false } && _frontEndSkills.UsesReact is false)
-        {
-            <div class="red-box">
-                <h2>Candidate is not eligible</h2>
-            </div>
-        }
-
-        @* @if (_backEndSkills is { UsesAspnet: false, UsesCSharp: false, UsesSql: false }) *@
-        @* { *@
-        @*     <h2>Candidate has no relevant back-end skills</h2> *@
-        @* } *@
-        @* @if (_frontEndSkills is { UsesReact: false, UsesCss: false, UsesJavaScript: false }) *@
-        @* { *@
-        @*     <h2>Candidate has no relevant front-end skills</h2> *@
-        @* } *@
-        <h3>Would you like to submit another candidate?</h3>
-        <button class="submit-button" @onclick="ClearFormYes">Yes</button>
-        <button class="submit-button" @onclick="ClearFormNo">No</button>
-        @if (_showThankYouMessage)
-        {
-            <h2>
-                <em>Thank you</em>
-            </h2>
-        }
-    </div>
-}
-
-<h3>Filter Candidates by First Name</h3>
+<h3>Filter Candidates</h3>
 <InputText @bind-Value="_filterFirstName" placeholder="Enter first name"></InputText>
 <button @onclick="FilterCandidatesByFirstName">Filter</button>
 <InputText @bind-Value="_filterLastName" placeholder="Enter last name"></InputText>
@@ -147,10 +16,10 @@
 <Button type="button" class="submit-button" @onclick="FilterAllFavorites">See all Favorites</Button>
 <Button type="button" class="submit-button" @onclick="NoFavoriteFilter">See all Eligible Candidates</Button>
 <Button type="button" class="submit-button" @onclick="ResetAllFilters">Reset all Filters</Button>
-<h3>All Eligible Candidates:</h3>
-<ul>
 
-    @if (_eligibleCandidates == null || !_eligibleCandidates.Any())
+<h3>All Resumes</h3>
+
+ @if (_eligibleCandidates == null || !_eligibleCandidates.Any())
     {
         <li>No eligible candidates found.</li>
     }
@@ -179,10 +48,8 @@
         }
     }
 
-</ul>
-
 @code {
-    private string? _resumeText;
+     private string? _resumeText;
     private BackEndSkills _backEndSkills = new BackEndSkills();
     private FrontEndSkills _frontEndSkills = new FrontEndSkills();
     private bool _pdfScanned;
@@ -413,5 +280,5 @@
         _filterFavorites = false;
         _filteredCandidates = _eligibleCandidates;
     }
-
+    
 }
