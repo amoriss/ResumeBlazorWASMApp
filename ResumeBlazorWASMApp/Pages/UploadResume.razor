@@ -135,6 +135,10 @@
 <button @onclick="FilterCandidatesByFirstName">Filter</button>
 <InputText @bind-Value="_filterLastName" placeholder="Enter last name"></InputText>
 <button @onclick="FilterCandidatesByLastName">Filter</button>
+@* <InputCheckbox @bind-Value="_filterFavorites"></InputCheckbox> *@
+@* <button @onclick="FilterAllFavorites">See all Favorites</button> *@
+<Button type="button" class="submit-button" @onclick="FilterAllFavorites">See all Favorites</Button>
+<Button type="button" class="submit-button" @onclick="NoFavoriteFilter">See all Eligible Candidates</Button>
 <h3>All Eligible Candidates:</h3>
 <ul>
 
@@ -180,6 +184,7 @@
     private bool _isLoading;
     private string? _filterFirstName;
     private string? _filterLastName;
+    private bool _filterFavorites;
     private List<Candidate> _filteredCandidates = new List<Candidate>();
 
     protected override async Task OnInitializedAsync()
@@ -334,8 +339,9 @@
         {
             _filteredCandidates = _eligibleCandidates;
         }
+
         _filteredCandidates = _eligibleCandidates.Where(can => can.FirstName.Contains(_filterFirstName.ToLower())).ToList();
-        StateHasChanged();
+
     }
 
     private void FilterCandidatesByLastName()
@@ -348,5 +354,27 @@
         _filteredCandidates = _eligibleCandidates.Where(can => can.LastName.Contains(_filterLastName.ToLower())).ToList();
     }
 
+    private void FilterAllFavorites()
+    {
+        _filterFavorites = !_filterFavorites;
+        if (!_filterFavorites)
+        {
+            _filteredCandidates = _eligibleCandidates;
+        }
+
+        _filteredCandidates = _eligibleCandidates.Where(can => can.IsFavorited).ToList();
+        StateHasChanged();
+    }
+
+    private void ToggleFavoriteList()
+    {
+        _filterFavorites = !_filterFavorites;
+    }
+
+    private void NoFavoriteFilter()
+    {
+        _filteredCandidates = _eligibleCandidates;
+        _filterFavorites = false;
+    }
 
 }
