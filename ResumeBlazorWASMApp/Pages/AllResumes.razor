@@ -111,18 +111,18 @@ else
             _filteredCandidates = _eligibleCandidates;
         }
 
-        _filteredCandidates = _eligibleCandidates.Where(can => can.FirstName.Contains(_filterFirstName.ToLower())).ToList();
+        _filteredCandidates = _eligibleCandidates.Where(can => can.FirstName.ToLower().Contains(_filterFirstName.ToLower())).ToList();
     }
 
     private void FilterCandidatesByLastName()
     {
-        Console.WriteLine($"Filtering by first name {_filterLastName}");
+        Console.WriteLine($"Filtering by last name {_filterLastName}");
         if (string.IsNullOrEmpty(_filterLastName))
         {
             _filteredCandidates = _eligibleCandidates;
         }
 
-        _filteredCandidates = _eligibleCandidates.Where(can => can.LastName.Contains(_filterLastName.ToLower())).ToList();
+        _filteredCandidates = _eligibleCandidates.Where(can => can.LastName.ToLower().Contains(_filterLastName.ToLower())).ToList();
     }
 
     private void FilterAllFavorites()
