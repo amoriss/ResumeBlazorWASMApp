@@ -7,6 +7,7 @@
 @inject CandidateService CandidateService
 
 <h3>Filter Candidates</h3>
+<div class="filter-container">
 <InputText @bind-Value="_filterFirstName" placeholder="Enter first name"></InputText>
 <button @onclick="FilterCandidatesByFirstName">Filter</button>
 <InputText @bind-Value="_filterLastName" placeholder="Enter last name"></InputText>
@@ -16,7 +17,7 @@
 <Button type="button" class="submit-button" @onclick="FilterAllFavorites">See all Favorites</Button>
 <Button type="button" class="submit-button" @onclick="NoFavoriteFilter">See all Eligible Candidates</Button>
 <Button type="button" class="submit-button" @onclick="ResetAllFilters">Reset all Filters</Button>
-
+</div>
 <h3>All Resumes</h3>
 
  @if (_eligibleCandidates == null || !_eligibleCandidates.Any())
