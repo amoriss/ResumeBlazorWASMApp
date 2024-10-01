@@ -8,49 +8,52 @@
 
 <h3>Filter Candidates</h3>
 <div class="filter-container">
-<InputText @bind-Value="_filterFirstName" placeholder="Enter first name"></InputText>
-<button @onclick="FilterCandidatesByFirstName">Filter</button>
-<InputText @bind-Value="_filterLastName" placeholder="Enter last name"></InputText>
-<button @onclick="FilterCandidatesByLastName">Filter</button>
-@* <InputCheckbox @bind-Value="_filterFavorites"></InputCheckbox> *@
-@* <button @onclick="FilterAllFavorites">See all Favorites</button> *@
-<Button type="button" class="submit-button" @onclick="FilterAllFavorites">See all Favorites</Button>
-<Button type="button" class="submit-button" @onclick="NoFavoriteFilter">See all Eligible Candidates</Button>
-<Button type="button" class="submit-button" @onclick="ResetAllFilters">Reset all Filters</Button>
+    <InputText @bind-Value="_filterFirstName" placeholder="Enter first name"></InputText>
+    <button class="submit-button" @onclick="FilterCandidatesByFirstName">Filter</button>
+    <InputText @bind-Value="_filterLastName" placeholder="Enter last name"></InputText>
+    <button class="submit-button" @onclick="FilterCandidatesByLastName">Filter</button>
+    @* <InputCheckbox @bind-Value="_filterFavorites"></InputCheckbox> *@
+    @* <button @onclick="FilterAllFavorites">See all Favorites</button> *@
+    <Button type="button" class="submit-button" @onclick="FilterAllFavorites">See all Favorites</Button>
+    <Button type="button" class="submit-button" @onclick="NoFavoriteFilter">See all Eligible Candidates</Button>
+    <Button type="button" class="submit-button" @onclick="ResetAllFilters">Reset all Filters</Button>
 </div>
 <h3>All Resumes</h3>
 
- @if (_eligibleCandidates == null || !_eligibleCandidates.Any())
+@if (_eligibleCandidates == null || !_eligibleCandidates.Any())
+{
+    <li>No eligible candidates found.</li>
+}
+else
+{
+    @foreach (var candidate in _filteredCandidates)
     {
-        <li>No eligible candidates found.</li>
-    }
-    else
-    {
-        @foreach (var candidate in _filteredCandidates)
-        {
-            <div class="candidate-card">
-                <li>@candidate.FirstName @candidate.LastName</li>
-                <li>@candidate.Email</li>
+        <div class="candidate-card">
+            <li>@candidate.FirstName @candidate.LastName</li>
+            <li>@candidate.Email</li>
+            <li>Date Submitted: @candidate.DateResumeSubmitted</li>
+            <div class="button-container">
                 <Button type="button" class="submit-button" @onclick="() => DeleteEligibleCandidate(candidate)">Delete</Button>
                 <Button type="button" class="submit-button" @onclick="() => ViewResume(candidate)">ViewResume</Button>
-                @if (candidate.IsResumeVisible)
-                {
-                    @* <iframe src="data:application/pdf;base64,@candidate.PdfResume" width="600" height="400"></iframe> *@
-                    <iframe src="data:application/pdf;base64,@_candidate.PdfResume" width="600" height="400" style="border: none;"></iframe>
-                    //<iframe src="data:application/pdf;base64,@candidate.PdfResume" width="100%" height="600px"></iframe>
-                }
-
                 <Button type="button" class="submit-button" @onclick="() => ToggleFavorite(candidate)">Favorite</Button>
-                @if (candidate.IsFavorited)
-                {
-                    <li class="success-box">Is Favorite</li>
-                }
             </div>
-        }
+            @if (candidate.IsResumeVisible)
+            {
+                @* <iframe src="data:application/pdf;base64,@candidate.PdfResume" width="600" height="400"></iframe> *@
+                <iframe src="data:application/pdf;base64,@_candidate.PdfResume" width="600" height="400" style="border: none;"></iframe>
+                //<iframe src="data:application/pdf;base64,@candidate.PdfResume" width="100%" height="600px"></iframe>
+            }
+            @if (candidate.IsFavorited)
+            {
+                <li class="success-box">Is Favorite</li>
+            }
+
+        </div>
     }
+}
 
 @code {
-     private string? _resumeText;
+    private string? _resumeText;
     private BackEndSkills _backEndSkills = new BackEndSkills();
     private FrontEndSkills _frontEndSkills = new FrontEndSkills();
     private bool _pdfScanned;
@@ -75,112 +78,9 @@
         _filteredCandidates = _eligibleCandidates;
     }
 
-    private async Task LoadFile(InputFileChangeEventArgs e)
-    {
-        IBrowserFile file = e.File; //getting file
-        if (file.Name.EndsWith(".pdf"))
-        {
-            _isLoading = true;
-            //read PDF into memory stream
-            //var stream = file.ContentType;
-            var memoryStream = new MemoryStream();
-            await file.OpenReadStream().CopyToAsync(memoryStream);
-
-            byte[] pdfBytes = memoryStream.ToArray();
-            string base64String = Convert.ToBase64String(pdfBytes);
-            _isLoading = false;
-            _candidate.PdfUploaded = true;
-            _candidate.PdfResume = base64String;
-            _resumeText = await ReadPdfText(pdfBytes);
-            await LocalStorage.SetItemAsStringAsync("storedPdf", _candidate.PdfResume);
-
-
-            // byte[] buffer = new byte[file.Size];
-            // await file.OpenReadStream().ReadAsync(buffer);
-            // string base64Pdf = Convert.ToBase64String(buffer);
-            // _candidate.PdfResume = base64Pdf;
-            // await LocalStorage.SetItemAsStringAsync("storedPdf", base64Pdf);
-            // _resumeText = await ReadPdfText(buffer);
-        }
-        else
-        {
-            _uploadErrorMessage = "Please upload valid PDF file";
-            _candidate.PdfUploaded = false;
-        }
-    }
-
-    private async Task ScanResume()
-    {
-        SkillsFinder.FindBackEndSkillsFromResume(_resumeText, _backEndSkills);
-        SkillsFinder.FindFrontEndSkillsFromResume(_resumeText, _frontEndSkills);
-        _candidate.BackEndSkills = _backEndSkills;
-        _candidate.FrontEndSkills = _frontEndSkills;
-        _candidate.PdfResume = _resumeText;
-
-        _pdfScanned = true;
-        /////storing PDF to local storage as Base64 string
-        // string base64Pdf = Convert.ToBase64String(buffer);
-        // await LocalStorage.SetItemAsStringAsync("storedPdf", base64Pdf);
-
-        await LocalStorage.SetItemAsStringAsync("storedPdf", _resumeText);
-    }
-
-    private async Task<string> ReadPdfText(byte[] pdfData)
-    {
-        try
-        {
-            using (MemoryStream stream = new MemoryStream(pdfData))
-            {
-                using (PdfDocument document = PdfDocument.Open(stream))
-                {
-                    string pageText = string.Empty;
-                    foreach (Page page in document.GetPages())
-                    {
-                        pageText += page.Text.ToLower();
-                    }
-
-                    return pageText;
-                }
-            }
-        }
-        catch (Exception e)
-        {
-            return $"{e.Message}";
-        }
-    }
-
-    private async Task HandleSubmit()
-    {
-        @if (!_candidate.PdfUploaded)
-        {
-            _uploadErrorMessage = "Please upload a valid PDF file";
-            return;
-        }
-
-        Console.WriteLine(_uploadErrorMessage);
-        await ScanResume();
-        await AddEligibleCandidate();
-       // _eligibleCandidates = await LocalStorage.GetItemAsync<List<Candidate>>("eligibleCandidates") ?? new List<Candidate>();
-        _eligibleCandidates = Services.CandidateService.GetAllEligibleCandidates();
-        _uploadErrorMessage = string.Empty;
-    }
-
-    private async Task AddEligibleCandidate()
-    {
-        //Services.CandidateService.EligibleCandidates = await LocalStorage.GetItemAsync<List<Candidate>>("eligibleCandidates") ?? new List<Candidate>();
-        @if (_candidate.BackEndSkills.UsesAspnet && _candidate is { BackEndSkills: { UsesCSharp: true, UsesSql: true }, FrontEndSkills.UsesReact: true })
-        {
-            //_eligibleCandidates.Add(_candidate);
-            CandidateService.AddEligibleCandidate(_candidate);
-        }
-
-        //await LocalStorage.SetItemAsync("eligibleCandidates", candidates);
-        await LocalStorage.SetItemAsync("eligibleCandidates", CandidateService.EligibleCandidates);
-    }
-
     private async Task DeleteEligibleCandidate(Candidate candidateToDelete)
     {
-       //_eligibleCandidates = await LocalStorage.GetItemAsync<List<Candidate>>("eligibleCandidates");
+        //_eligibleCandidates = await LocalStorage.GetItemAsync<List<Candidate>>("eligibleCandidates");
         if (CandidateService.EligibleCandidates.Count > 0)
         {
             //_eligibleCandidates.Remove(candidateToDelete);
@@ -188,35 +88,7 @@
         }
 
         await LocalStorage.SetItemAsync("eligibleCandidates", Services.CandidateService.EligibleCandidates);
-       // _eligibleCandidates = await LocalStorage.GetItemAsync<List<Candidate>>("eligibleCandidates") ?? new List<Candidate>();
-    }
-
-    private Task ClearFormYes()
-    {
-        _candidate.FirstName = string.Empty;
-        _candidate.LastName = string.Empty;
-        _candidate.Email = string.Empty;
-        _backEndSkills = new BackEndSkills();
-        _frontEndSkills = new FrontEndSkills();
-        _pdfScanned = false;
-        _resumeText = string.Empty;
-        _showThankYouMessage = false; //don't show thank you message
-        StateHasChanged();
-        return Task.CompletedTask;
-    }
-
-    private Task ClearFormNo()
-    {
-        _candidate.FirstName = string.Empty;
-        _candidate.LastName = string.Empty;
-        _candidate.Email = string.Empty;
-        _backEndSkills = new BackEndSkills();
-        _frontEndSkills = new FrontEndSkills();
-        _pdfScanned = false;
-        _resumeText = string.Empty;
-        _showThankYouMessage = true; //show thank you message
-        StateHasChanged();
-        return Task.CompletedTask;
+        // _eligibleCandidates = await LocalStorage.GetItemAsync<List<Candidate>>("eligibleCandidates") ?? new List<Candidate>();
     }
 
     private void ViewResume(Candidate candidate)
@@ -233,6 +105,7 @@
 
     private void FilterCandidatesByFirstName()
     {
+        Console.WriteLine($"Filtering by first name {_filterFirstName}");
         if (string.IsNullOrEmpty(_filterFirstName))
         {
             _filteredCandidates = _eligibleCandidates;
@@ -243,6 +116,7 @@
 
     private void FilterCandidatesByLastName()
     {
+        Console.WriteLine($"Filtering by first name {_filterLastName}");
         if (string.IsNullOrEmpty(_filterLastName))
         {
             _filteredCandidates = _eligibleCandidates;
@@ -281,5 +155,5 @@
         _filterFavorites = false;
         _filteredCandidates = _eligibleCandidates;
     }
-    
+
 }

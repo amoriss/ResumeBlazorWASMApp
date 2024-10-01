@@ -137,7 +137,7 @@
     </div>
 }
 
-<h3>Filter Candidates by First Name</h3>
+<h3>Filter Candidates</h3>
 <InputText @bind-Value="_filterFirstName" placeholder="Enter first name"></InputText>
 <button @onclick="FilterCandidatesByFirstName">Filter</button>
 <InputText @bind-Value="_filterLastName" placeholder="Enter last name"></InputText>
@@ -161,6 +161,7 @@
             <div class="candidate-card">
                 <li>@candidate.FirstName @candidate.LastName</li>
                 <li>@candidate.Email</li>
+                <li>Date Submitted: @candidate.DateResumeSubmitted</li>
                 <Button type="button" class="submit-button" @onclick="() => DeleteEligibleCandidate(candidate)">Delete</Button>
                 <Button type="button" class="submit-button" @onclick="() => ViewResume(candidate)">ViewResume</Button>
                 @if (candidate.IsResumeVisible)
@@ -290,6 +291,7 @@
         }
 
         Console.WriteLine(_uploadErrorMessage);
+        _candidate.DateResumeSubmitted = DateTime.Now;
         await ScanResume();
         await AddEligibleCandidate();
        // _eligibleCandidates = await LocalStorage.GetItemAsync<List<Candidate>>("eligibleCandidates") ?? new List<Candidate>();
@@ -361,6 +363,7 @@
         candidate.IsFavorited = !candidate.IsFavorited;
         Console.WriteLine($"{candidate.FirstName} {candidate.LastName}");
         Console.WriteLine($"{candidate.IsFavorited}");
+        await LocalStorage.SetItemAsync("eligibleCandidates", CandidateService.EligibleCandidates);
     }
 
     private void FilterCandidatesByFirstName()

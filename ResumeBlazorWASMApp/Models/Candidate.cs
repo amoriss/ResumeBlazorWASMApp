@@ -19,6 +19,7 @@ public class Candidate
     public FrontEndSkills FrontEndSkills { get; set; } = new FrontEndSkills();
     public bool IsFavorited { get; set; }
     public bool PdfUploaded { get; set; }
+    public DateTime DateResumeSubmitted { get; set; }
 
     public override bool Equals(object obj)
     {
