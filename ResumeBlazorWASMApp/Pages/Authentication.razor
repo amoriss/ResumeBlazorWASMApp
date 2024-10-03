@@ -1,11 +1,28 @@
 ﻿@page "/authentication"
 @using ResumeBlazorWASMApp.Services
 @inject SupabaseService SupabaseService
+@inject Authentication Auth
+@inject NavigationManager NavigationManager
+@using MudBlazor
+
+
 <h3>Authentication</h3>
 <button @onclick="FetchData">Fetch Data</button>
 <p>@data</p>
+
+<MudContainer class="d-flex justify-content-center align-content-center">
+    <MudPaper Elevation="5" class="pa-10" style="text-align: center">
+        <br/>
+        <MudTextField Label="Email" @bind-Value="Email" Variant="Variant.Outlined"></MudTextField>
+        
+    </MudPaper>
+    
+</MudContainer>
+
+<MudContainer class="d-flex justify-content-center align-content-center"></MudContainer>
 @code {
     private string data;
+    private string Email { get; set; }
 
     private async Task FetchData()
     {
