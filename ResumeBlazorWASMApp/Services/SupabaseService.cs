@@ -5,17 +5,27 @@ namespace ResumeBlazorWASMApp.Services;
 public class SupabaseService
 {
     private readonly HttpClient _httpClient;
+    private string _supabaseUrl;
+    private string _supabaseKey;
 
     public SupabaseService(HttpClient httpClient, string supabaseUrl, string supabaseKey)
     {
         _httpClient = httpClient;
-        _httpClient.BaseAddress = new Uri(supabaseUrl);
-        _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", supabaseKey);
+        _supabaseUrl = supabaseUrl;
+        _supabaseKey = supabaseKey;
     }
 
     public async Task<string> GetDataAsync()
     {
-        var response = await _httpClient.GetAsync(_httpClient.BaseAddress);
-        return await response.Content.ReadAsStringAsync();
+        try
+        {
+            var response = await _httpClient.GetAsync(_supabaseUrl);
+            return await response.Content.ReadAsStringAsync();
+        }
+        catch (Exception e)
+        {
+            return e.Message;
+        }
+        
     }
 }

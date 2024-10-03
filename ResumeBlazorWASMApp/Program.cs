@@ -11,9 +11,8 @@ using ResumeBlazorWASMApp.Services;
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.Services.AddBlazoredLocalStorage();
 builder.Services.AddSingleton<CandidateService>();
-var configuration = builder.Configuration;
-string supabaseUrl = configuration["SupabaseUrl"];
-string supabaseKey= configuration["SupabaseKey"];
+string supabaseUrl = builder.Configuration["SupabaseUrl"];
+string supabaseKey= builder.Configuration["SupabaseKey"];
 
 
 // builder.Services
