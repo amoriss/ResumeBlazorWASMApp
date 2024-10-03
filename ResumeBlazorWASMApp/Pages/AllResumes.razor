@@ -6,18 +6,36 @@
 @using UglyToad.PdfPig.Content
 @inject CandidateService CandidateService
 
-<h3>Filter Candidates</h3>
+<label>First Name</label>
 <div class="filter-container">
-    <InputText @bind-Value="_filterFirstName" placeholder="Enter first name"></InputText>
-    <button class="submit-button" @onclick="FilterCandidatesByFirstName">Filter</button>
-    <InputText @bind-Value="_filterLastName" placeholder="Enter last name"></InputText>
-    <button class="submit-button" @onclick="FilterCandidatesByLastName">Filter</button>
+    <div class="filter-container">
+        <InputText @bind-Value="_filterFirstName" placeholder="Enter first name"></InputText>
+        <button class="submit-button" @onclick="FilterCandidatesByFirstName">Filter</button>
+    </div>
+    <label>Last Name</label>
+    <div class="filter-container">
+        <InputText @bind-Value="_filterLastName" placeholder="Enter last name"></InputText>
+        <button class="submit-button" @onclick="FilterCandidatesByLastName">Filter</button>
+    </div>
+</div>
+<label>Status Filters</label>
+<div class="filter-container">
     @* <InputCheckbox @bind-Value="_filterFavorites"></InputCheckbox> *@
     @* <button @onclick="FilterAllFavorites">See all Favorites</button> *@
     <Button type="button" class="submit-button" @onclick="FilterAllFavorites">See all Favorites</Button>
     <Button type="button" class="submit-button" @onclick="NoFavoriteFilter">See all Eligible Candidates</Button>
-    <Button type="button" class="submit-button" @onclick="ResetAllFilters">Reset all Filters</Button>
 </div>
+<label>Date Filters</label>
+<div class="filter-container"></div>
+<div class="filter-group">
+    <InputDate @bind-Value="_filterStartDate" min="2024-01-01" max="2024-12-31">Start Date</InputDate>
+</div>
+<div class="filter-group">
+<InputDate @bind-Value="_filterEndDate" min="2024-01-01" max="2024-12-31">End Date</InputDate>
+</div>
+<Button type="button" class="submit-button" @onclick="() => FilterByDate(_filterStartDate, _filterEndDate)">Filter By Date</Button>
+<Button type="button" class="submit-button" @onclick="ResetAllFilters">Reset all Filters</Button>
+
 <h3>All Resumes</h3>
 
 @if (_eligibleCandidates == null || !_eligibleCandidates.Any())
@@ -31,7 +49,7 @@ else
         <div class="candidate-card">
             <li>@candidate.FirstName @candidate.LastName</li>
             <li>@candidate.Email</li>
-            <li>Date Submitted: @candidate.DateResumeSubmitted</li>
+            <li>Date Submitted: @candidate.DateResumeSubmitted.ToString("MMMM dd, yyyy")</li>
             <div class="button-container">
                 <Button type="button" class="submit-button" @onclick="() => DeleteEligibleCandidate(candidate)">Delete</Button>
                 <Button type="button" class="submit-button" @onclick="() => ViewResume(candidate)">ViewResume</Button>
@@ -45,6 +63,7 @@ else
             }
             @if (candidate.IsFavorited)
             {
+                <i class="fas fa-star"></i>
                 <li class="success-box">Is Favorite</li>
             }
 
@@ -63,6 +82,8 @@ else
     private bool _isLoading;
     private string? _filterFirstName;
     private string? _filterLastName;
+    private DateTime? _filterStartDate;
+    private DateTime? _filterEndDate;
     private bool _filterFavorites;
     private List<Candidate> _filteredCandidates = new List<Candidate>();
     private string? _uploadErrorMessage;
@@ -135,6 +156,11 @@ else
 
         _filteredCandidates = _eligibleCandidates.Where(can => can.IsFavorited).ToList();
         StateHasChanged();
+    }
+
+    private void FilterByDate(DateTime? startDate, DateTime? endDate)
+    {
+        _filteredCandidates = _eligibleCandidates.Where(can => can.DateResumeSubmitted >= startDate && can.DateResumeSubmitted <= endDate).ToList();
     }
 
     private void ToggleFavoriteList()
