@@ -3,17 +3,21 @@
 @inject SupabaseService SupabaseService
 @inject Authentication Auth
 @inject NavigationManager NavigationManager
+@inject ISnackbar Snackbar
 @using MudBlazor
 
 
 <h3>Authentication</h3>
 <button @onclick="FetchData">Fetch Data</button>
 <p>@data</p>
+<button @onclick="ShowMessage">Show Snackbar</button>
+<MudButton OnClick="@(() => Snackbar.Add("Test Snackbar", Severity.Info))">Test Snackbar</MudButton>
+
 
 <MudContainer class="d-flex justify-content-center align-content-center">
     <MudPaper Elevation="5" class="pa-10" style="text-align: center">
         <br/>
-        <MudTextField Label="Email" @bind-Value="Email" Variant="Variant.Outlined"></MudTextField>
+        <MudTextField Label="Email" @bind-Value="Email"></MudTextField>
         
     </MudPaper>
     
@@ -27,5 +31,12 @@
     private async Task FetchData()
     {
         data = await SupabaseService.GetDataAsync();
+    }
+
+    private void ShowMessage()
+    {
+        Console.WriteLine(Snackbar);
+        Console.WriteLine("snackbar message");
+        Snackbar.Add("This is a snackbar message!", Severity.Info);
     }
 }
