@@ -1,0 +1,14 @@
+﻿@page "/authentication"
+@using ResumeBlazorWASMApp.Services
+@inject SupabaseService SupabaseService
+<h3>Authentication</h3>
+<button @onclick="FetchData">Fetch Data</button>
+<p>@data</p>
+@code {
+    private string data;
+
+    private async Task FetchData()
+    {
+        data = await SupabaseService.GetDataAsync();
+    }
+}
