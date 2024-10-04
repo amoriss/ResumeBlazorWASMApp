@@ -7,6 +7,7 @@
 @using MudBlazor
 
 
+
 <h3>Authentication</h3>
 @* <button @onclick="FetchData">Fetch Data</button> *@
 @* <p>@data</p> *@
@@ -23,7 +24,8 @@
         <InputText @bind-Value="Password" required></InputText>
         @* <MudTextField Label="Password" @bind-Value="Password"></MudTextField> *@
         <br/>
-        <button class="submit-button" @onclick="ShowMessage">Show Message</button>
+        <button class="submit-button" @onclick="HandleSignIn">SignIn</button>
+        <button class="submit-button" @onclick="HandleSignUp">Signup</button>
         <p>@data</p>
    
 
@@ -48,5 +50,15 @@
     {
         var result = await SupabaseService.SignUp(Email, Password);
         Snackbar.Add("Signed up!", Severity.Success);
+    }
+
+    private async Task HandleSignIn()
+    {
+        var result = await SupabaseService.SignIn(Email, Password);
+    }
+
+    private async Task HandleSignUp()
+    {
+        var result = await SupabaseService.SignUp(Email, Password);
     }
 }
