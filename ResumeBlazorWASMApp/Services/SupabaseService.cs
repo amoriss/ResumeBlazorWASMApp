@@ -1,5 +1,9 @@
 ﻿using System.Net.Http.Headers;
 using System.Net.Http.Json;
+using System.Text.Json;
+using UglyToad.PdfPig.Fonts.Encodings;
+using Encoding = System.Text.Encoding;
+
 
 namespace ResumeBlazorWASMApp.Services;
 
@@ -27,12 +31,27 @@ public class SupabaseService
         {
             return e.Message;
         }
-        
     }
 
     public async Task<string> SignUp(string email, string password)
     {
         var response = await _httpClient.PostAsJsonAsync($"{_supabaseUrl}/auth/v1/signup", new { email, password });
         return await response.Content.ReadAsStringAsync();
+    }
+
+    public async Task<string> Login(string email, string password)
+    {
+        var requestBody = new
+        {
+            email, password
+        };
+        var response = await _httpClient.PostAsync("auth/v1/token",
+            new StringContent(JsonSerializer.Serialize(requestBody), Encoding.UTF8, "application/json"));
+
+        var content = await response.Content.ReadAsStringAsync();
+
+        var token = JsonDocument.Parse(content).RootElement.GetProperty("access_token").GetString();
+        _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+        return token;
     }
 }

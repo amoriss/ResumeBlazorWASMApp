@@ -14,8 +14,7 @@
 @* <MudButton OnClick="@(() => Snackbar.Add("Test Snackbar", Severity.Info))">Test Snackbar</MudButton> *@
 
 
-
-        <MudText Typo="Typo.h5">Welcome</MudText>
+<MudText Typo="Typo.h5">Welcome</MudText>
         <br/>
         @* <MudTextField Label="Email" @bind-Value="Email"></MudTextField> *@
         <label>Email</label>
@@ -24,12 +23,10 @@
         <InputText @bind-Value="Password" required></InputText>
         @* <MudTextField Label="Password" @bind-Value="Password"></MudTextField> *@
         <br/>
-        <MudButton OnClick="OnClickSignUp"></MudButton>
+        <button class="submit-button" @onclick="ShowMessage">Show Message</button>
         <p>@data</p>
    
- 
 
-<MudContainer class="d-flex justify-content-center align-content-center"></MudContainer>
 @code {
     private string data;
     private string Email { get; set; }
