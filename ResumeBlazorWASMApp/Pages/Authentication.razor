@@ -8,25 +8,32 @@
 
 
 <h3>Authentication</h3>
-<button @onclick="FetchData">Fetch Data</button>
-<p>@data</p>
-<button @onclick="ShowMessage">Show Snackbar</button>
-<MudButton OnClick="@(() => Snackbar.Add("Test Snackbar", Severity.Info))">Test Snackbar</MudButton>
+@* <button @onclick="FetchData">Fetch Data</button> *@
+@* <p>@data</p> *@
+@* <button @onclick="ShowMessage">Show Snackbar</button> *@
+@* <MudButton OnClick="@(() => Snackbar.Add("Test Snackbar", Severity.Info))">Test Snackbar</MudButton> *@
 
 
-<MudContainer class="d-flex justify-content-center align-content-center">
-    <MudPaper Elevation="5" class="pa-10" style="text-align: center">
+
+        <MudText Typo="Typo.h5">Welcome</MudText>
         <br/>
-        <MudTextField Label="Email" @bind-Value="Email"></MudTextField>
-        
-    </MudPaper>
-    
-</MudContainer>
+        @* <MudTextField Label="Email" @bind-Value="Email"></MudTextField> *@
+        <label>Email</label>
+        <InputText @bind-Value="Email" required></InputText>
+        <label>Password</label>
+        <InputText @bind-Value="Password" required></InputText>
+        @* <MudTextField Label="Password" @bind-Value="Password"></MudTextField> *@
+        <br/>
+        <MudButton OnClick="OnClickSignUp"></MudButton>
+        <p>@data</p>
+   
+ 
 
 <MudContainer class="d-flex justify-content-center align-content-center"></MudContainer>
 @code {
     private string data;
     private string Email { get; set; }
+    private string Password { get; set; }
 
     private async Task FetchData()
     {
@@ -38,5 +45,11 @@
         Console.WriteLine(Snackbar);
         Console.WriteLine("snackbar message");
         Snackbar.Add("This is a snackbar message!", Severity.Info);
+    }
+
+    public async Task OnClickSignUp()
+    {
+        var result = await SupabaseService.SignUp(Email, Password);
+        Snackbar.Add("Signed up!", Severity.Success);
     }
 }

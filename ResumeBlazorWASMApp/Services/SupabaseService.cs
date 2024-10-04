@@ -1,4 +1,5 @@
 ﻿using System.Net.Http.Headers;
+using System.Net.Http.Json;
 
 namespace ResumeBlazorWASMApp.Services;
 
@@ -27,5 +28,11 @@ public class SupabaseService
             return e.Message;
         }
         
+    }
+
+    public async Task<string> SignUp(string email, string password)
+    {
+        var response = await _httpClient.PostAsJsonAsync($"{_supabaseUrl}/auth/v1/signup", new { email, password });
+        return await response.Content.ReadAsStringAsync();
     }
 }
