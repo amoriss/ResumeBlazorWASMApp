@@ -1,6 +1,7 @@
 ﻿@page "/all-resumes"
 @using ResumeBlazorWASMApp.Services
 @inject Blazored.LocalStorage.ILocalStorageService LocalStorage
+@using System.Text.Json
 @using UglyToad.PdfPig
 @using ResumeBlazorWASMApp.Models
 @using UglyToad.PdfPig.Content
@@ -92,11 +93,20 @@ else
     {
         // _resumeText = await LocalStorage.GetItemAsync<string>("storedPdf");
         var storedCandidates = await LocalStorage.GetItemAsync<List<Candidate>>("eligibleCandidates") ?? new List<Candidate>();
+        string json = JsonSerializer.Serialize(storedCandidates);
+        Console.WriteLine($"Stored candidates JSON: {json}");
         CandidateService.LoadEligibleCandidates(storedCandidates);
-        _eligibleCandidates = Services.CandidateService.EligibleCandidates;
+        _eligibleCandidates = Services.CandidateService.GetAllEligibleCandidates();
         //_eligibleCandidates = storedCandidates;
         // _candidate.PdfResume = await RetrieveFromLocalStorage();
-        _filteredCandidates = _eligibleCandidates;
+        Console.WriteLine("Loaded Candidates:");
+        foreach (var item in _eligibleCandidates)
+        {
+            Console.WriteLine(item.FirstName);
+            Console.WriteLine(item.LastName);
+        }
+        Console.WriteLine($"Number of eligible candidates: {Services.CandidateService.EligibleCandidates.Count}");
+        _filteredCandidates = _eligibleCandidates.ToList();
     }
 
     private async Task DeleteEligibleCandidate(Candidate candidateToDelete)
@@ -127,12 +137,27 @@ else
     private void FilterCandidatesByFirstName()
     {
         Console.WriteLine($"Filtering by first name {_filterFirstName}");
+        Console.WriteLine("---------------");
+
+        Console.WriteLine("All eligible candidates: ");
+        foreach (var candidate in _eligibleCandidates)
+        {
+            Console.WriteLine(candidate.FirstName);
+            Console.WriteLine(candidate.LastName);
+        }
         if (string.IsNullOrEmpty(_filterFirstName))
         {
             _filteredCandidates = _eligibleCandidates;
         }
 
         _filteredCandidates = _eligibleCandidates.Where(can => can.FirstName.ToLower().Contains(_filterFirstName.ToLower())).ToList();
+        StateHasChanged();
+        Console.WriteLine("Filtered Candidates: ");
+        foreach (var item in _filteredCandidates)
+        {
+            Console.WriteLine(item.FirstName);
+            Console.WriteLine(item.LastName);
+        }
     }
 
     private void FilterCandidatesByLastName()

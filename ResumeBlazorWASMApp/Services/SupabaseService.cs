@@ -3,15 +3,18 @@ using System.Net.Http.Json;
 using System.Text.Json;
 using UglyToad.PdfPig.Fonts.Encodings;
 using Encoding = System.Text.Encoding;
+using Supabase.Gotrue;
+
 
 
 namespace ResumeBlazorWASMApp.Services;
 
 public class SupabaseService
 {
-    private readonly HttpClient _httpClient;
-    private string _supabaseUrl;
-    // private string _supabaseKey;
+     private readonly HttpClient _httpClient;
+     private string _supabaseUrl;
+     private string _supabaseKey;
+    //private readonly GotrueClient _gotrueClient;
 
     public SupabaseService(HttpClient httpClient, string supabaseUrl)
     {
@@ -56,8 +59,24 @@ public class SupabaseService
 
     public async Task<string> SignIn(string email, string password)
     {
-        var response = await _httpClient.PostAsJsonAsync($"{_supabaseUrl}/auth/v1/token", new { email, password });
-        return await response.Content.ReadAsStringAsync();
+        //var response = await _httpClient.PostAsJsonAsync($"{_supabaseUrl}/auth/v1/token", new { email, password });
+
+        var payload = new
+        {
+            grant_type = "password",
+            email,
+            password
+        };
+        var response = await _httpClient.PostAsJsonAsync($"{_supabaseUrl}/auth/v1/token", payload);
+
+        if (response.IsSuccessStatusCode)
+        {
+            return await response.Content.ReadAsStringAsync();
+        }
+        else
+        {
+            throw new Exception("Error signing in");
+        }
     }
 
     public async Task SignOut()

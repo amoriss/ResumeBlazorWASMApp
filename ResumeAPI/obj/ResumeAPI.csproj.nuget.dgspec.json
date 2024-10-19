@@ -35,6 +35,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -48,6 +53,10 @@
             "PdfPig": {
               "target": "Package",
               "version": "[0.1.8, )"
+            },
+            "Supabase.Gotrue": {
+              "target": "Package",
+              "version": "[6.0.3, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

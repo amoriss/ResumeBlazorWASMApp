@@ -289,12 +289,14 @@
             _uploadErrorMessage = "Please upload a valid PDF file";
             return;
         }
-
+        
         Console.WriteLine(_uploadErrorMessage);
+        Console.WriteLine($"First Name: {_candidate.FirstName} {_candidate.LastName}");
         _candidate.DateResumeSubmitted = DateTime.Now;
         await ScanResume();
-        await AddEligibleCandidate();
-       // _eligibleCandidates = await LocalStorage.GetItemAsync<List<Candidate>>("eligibleCandidates") ?? new List<Candidate>();
+        //await AddEligibleCandidate();
+        CandidateService.AddEligibleCandidate(_candidate, LocalStorage);
+        // _eligibleCandidates = await LocalStorage.GetItemAsync<List<Candidate>>("eligibleCandidates") ?? new List<Candidate>();
         _eligibleCandidates = Services.CandidateService.GetAllEligibleCandidates();
         _uploadErrorMessage = string.Empty;
     }
@@ -305,7 +307,7 @@
         @if (_candidate.BackEndSkills.UsesAspnet && _candidate is { BackEndSkills: { UsesCSharp: true, UsesSql: true }, FrontEndSkills.UsesReact: true })
         {
             //_eligibleCandidates.Add(_candidate);
-            CandidateService.AddEligibleCandidate(_candidate);
+            CandidateService.AddEligibleCandidate(_candidate, LocalStorage);
         }
 
         //await LocalStorage.SetItemAsync("eligibleCandidates", candidates);
