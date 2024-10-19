@@ -2,13 +2,6 @@
 =======
 >>>>>>> e99ca5a98fc29c7126c177d3ec845c655cc85b1f
 >>>>>>> 71b2b2a64a1c4a49663fa6c42d5f9c0365c84da7
-C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0\ResumeBlazorWASMApp.csproj.AssemblyReference.cache
-C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0\ResumeBlazorWASMApp.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0\ResumeBlazorWASMApp.AssemblyInfoInputs.cache
-C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0\ResumeBlazorWASMApp.AssemblyInfo.cs
-C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0\ResumeBlazorWASMApp.csproj.CoreCompileInputs.cache
-C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0\ResumeBlazorWASMApp.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0\ResumeBlazorWASMApp.sourcelink.json
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\bin\Debug\net8.0\wwwroot\_framework\blazor.boot.json
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\bin\Debug\net8.0\wwwroot\_framework\blazor.webassembly.js
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\bin\Debug\net8.0\wwwroot\_framework\Blazored.LocalStorage.wasm
@@ -659,6 +652,13 @@ C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\bin\Debug\net8.0
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\bin\Debug\net8.0\icudt_CJK.dat
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\bin\Debug\net8.0\icudt_EFIGS.dat
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\bin\Debug\net8.0\icudt_no_CJK.dat
+C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0\ResumeBlazorWASMApp.csproj.AssemblyReference.cache
+C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0\ResumeBlazorWASMApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0\ResumeBlazorWASMApp.AssemblyInfoInputs.cache
+C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0\ResumeBlazorWASMApp.AssemblyInfo.cs
+C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0\ResumeBlazorWASMApp.csproj.CoreCompileInputs.cache
+C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0\ResumeBlazorWASMApp.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0\ResumeBlazorWASMApp.sourcelink.json
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0\webcil\Blazored.LocalStorage.wasm
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0\webcil\Blazorise.wasm
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Debug\net8.0\webcil\Blazorise.Bootstrap.wasm
