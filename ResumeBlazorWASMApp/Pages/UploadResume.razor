@@ -1,4 +1,5 @@
 ﻿@page "/upload-resume"
+@using System.Text.Json
 @using UglyToad.PdfPig
 @using UglyToad.PdfPig.Content
 @using System.Net
@@ -16,19 +17,19 @@
 }
 <div class="form-container">
     <EditForm Model="_candidate" OnSubmit="HandleSubmit">
-        <DataAnnotationsValidator/>
-        <ValidationSummary/>
+        <DataAnnotationsValidator />
+        <ValidationSummary />
         <div class="form-group">
             <label>First Name:</label>
-            <InputText @bind-Value="_candidate.FirstName" required/>
+            <InputText @bind-Value="_candidate.FirstName" required />
         </div>
         <div class="form-group">
             <label>Last Name:</label>
-            <InputText @bind-Value="_candidate.LastName" required/>
+            <InputText @bind-Value="_candidate.LastName" required />
         </div>
         <div class="form-group">
             <label>Email:</label>
-            <InputText @bind-Value="_candidate.Email" required/>
+            <InputText @bind-Value="_candidate.Email" required />
         </div>
 
         <div>
@@ -159,22 +160,22 @@
         @foreach (var candidate in _filteredCandidates)
         {
             <div class="candidate-card">
-                <li>@candidate.FirstName @candidate.LastName</li>
-                <li>@candidate.Email</li>
-                <li>Date Submitted: @candidate.DateResumeSubmitted</li>
-                <Button type="button" class="submit-button" @onclick="() => DeleteEligibleCandidate(candidate)">Delete</Button>
-                <Button type="button" class="submit-button" @onclick="() => ViewResume(candidate)">ViewResume</Button>
+            <li>@candidate.FirstName @candidate.LastName</li>
+            <li>@candidate.Email</li>
+            <li>Date Submitted: @candidate.DateResumeSubmitted</li>
+            <Button type="button" class="submit-button" @onclick="() => DeleteEligibleCandidate(candidate)">Delete</Button>
+            <Button type="button" class="submit-button" @onclick="() => ViewResume(candidate)">ViewResume</Button>
                 @if (candidate.IsResumeVisible)
                 {
                     @* <iframe src="data:application/pdf;base64,@candidate.PdfResume" width="600" height="400"></iframe> *@
-                    <iframe src="data:application/pdf;base64,@_candidate.PdfResume" width="600" height="400" style="border: none;"></iframe>
+                <iframe src="data:application/pdf;base64,@_candidate.PdfResume" width="600" height="400" style="border: none;"></iframe>
                     //<iframe src="data:application/pdf;base64,@candidate.PdfResume" width="100%" height="600px"></iframe>
                 }
 
-                <Button type="button" class="submit-button" @onclick="() => ToggleFavorite(candidate)">Favorite</Button>
+            <Button type="button" class="submit-button" @onclick="() => ToggleFavorite(candidate)">Favorite</Button>
                 @if (candidate.IsFavorited)
                 {
-                    <li class="success-box">Is Favorite</li>
+                <li class="success-box">Is Favorite</li>
                 }
             </div>
         }
@@ -201,11 +202,20 @@
     {
         // _resumeText = await LocalStorage.GetItemAsync<string>("storedPdf");
         var storedCandidates = await LocalStorage.GetItemAsync<List<Candidate>>("eligibleCandidates") ?? new List<Candidate>();
+        string json = JsonSerializer.Serialize(storedCandidates);
+        Console.WriteLine($"Stored candidates JSON: {json}");
         CandidateService.LoadEligibleCandidates(storedCandidates);
-        _eligibleCandidates = Services.CandidateService.EligibleCandidates;
+
+        _eligibleCandidates = Services.CandidateService.GetAllEligibleCandidates();
+        Console.WriteLine("Loaded Candidates:");
+        foreach (var item in _eligibleCandidates)
+        {
+            Console.WriteLine($"{item.FirstName} {item.LastName}");
+        }
+        Console.WriteLine($"Number of eligible candidates: {Services.CandidateService.EligibleCandidates.Count}");
         //_eligibleCandidates = storedCandidates;
         // _candidate.PdfResume = await RetrieveFromLocalStorage();
-        _filteredCandidates = _eligibleCandidates;
+        _filteredCandidates = _eligibleCandidates.ToList();
     }
 
     private async Task LoadFile(InputFileChangeEventArgs e)
@@ -289,7 +299,7 @@
             _uploadErrorMessage = "Please upload a valid PDF file";
             return;
         }
-        
+
         Console.WriteLine(_uploadErrorMessage);
         Console.WriteLine($"First Name: {_candidate.FirstName} {_candidate.LastName}");
         _candidate.DateResumeSubmitted = DateTime.Now;
@@ -316,7 +326,7 @@
 
     private async Task DeleteEligibleCandidate(Candidate candidateToDelete)
     {
-       //_eligibleCandidates = await LocalStorage.GetItemAsync<List<Candidate>>("eligibleCandidates");
+        //_eligibleCandidates = await LocalStorage.GetItemAsync<List<Candidate>>("eligibleCandidates");
         if (CandidateService.EligibleCandidates.Count > 0)
         {
             //_eligibleCandidates.Remove(candidateToDelete);
@@ -324,7 +334,7 @@
         }
 
         await LocalStorage.SetItemAsync("eligibleCandidates", Services.CandidateService.EligibleCandidates);
-       // _eligibleCandidates = await LocalStorage.GetItemAsync<List<Candidate>>("eligibleCandidates") ?? new List<Candidate>();
+        // _eligibleCandidates = await LocalStorage.GetItemAsync<List<Candidate>>("eligibleCandidates") ?? new List<Candidate>();
     }
 
     private Task ClearFormYes()
@@ -370,12 +380,27 @@
 
     private void FilterCandidatesByFirstName()
     {
+        Console.WriteLine($"Searching for: {_filterFirstName}");
         if (string.IsNullOrEmpty(_filterFirstName))
         {
-            _filteredCandidates = _eligibleCandidates;
+            _filteredCandidates = _eligibleCandidates.ToList();
+        }
+        Console.WriteLine("All eligible candidates");
+        foreach (var item in _eligibleCandidates)
+        {
+            Console.WriteLine($"{item.FirstName} {item.LastName}");
+
         }
 
         _filteredCandidates = _eligibleCandidates.Where(can => can.FirstName.Contains(_filterFirstName.ToLower())).ToList();
+
+        Console.WriteLine("Filtered candidates");
+        foreach (var item in _filteredCandidates)
+        {
+            Console.WriteLine($"{item.FirstName} {item.LastName}");
+        }
+
+        StateHasChanged();
     }
 
     private void FilterCandidatesByLastName()
