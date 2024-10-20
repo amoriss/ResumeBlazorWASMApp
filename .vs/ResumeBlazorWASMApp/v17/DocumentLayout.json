@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{BCBA2CDB-3F29-42AE-A5C4-8AA97EE1CF41}|ResumeBlazorWASMApp\\ResumeBlazorWASMApp.csproj|solutionrelative:resumeblazorwasmapp\\pages\\allresumes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{BCBA2CDB-3F29-42AE-A5C4-8AA97EE1CF41}|ResumeBlazorWASMApp\\ResumeBlazorWASMApp.csproj|c:\\users\\amori\\original\\resumeblazorwasmapp\\resumeblazorwasmapp\\wwwroot\\css\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{BCBA2CDB-3F29-42AE-A5C4-8AA97EE1CF41}|ResumeBlazorWASMApp\\ResumeBlazorWASMApp.csproj|solutionrelative:resumeblazorwasmapp\\wwwroot\\css\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BCBA2CDB-3F29-42AE-A5C4-8AA97EE1CF41}|ResumeBlazorWASMApp\\ResumeBlazorWASMApp.csproj|c:\\users\\amori\\original\\resumeblazorwasmapp\\resumeblazorwasmapp\\pages\\uploadresume.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{BCBA2CDB-3F29-42AE-A5C4-8AA97EE1CF41}|ResumeBlazorWASMApp\\ResumeBlazorWASMApp.csproj|solutionrelative:resumeblazorwasmapp\\pages\\uploadresume.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -24,10 +28,6 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\amori\\AppData\\Local\\Temp\\.vsdbgsrc\\44aa595dc2a1078aa662bebf92f46ec0aa83d37961bfc5ec1f12f1b995219153\\AddressBinder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BCBA2CDB-3F29-42AE-A5C4-8AA97EE1CF41}|ResumeBlazorWASMApp\\ResumeBlazorWASMApp.csproj|c:\\users\\amori\\original\\resumeblazorwasmapp\\resumeblazorwasmapp\\wwwroot\\css\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{BCBA2CDB-3F29-42AE-A5C4-8AA97EE1CF41}|ResumeBlazorWASMApp\\ResumeBlazorWASMApp.csproj|solutionrelative:resumeblazorwasmapp\\wwwroot\\css\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BCBA2CDB-3F29-42AE-A5C4-8AA97EE1CF41}|ResumeBlazorWASMApp\\ResumeBlazorWASMApp.csproj|c:\\users\\amori\\original\\resumeblazorwasmapp\\resumeblazorwasmapp\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -108,7 +108,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -120,20 +120,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Candidate.cs",
-              "DocumentMoniker": "C:\\Users\\amori\\Original\\ResumeBlazorWASMApp\\ResumeBlazorWASMApp\\Models\\Candidate.cs",
-              "RelativeDocumentMoniker": "ResumeBlazorWASMApp\\Models\\Candidate.cs",
-              "ToolTip": "C:\\Users\\amori\\Original\\ResumeBlazorWASMApp\\ResumeBlazorWASMApp\\Models\\Candidate.cs",
-              "RelativeToolTip": "ResumeBlazorWASMApp\\Models\\Candidate.cs",
-              "ViewState": "AQIAAAcAAAAAAAAAAAAAAAoAAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-19T22:55:24.452Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "AddressBinder.cs",
               "DocumentMoniker": "C:\\Users\\amori\\AppData\\Local\\Temp\\.vsdbgsrc\\44aa595dc2a1078aa662bebf92f46ec0aa83d37961bfc5ec1f12f1b995219153\\AddressBinder.cs",
               "RelativeDocumentMoniker": "..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\44aa595dc2a1078aa662bebf92f46ec0aa83d37961bfc5ec1f12f1b995219153\\AddressBinder.cs",
@@ -146,7 +133,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "UploadResume.razor",
               "DocumentMoniker": "C:\\Users\\amori\\Original\\ResumeBlazorWASMApp\\ResumeBlazorWASMApp\\Pages\\UploadResume.razor",
               "RelativeDocumentMoniker": "ResumeBlazorWASMApp\\Pages\\UploadResume.razor",
@@ -163,9 +150,9 @@
               "Title": "AllResumes.razor",
               "DocumentMoniker": "C:\\Users\\amori\\Original\\ResumeBlazorWASMApp\\ResumeBlazorWASMApp\\Pages\\AllResumes.razor",
               "RelativeDocumentMoniker": "ResumeBlazorWASMApp\\Pages\\AllResumes.razor",
-              "ToolTip": "C:\\Users\\amori\\Original\\ResumeBlazorWASMApp\\ResumeBlazorWASMApp\\Pages\\AllResumes.razor*",
-              "RelativeToolTip": "ResumeBlazorWASMApp\\Pages\\AllResumes.razor*",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAsAAAAdAAAA",
+              "ToolTip": "C:\\Users\\amori\\Original\\ResumeBlazorWASMApp\\ResumeBlazorWASMApp\\Pages\\AllResumes.razor",
+              "RelativeToolTip": "ResumeBlazorWASMApp\\Pages\\AllResumes.razor",
+              "ViewState": "AQIAAGUAAAAAAAAAAAAAAHkAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-10-19T03:46:03.639Z",
               "EditorCaption": ""
@@ -185,7 +172,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "DisplayResume.razor",
               "DocumentMoniker": "C:\\Users\\amori\\Original\\ResumeBlazorWASMApp\\ResumeBlazorWASMApp\\Pages\\DisplayResume.razor",
               "RelativeDocumentMoniker": "ResumeBlazorWASMApp\\Pages\\DisplayResume.razor",
@@ -198,7 +185,33 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "app.css",
+              "DocumentMoniker": "C:\\Users\\amori\\Original\\ResumeBlazorWASMApp\\ResumeBlazorWASMApp\\wwwroot\\css\\app.css",
+              "RelativeDocumentMoniker": "ResumeBlazorWASMApp\\wwwroot\\css\\app.css",
+              "ToolTip": "C:\\Users\\amori\\Original\\ResumeBlazorWASMApp\\ResumeBlazorWASMApp\\wwwroot\\css\\app.css",
+              "RelativeToolTip": "ResumeBlazorWASMApp\\wwwroot\\css\\app.css",
+              "ViewState": "AQIAAPsAAAAAAAAAAAAwwBcBAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-09-13T19:06:01.573Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "Candidate.cs",
+              "DocumentMoniker": "C:\\Users\\amori\\Original\\ResumeBlazorWASMApp\\ResumeBlazorWASMApp\\Models\\Candidate.cs",
+              "RelativeDocumentMoniker": "ResumeBlazorWASMApp\\Models\\Candidate.cs",
+              "ToolTip": "C:\\Users\\amori\\Original\\ResumeBlazorWASMApp\\ResumeBlazorWASMApp\\Models\\Candidate.cs",
+              "RelativeToolTip": "ResumeBlazorWASMApp\\Models\\Candidate.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAAAAoAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T22:55:24.452Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "CandidateService.cs",
               "DocumentMoniker": "C:\\Users\\amori\\Original\\ResumeBlazorWASMApp\\ResumeBlazorWASMApp\\Services\\CandidateService.cs",
               "RelativeDocumentMoniker": "ResumeBlazorWASMApp\\Services\\CandidateService.cs",
@@ -220,19 +233,6 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-09-13T19:03:52.808Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "app.css",
-              "DocumentMoniker": "C:\\Users\\amori\\Original\\ResumeBlazorWASMApp\\ResumeBlazorWASMApp\\wwwroot\\css\\app.css",
-              "RelativeDocumentMoniker": "ResumeBlazorWASMApp\\wwwroot\\css\\app.css",
-              "ToolTip": "C:\\Users\\amori\\Original\\ResumeBlazorWASMApp\\ResumeBlazorWASMApp\\wwwroot\\css\\app.css",
-              "RelativeToolTip": "ResumeBlazorWASMApp\\wwwroot\\css\\app.css",
-              "ViewState": "AQIAAOoAAAAAAAAAAAAAAAEBAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-09-13T19:06:01.573Z",
               "EditorCaption": ""
             },
             {

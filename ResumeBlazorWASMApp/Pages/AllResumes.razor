@@ -8,68 +8,70 @@
 @inject CandidateService CandidateService
 
 
-<div class="filter-container">
-    <label>First Name</label>
-    <div class="filter-container">
+<header>
+    <h3>All Resumes</h3>
+</header>
+<section class="filter-section">
+    <fieldset>
+        <legend>First Name</legend>
         <InputText @bind-Value="_filterFirstName" placeholder="Enter first name"></InputText>
         <button class="submit-button" @onclick="FilterCandidatesByFirstName">Filter</button>
-    </div>
-    <label>Last Name</label>
-    <div class="filter-container">
+    </fieldset>
+
+    <fieldset>
+        <legend>Last Name</legend>
         <InputText @bind-Value="_filterLastName" placeholder="Enter last name"></InputText>
         <button class="submit-button" @onclick="FilterCandidatesByLastName">Filter</button>
-    </div>
-</div>
-<label>Status Filters</label>
-<div class="filter-container">
-    @* <InputCheckbox @bind-Value="_filterFavorites"></InputCheckbox> *@
-    @* <button @onclick="FilterAllFavorites">See all Favorites</button> *@
-    <Button type="button" class="submit-button" @onclick="FilterAllFavorites">See all Favorites</Button>
-    <Button type="button" class="submit-button" @onclick="NoFavoriteFilter">See all Eligible Candidates</Button>
-</div>
-<label>Date Filters</label>
-<div class="filter-container"></div>
-<div class="filter-group">
-    <InputDate @bind-Value="_filterStartDate" min="2024-01-01" max="2024-12-31">Start Date</InputDate>
-</div>
-<div class="filter-group">
-<InputDate @bind-Value="_filterEndDate" min="2024-01-01" max="2024-12-31">End Date</InputDate>
-</div>
-<Button type="button" class="submit-button" @onclick="() => FilterByDate(_filterStartDate, _filterEndDate)">Filter By Date</Button>
-<Button type="button" class="submit-button" @onclick="ResetAllFilters">Reset all Filters</Button>
+    </fieldset>
 
-<h3>All Resumes</h3>
+    <fieldset>
+        <legend>Status Filters</legend>
+        <button class="submit-button" @onclick="FilterAllFavorites">See all Favorites</button>
+        <button class="submit-button" @onclick="NoFavoriteFilter">See all Eligible Candidates</button>
+    </fieldset>
+    <fieldset>
+        <legend>Date Filters</legend>
+        <p class="date-range-note">Select a date range to filter candidates by date resume submitted:</p>
+        <label style="display: inline;" for="start-date">Start Date</label>
+        <InputDate @bind-Value="_filterStartDate" min="2024-01-01" max="2024-12-31">Start Date</InputDate>
+        <label style="display: inline;" for="end-date">End Date</label>
+        <InputDate @bind-Value="_filterEndDate" min="2024-01-01" max="2024-12-31">End Date</InputDate>
+        <button class="submit-button" @onclick="() => FilterByDate(_filterStartDate, _filterEndDate)">Filter By Date</button>
+        <button class="submit-button" @onclick="ResetAllFilters">Reset all Filters</button>
+    </fieldset>
+</section>
+
+
 
 @if (_eligibleCandidates == null || !_eligibleCandidates.Any())
 {
-    <li>No eligible candidates found.</li>
+    <p>No eligible candidates found.</p>
 }
 else
 {
     @foreach (var candidate in _filteredCandidates)
     {
-        <div class="candidate-card">
-            <li>@candidate.FirstName @candidate.LastName</li>
-            <li>@candidate.Email</li>
-            <li>Date Submitted: @candidate.DateResumeSubmitted.ToString("MMMM dd, yyyy")</li>
+        <article class="candidate-card">
+            <span class="date-submitted">Date Submitted: @candidate.DateResumeSubmitted.ToString("MMMM dd, yyyy")</span>
+            <h5>@candidate.FirstName @candidate.LastName</h5>
+            <p>@candidate.Email</p>
+
             <div class="button-container">
-                <Button type="button" class="submit-button" @onclick="() => DeleteEligibleCandidate(candidate)">Delete</Button>
-                <Button type="button" class="submit-button" @onclick="() => ViewResume(candidate)">ViewResume</Button>
-                <Button type="button" class="submit-button" @onclick="() => ToggleFavorite(candidate)">Favorite</Button>
+                <button class="submit-button" @onclick="() => DeleteEligibleCandidate(candidate)">Delete</button>
+                <button class="submit-button" @onclick="() => ViewResume(candidate)">ViewResume</button>
+                <button class="submit-button" @onclick="() => ToggleFavorite(candidate)">Favorite</button>
             </div>
             @if (candidate.IsResumeVisible)
             {
-                @* <iframe src="data:application/pdf;base64,@candidate.PdfResume" width="600" height="400"></iframe> *@
                 <iframe src="data:application/pdf;base64,@_candidate.PdfResume" width="600" height="400" style="border: none;"></iframe>
-                //<iframe src="data:application/pdf;base64,@candidate.PdfResume" width="100%" height="600px"></iframe>
             }
             @if (candidate.IsFavorited)
             {
                 <i class="fas fa-star"></i>
-                <li class="success-box">Is Favorite</li>
+                <span class="success-box">Is Favorite</span>
             }
 
-        </div>
+        </article>
     }
 }
 
