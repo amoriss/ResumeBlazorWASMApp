@@ -7,8 +7,9 @@
 @using UglyToad.PdfPig.Content
 @inject CandidateService CandidateService
 
-<label>First Name</label>
+
 <div class="filter-container">
+    <label>First Name</label>
     <div class="filter-container">
         <InputText @bind-Value="_filterFirstName" placeholder="Enter first name"></InputText>
         <button class="submit-button" @onclick="FilterCandidatesByFirstName">Filter</button>

@@ -149,7 +149,7 @@
 <Button type="button" class="submit-button" @onclick="NoFavoriteFilter">See all Eligible Candidates</Button>
 <Button type="button" class="submit-button" @onclick="ResetAllFilters">Reset all Filters</Button>
 <h3>All Eligible Candidates:</h3>
-<ul>
+
 
     @if (_eligibleCandidates == null || !_eligibleCandidates.Any())
     {
@@ -162,7 +162,7 @@
             <div class="candidate-card">
             <li>@candidate.FirstName @candidate.LastName</li>
             <li>@candidate.Email</li>
-            <li>Date Submitted: @candidate.DateResumeSubmitted</li>
+            <li>Date Submitted: @candidate.DateResumeSubmitted.ToString("MMMM dd, yyyy")</li>
             <Button type="button" class="submit-button" @onclick="() => DeleteEligibleCandidate(candidate)">Delete</Button>
             <Button type="button" class="submit-button" @onclick="() => ViewResume(candidate)">ViewResume</Button>
                 @if (candidate.IsResumeVisible)
@@ -181,7 +181,7 @@
         }
     }
 
-</ul>
+
 
 @code {
     private string? _resumeText;
