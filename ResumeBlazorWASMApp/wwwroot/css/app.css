@@ -1,5 +1,6 @@
 html, body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    /*font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;*/
+    font-family: 'Lato', sans-serif;
 }
 
 h1:focus {
@@ -244,10 +245,16 @@ input:focus, textarea:focus, select:focus {
     transition: border-color 0.3s, box-shadow 0.3s;
     position: relative;
 }
-.candidate-card:hover {
-    border-color: orange;
-    /*box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);*/
-}
+    .candidate-card:hover {
+        background-color: #d0e7ef;
+        border-color: #4bb0ce;
+        /*background-color: #e0f7fa;
+        border-color: #80deea;*/
+
+        /*border-color: #b2ebf2;*/
+        /*border-color: orange;*/
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
 li {
     font-size: larger;
     list-style: none;
