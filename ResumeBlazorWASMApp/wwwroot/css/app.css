@@ -289,3 +289,31 @@ fieldset {
     font-size: 0.8rem;
     margin-bottom: 5px;
 }
+
+.gold-icon {
+    color: gold;
+}
+
+.grey-icon {
+    color: grey;
+}
+
+.favorite-button {
+    position: absolute;
+    top: 30px;
+    right: 10px;
+    background: transparent;
+    transition: transform 0.2s, color 0.2s;
+    border: none;
+}
+.favorite-button:hover {
+    transform: scale(1.1);
+    color: #555;
+}
+
+/*.candidate-card h5 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}*/

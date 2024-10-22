@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ResumeBlazorWASMApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e9d055159bce1e0fa8cab4efc6abb406d8b1dba1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+46894ccb1117bb497109affffa0ce59f8f5c205d")]
 [assembly: System.Reflection.AssemblyProductAttribute("ResumeBlazorWASMApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ResumeBlazorWASMApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

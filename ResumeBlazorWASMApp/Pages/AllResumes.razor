@@ -59,17 +59,22 @@ else
             <div class="button-container">
                 <button class="submit-button" @onclick="() => DeleteEligibleCandidate(candidate)">Delete</button>
                 <button class="submit-button" @onclick="() => ViewResume(candidate)">ViewResume</button>
-                <button class="submit-button" @onclick="() => ToggleFavorite(candidate)">Favorite</button>
+                @* <button class="submit-button" @onclick="() => ToggleFavorite(candidate)">Favorite</button> *@
+
+                <button class="favorite-button" @onclick="() => ToggleFavorite(candidate)" title="Favorite">
+                   @*  <i class="fas fa-star" style="colo(r: @(candidate.IsFavorited ? "gold" : "grey")"></i>Favorite *@
+                   <span class="material-icons @(candidate.IsFavorited? "gold-icon": "grey-icon")">star</span>
+                </button>
             </div>
             @if (candidate.IsResumeVisible)
             {
                 <iframe src="data:application/pdf;base64,@_candidate.PdfResume" width="600" height="400" style="border: none;"></iframe>
             }
-            @if (candidate.IsFavorited)
+            @* @if (candidate.IsFavorited)
             {
-                <i class="fas fa-star"></i>
+                <span class="material-icons @(candidate.IsFavorited? "gold-icon": "grey-icon")">star</span>
                 <span class="success-box">Is Favorite</span>
-            }
+            } *@
 
         </article>
     }
