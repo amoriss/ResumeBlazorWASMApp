@@ -168,7 +168,7 @@
                 @if (candidate.IsResumeVisible)
                 {
                     @* <iframe src="data:application/pdf;base64,@candidate.PdfResume" width="600" height="400"></iframe> *@
-                <iframe src="data:application/pdf;base64,@_candidate.PdfResume" width="600" height="400" style="border: none;"></iframe>
+                <iframe src="data:application/pdf;base64,@candidate.PdfResume" width="600" height="400" style="border: none;"></iframe>
                     //<iframe src="data:application/pdf;base64,@candidate.PdfResume" width="100%" height="600px"></iframe>
                 }
 
@@ -224,26 +224,41 @@
         if (file.Name.EndsWith(".pdf"))
         {
             _isLoading = true;
-            //read PDF into memory stream
-            //var stream = file.ContentType;
-            var memoryStream = new MemoryStream();
-            await file.OpenReadStream().CopyToAsync(memoryStream);
+            try
+            {
+                //read PDF into memory stream
+                //var stream = file.ContentType;
+                var memoryStream = new MemoryStream();
+                await file.OpenReadStream().CopyToAsync(memoryStream);
 
-            byte[] pdfBytes = memoryStream.ToArray();
-            string base64String = Convert.ToBase64String(pdfBytes);
-            _isLoading = false;
-            _candidate.PdfUploaded = true;
-            _candidate.PdfResume = base64String;
-            _resumeText = await ReadPdfText(pdfBytes);
-            await LocalStorage.SetItemAsStringAsync("storedPdf", _candidate.PdfResume);
+                //convert PDF to Base64
+                byte[] pdfBytes = memoryStream.ToArray();
+                string base64String = Convert.ToBase64String(pdfBytes);
+                _isLoading = false;
+                _candidate.PdfUploaded = true;
+                _candidate.PdfResume = base64String;
+
+                _resumeText = await ReadPdfText(pdfBytes);
+                await LocalStorage.SetItemAsStringAsync("storedPdf", _candidate.PdfResume);
 
 
-            // byte[] buffer = new byte[file.Size];
-            // await file.OpenReadStream().ReadAsync(buffer);
-            // string base64Pdf = Convert.ToBase64String(buffer);
-            // _candidate.PdfResume = base64Pdf;
-            // await LocalStorage.SetItemAsStringAsync("storedPdf", base64Pdf);
-            // _resumeText = await ReadPdfText(buffer);
+                // byte[] buffer = new byte[file.Size];
+                // await file.OpenReadStream().ReadAsync(buffer);
+                // string base64Pdf = Convert.ToBase64String(buffer);
+                // _candidate.PdfResume = base64Pdf;
+                // await LocalStorage.SetItemAsStringAsync("storedPdf", base64Pdf);
+                // _resumeText = await ReadPdfText(buffer);
+            }
+            catch (Exception ex)
+            {
+
+                _uploadErrorMessage = $"An error occurred while uploading the file: {ex.Message}";
+            }
+            finally
+            {
+                _isLoading = false;
+            }
+
         }
         else
         {
@@ -258,14 +273,14 @@
         SkillsFinder.FindFrontEndSkillsFromResume(_resumeText, _frontEndSkills);
         _candidate.BackEndSkills = _backEndSkills;
         _candidate.FrontEndSkills = _frontEndSkills;
-        _candidate.PdfResume = _resumeText;
+        //_candidate.PdfResume = _resumeText;
 
         _pdfScanned = true;
         /////storing PDF to local storage as Base64 string
         // string base64Pdf = Convert.ToBase64String(buffer);
         // await LocalStorage.SetItemAsStringAsync("storedPdf", base64Pdf);
 
-        await LocalStorage.SetItemAsStringAsync("storedPdf", _resumeText);
+        //await LocalStorage.SetItemAsStringAsync("storedPdf", _resumeText);
     }
 
     private async Task<string> ReadPdfText(byte[] pdfData)

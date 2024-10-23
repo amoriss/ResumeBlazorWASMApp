@@ -9,7 +9,7 @@
 
 
 <header>
-    <h3>All Resumes</h3>
+    <h3 style="text-align: center;">All Resumes</h3>
 </header>
 <section class="filter-section">
     <fieldset>
@@ -62,19 +62,19 @@ else
                 @* <button class="submit-button" @onclick="() => ToggleFavorite(candidate)">Favorite</button> *@
 
                 <button class="favorite-button" @onclick="() => ToggleFavorite(candidate)" title="Favorite">
-                   @*  <i class="fas fa-star" style="colo(r: @(candidate.IsFavorited ? "gold" : "grey")"></i>Favorite *@
-                   <span class="material-icons @(candidate.IsFavorited? "gold-icon": "grey-icon")">star</span>
+                    <span class="material-icons @(candidate.IsFavorited? "gold-icon": "grey-icon")">star</span>
                 </button>
             </div>
             @if (candidate.IsResumeVisible)
             {
-                <iframe src="data:application/pdf;base64,@_candidate.PdfResume" width="600" height="400" style="border: none;"></iframe>
+                <iframe src="data:application/pdf;base64,@candidate.PdfResume" width="600" height="400" style="border: none;"></iframe>
+                @* <a href="data:application/pdf;base64,@candidate.PdfResume" download="resume.pdf" class="download-button">Download Resume</a> *@
             }
             @* @if (candidate.IsFavorited)
-            {
-                <span class="material-icons @(candidate.IsFavorited? "gold-icon": "grey-icon")">star</span>
-                <span class="success-box">Is Favorite</span>
-            } *@
+    {
+    <span class="material-icons @(candidate.IsFavorited? "gold-icon": "grey-icon")">star</span>
+    <span class="success-box">Is Favorite</span>
+    } *@
 
         </article>
     }
@@ -110,12 +110,13 @@ else
         Console.WriteLine("Loaded Candidates:");
         foreach (var item in _eligibleCandidates)
         {
-            Console.WriteLine(item.FirstName);
-            Console.WriteLine(item.LastName);
+            Console.WriteLine($"First Name: {item.FirstName} Last Name: {item.LastName}");
+            Console.WriteLine($"PDF Base64 {item.PdfResume}");
         }
         Console.WriteLine($"Number of eligible candidates: {Services.CandidateService.EligibleCandidates.Count}");
         _filteredCandidates = _eligibleCandidates.ToList();
     }
+
 
     private async Task DeleteEligibleCandidate(Candidate candidateToDelete)
     {
@@ -133,6 +134,9 @@ else
     private void ViewResume(Candidate candidate)
     {
         candidate.IsResumeVisible = !candidate.IsResumeVisible;
+        StateHasChanged();
+        Console.WriteLine($"Resume for {candidate.FirstName} {candidate.LastName}");
+        Console.WriteLine($"PDF Base64: {candidate.PdfResume}");
     }
 
     private async Task ToggleFavorite(Candidate candidate)
