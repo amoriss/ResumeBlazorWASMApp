@@ -132,6 +132,8 @@ else
         candidate.IsFavorited = !candidate.IsFavorited;
         Console.WriteLine($"{candidate.FirstName} {candidate.LastName}");
         Console.WriteLine($"{candidate.IsFavorited}");
+        await LocalStorage.SetItemAsync("eligibleCandidates", Services.CandidateService.EligibleCandidates);
+        StateHasChanged();
     }
 
     private void FilterCandidatesByFirstName()

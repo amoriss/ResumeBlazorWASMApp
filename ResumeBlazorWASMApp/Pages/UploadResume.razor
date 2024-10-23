@@ -38,6 +38,11 @@
             @if (_isLoading)
             {
                 <h2>Document is Loading</h2>
+              @*   <svg class="loading-progress">
+                    <circle r="20%" cx="50%" cy="50%" />
+                    <circle r="20%" cx="50%" cy="50%" />
+                </svg>
+                <div class="loading-progress-text"></div> *@
             }
             @if (!string.IsNullOrEmpty(_uploadErrorMessage))
             {
