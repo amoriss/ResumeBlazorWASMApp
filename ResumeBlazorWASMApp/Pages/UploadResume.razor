@@ -51,11 +51,6 @@
 </div>
 
 
-@* @if (!string.IsNullOrEmpty(_resumeText)) *@
-@* { *@
-@*     <p>@_resumeText</p> *@
-@* } *@
-
 @if (_pdfScanned)
 {
     <div class="skills-container">
@@ -107,25 +102,13 @@
             <div class="success-box">
                 <h2>Candidate is eligible</h2>
             </div>
-            @* <Alert Color="Color.Success"> *@
-            @*     <h4>This candidate is eligible</h4> *@
-            @* </Alert> *@
         }
-        else //if (_backEndSkills is { UsesAspnet: false, UsesCSharp: false, UsesSql: false } && _frontEndSkills.UsesReact is false)
+        else 
         {
             <div class="red-box">
                 <h2>Candidate is not eligible</h2>
             </div>
         }
-
-        @* @if (_backEndSkills is { UsesAspnet: false, UsesCSharp: false, UsesSql: false }) *@
-        @* { *@
-        @*     <h2>Candidate has no relevant back-end skills</h2> *@
-        @* } *@
-        @* @if (_frontEndSkills is { UsesReact: false, UsesCss: false, UsesJavaScript: false }) *@
-        @* { *@
-        @*     <h2>Candidate has no relevant front-end skills</h2> *@
-        @* } *@
         <h3>Would you like to submit another candidate?</h3>
         <button class="submit-button" @onclick="ClearFormYes">Yes</button>
         <button class="submit-button" @onclick="ClearFormNo">No</button>
@@ -137,50 +120,6 @@
         }
     </div>
 }
-
-<h3>Filter Candidates</h3>
-<InputText @bind-Value="_filterFirstName" placeholder="Enter first name"></InputText>
-<button @onclick="FilterCandidatesByFirstName">Filter</button>
-<InputText @bind-Value="_filterLastName" placeholder="Enter last name"></InputText>
-<button @onclick="FilterCandidatesByLastName">Filter</button>
-@* <InputCheckbox @bind-Value="_filterFavorites"></InputCheckbox> *@
-@* <button @onclick="FilterAllFavorites">See all Favorites</button> *@
-<Button type="button" class="submit-button" @onclick="FilterAllFavorites">See all Favorites</Button>
-<Button type="button" class="submit-button" @onclick="NoFavoriteFilter">See all Eligible Candidates</Button>
-<Button type="button" class="submit-button" @onclick="ResetAllFilters">Reset all Filters</Button>
-<h3>All Eligible Candidates:</h3>
-
-
-    @if (_eligibleCandidates == null || !_eligibleCandidates.Any())
-    {
-        <li>No eligible candidates found.</li>
-    }
-    else
-    {
-        @foreach (var candidate in _filteredCandidates)
-        {
-            <div class="candidate-card">
-            <li>@candidate.FirstName @candidate.LastName</li>
-            <li>@candidate.Email</li>
-            <li>Date Submitted: @candidate.DateResumeSubmitted.ToString("MMMM dd, yyyy")</li>
-            <Button type="button" class="submit-button" @onclick="() => DeleteEligibleCandidate(candidate)">Delete</Button>
-            <Button type="button" class="submit-button" @onclick="() => ViewResume(candidate)">ViewResume</Button>
-                @if (candidate.IsResumeVisible)
-                {
-                    @* <iframe src="data:application/pdf;base64,@candidate.PdfResume" width="600" height="400"></iframe> *@
-                <iframe src="data:application/pdf;base64,@candidate.PdfResume" width="600" height="400" style="border: none;"></iframe>
-                    //<iframe src="data:application/pdf;base64,@candidate.PdfResume" width="100%" height="600px"></iframe>
-                }
-
-            <Button type="button" class="submit-button" @onclick="() => ToggleFavorite(candidate)">Favorite</Button>
-                @if (candidate.IsFavorited)
-                {
-                <li class="success-box">Is Favorite</li>
-                }
-            </div>
-        }
-    }
-
 
 
 @code {
@@ -199,8 +138,7 @@
     private string? _uploadErrorMessage;
 
     protected override async Task OnInitializedAsync()
-    {
-        // _resumeText = await LocalStorage.GetItemAsync<string>("storedPdf");
+    {        
         var storedCandidates = await LocalStorage.GetItemAsync<List<Candidate>>("eligibleCandidates") ?? new List<Candidate>();
         string json = JsonSerializer.Serialize(storedCandidates);
         Console.WriteLine($"Stored candidates JSON: {json}");
@@ -213,8 +151,6 @@
             Console.WriteLine($"{item.FirstName} {item.LastName}");
         }
         Console.WriteLine($"Number of eligible candidates: {Services.CandidateService.EligibleCandidates.Count}");
-        //_eligibleCandidates = storedCandidates;
-        // _candidate.PdfResume = await RetrieveFromLocalStorage();
         _filteredCandidates = _eligibleCandidates.ToList();
     }
 
@@ -227,7 +163,6 @@
             try
             {
                 //read PDF into memory stream
-                //var stream = file.ContentType;
                 var memoryStream = new MemoryStream();
                 await file.OpenReadStream().CopyToAsync(memoryStream);
 
@@ -241,13 +176,6 @@
                 _resumeText = await ReadPdfText(pdfBytes);
                 await LocalStorage.SetItemAsStringAsync("storedPdf", _candidate.PdfResume);
 
-
-                // byte[] buffer = new byte[file.Size];
-                // await file.OpenReadStream().ReadAsync(buffer);
-                // string base64Pdf = Convert.ToBase64String(buffer);
-                // _candidate.PdfResume = base64Pdf;
-                // await LocalStorage.SetItemAsStringAsync("storedPdf", base64Pdf);
-                // _resumeText = await ReadPdfText(buffer);
             }
             catch (Exception ex)
             {
@@ -273,14 +201,9 @@
         SkillsFinder.FindFrontEndSkillsFromResume(_resumeText, _frontEndSkills);
         _candidate.BackEndSkills = _backEndSkills;
         _candidate.FrontEndSkills = _frontEndSkills;
-        //_candidate.PdfResume = _resumeText;
 
         _pdfScanned = true;
-        /////storing PDF to local storage as Base64 string
-        // string base64Pdf = Convert.ToBase64String(buffer);
-        // await LocalStorage.SetItemAsStringAsync("storedPdf", base64Pdf);
-
-        //await LocalStorage.SetItemAsStringAsync("storedPdf", _resumeText);
+        
     }
 
     private async Task<string> ReadPdfText(byte[] pdfData)
@@ -318,38 +241,30 @@
         Console.WriteLine(_uploadErrorMessage);
         Console.WriteLine($"First Name: {_candidate.FirstName} {_candidate.LastName}");
         _candidate.DateResumeSubmitted = DateTime.Now;
-        await ScanResume();
-        //await AddEligibleCandidate();
-        CandidateService.AddEligibleCandidate(_candidate, LocalStorage);
-        // _eligibleCandidates = await LocalStorage.GetItemAsync<List<Candidate>>("eligibleCandidates") ?? new List<Candidate>();
+        await ScanResume();       
+        CandidateService.AddEligibleCandidate(_candidate, LocalStorage);       
         _eligibleCandidates = Services.CandidateService.GetAllEligibleCandidates();
         _uploadErrorMessage = string.Empty;
     }
 
     private async Task AddEligibleCandidate()
-    {
-        //Services.CandidateService.EligibleCandidates = await LocalStorage.GetItemAsync<List<Candidate>>("eligibleCandidates") ?? new List<Candidate>();
+    {        
         @if (_candidate.BackEndSkills.UsesAspnet && _candidate is { BackEndSkills: { UsesCSharp: true, UsesSql: true }, FrontEndSkills.UsesReact: true })
-        {
-            //_eligibleCandidates.Add(_candidate);
+        {        
             CandidateService.AddEligibleCandidate(_candidate, LocalStorage);
         }
-
-        //await LocalStorage.SetItemAsync("eligibleCandidates", candidates);
+       
         await LocalStorage.SetItemAsync("eligibleCandidates", CandidateService.EligibleCandidates);
     }
 
     private async Task DeleteEligibleCandidate(Candidate candidateToDelete)
-    {
-        //_eligibleCandidates = await LocalStorage.GetItemAsync<List<Candidate>>("eligibleCandidates");
+    {        
         if (CandidateService.EligibleCandidates.Count > 0)
         {
-            //_eligibleCandidates.Remove(candidateToDelete);
             CandidateService.DeleteEligibleCandidate(candidateToDelete);
         }
 
-        await LocalStorage.SetItemAsync("eligibleCandidates", Services.CandidateService.EligibleCandidates);
-        // _eligibleCandidates = await LocalStorage.GetItemAsync<List<Candidate>>("eligibleCandidates") ?? new List<Candidate>();
+        await LocalStorage.SetItemAsync("eligibleCandidates", Services.CandidateService.EligibleCandidates);       
     }
 
     private Task ClearFormYes()
