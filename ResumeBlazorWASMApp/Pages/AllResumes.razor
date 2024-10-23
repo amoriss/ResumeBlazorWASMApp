@@ -114,9 +114,11 @@ else
         if (CandidateService.EligibleCandidates.Count > 0)
         {            
             CandidateService.DeleteEligibleCandidate(candidateToDelete);
+            _filteredCandidates.Remove(candidateToDelete);
         }
 
-        await LocalStorage.SetItemAsync("eligibleCandidates", Services.CandidateService.EligibleCandidates);        
+        await LocalStorage.SetItemAsync("eligibleCandidates", Services.CandidateService.EligibleCandidates);
+        StateHasChanged();
     }
 
     private void ViewResume(Candidate candidate)
