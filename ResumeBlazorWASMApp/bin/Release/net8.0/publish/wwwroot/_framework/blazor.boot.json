@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "ResumeBlazorWASMApp",
   "resources": {
-    "hash": "sha256-vepPTi/PN0guOCDFbsZiYOUmsQR6EAyjWW0TY7GaajE=",
+    "hash": "sha256-wIso80geWFhHM1iRv/gPFpxUJ44dXg/YxeE37mi6JIA=",
     "jsModuleNative": {
       "dotnet.native.8.0.7.059sb6irif.js": "sha256-tFsxPBbhkdn6GKNBKvCRLzrfAHdyM86odYTe0MtrwMk="
     },
@@ -51,7 +51,7 @@
       "MudBlazor.wasm": "sha256-ysq8iGI7qwDdQNFejEEc5r7Ar3JrGpB/oYQ5G4uEbcs=",
       "netstandard.wasm": "sha256-fLFRGy/MqE3T/AFNeZpbADRxqHXa4POLtDuRVhkKZKQ=",
       "Newtonsoft.Json.wasm": "sha256-GlXMWKvDs45M2pACoR3Y4Qh8mcrOZGljqmvJY+6JZ5s=",
-      "ResumeBlazorWASMApp.wasm": "sha256-yhyE41mcMdi06qQmjdCsJJypKXKyFtAPw6RaYSgeuj4=",
+      "ResumeBlazorWASMApp.wasm": "sha256-qEF4oJbueliz7jE0bDBMlGXTorr+xdVHOK4A0tkemMM=",
       "Supabase.Core.wasm": "sha256-jUEh1mM6mkGdyQrEwowAbpQ8R148PZIAUIOXn0mrgIA=",
       "Supabase.Functions.wasm": "sha256-i3baKTpUA4voBHgpG1KCEXhOQom7BsRz3N4FCywsZ6k=",
       "Supabase.Gotrue.wasm": "sha256-fIDLwe2YAl/vphQoUtljCM5aRD5nbL3EXYlszJRLyfw=",
