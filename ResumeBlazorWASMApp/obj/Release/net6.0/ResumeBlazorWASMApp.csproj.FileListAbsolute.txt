@@ -1,0 +1,7 @@
+C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Release\net6.0\ResumeBlazorWASMApp.csproj.AssemblyReference.cache
+C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Release\net6.0\ResumeBlazorWASMApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Release\net6.0\ResumeBlazorWASMApp.AssemblyInfoInputs.cache
+C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Release\net6.0\ResumeBlazorWASMApp.AssemblyInfo.cs
+C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Release\net6.0\ResumeBlazorWASMApp.csproj.CoreCompileInputs.cache
+C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Release\net6.0\ResumeBlazorWASMApp.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Release\net6.0\ResumeBlazorWASMApp.sourcelink.json

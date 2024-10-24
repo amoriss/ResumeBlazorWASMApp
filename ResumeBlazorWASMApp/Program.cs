@@ -6,7 +6,7 @@ using Blazorise;
 using Blazorise.Bootstrap;
 using Blazorise.Bootstrap5;
 using Blazorise.Icons.FontAwesome;
-using MudBlazor.Services;
+//using MudBlazor.Services;
 using ResumeBlazorWASMApp.Pages;
 using ResumeBlazorWASMApp.Services;
 using Supabase;
@@ -17,7 +17,7 @@ var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.Services.AddBlazoredLocalStorage();
 builder.Services.AddSingleton<CandidateService>();
 builder.Services.AddScoped<Authentication>(); //Authentication service
-builder.Services.AddMudServices();
+//builder.Services.AddMudServices();
 
 
 
