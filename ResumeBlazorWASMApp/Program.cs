@@ -16,7 +16,7 @@ using Supabase.Gotrue;
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.Services.AddBlazoredLocalStorage();
 builder.Services.AddSingleton<CandidateService>();
-builder.Services.AddScoped<Authentication>(); //Authentication service
+//builder.Services.AddScoped<Authentication>(); //Authentication service
 //builder.Services.AddMudServices();
 
 
