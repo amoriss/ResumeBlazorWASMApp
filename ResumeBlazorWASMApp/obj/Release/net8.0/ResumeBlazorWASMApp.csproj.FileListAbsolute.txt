@@ -1195,3 +1195,4 @@ C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Release\net8
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Release\net8.0\refint\ResumeBlazorWASMApp.dll
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Release\net8.0\ResumeBlazorWASMApp.pdb
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\obj\Release\net8.0\ref\ResumeBlazorWASMApp.dll
+C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\bin\Release\net8.0\global.json
