@@ -1,3 +1,6 @@
- [build]
+[build]
   command = "dotnet publish -c Release --verbosity detailed"
   publish = "bin/Release/net8.0/publish/wwwroot"
+
+[build.environment]
+  DOTNET_SDK_VERSION = "8.0.303"
