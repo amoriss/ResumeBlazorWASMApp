@@ -6,7 +6,12 @@ C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeAPI\bin\Debug\net8.0\ResumeAPI
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeAPI\bin\Debug\net8.0\ResumeAPI.dll
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeAPI\bin\Debug\net8.0\ResumeAPI.pdb
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeAPI\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeAPI\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeAPI\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeAPI\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeAPI\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeAPI\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeAPI\bin\Debug\net8.0\Newtonsoft.Json.dll
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeAPI\bin\Debug\net8.0\UglyToad.PdfPig.Core.dll
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeAPI\bin\Debug\net8.0\UglyToad.PdfPig.DocumentLayoutAnalysis.dll
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeAPI\bin\Debug\net8.0\UglyToad.PdfPig.Fonts.dll
@@ -14,9 +19,12 @@ C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeAPI\bin\Debug\net8.0\UglyToad.
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeAPI\bin\Debug\net8.0\UglyToad.PdfPig.Tokenization.dll
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeAPI\bin\Debug\net8.0\UglyToad.PdfPig.Tokens.dll
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeAPI\bin\Debug\net8.0\UglyToad.PdfPig.dll
+C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeAPI\bin\Debug\net8.0\Supabase.Core.dll
+C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeAPI\bin\Debug\net8.0\Supabase.Gotrue.dll
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeAPI\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeAPI\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeAPI\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeAPI\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeAPI\obj\Debug\net8.0\ResumeAPI.csproj.AssemblyReference.cache
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeAPI\obj\Debug\net8.0\ResumeAPI.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeAPI\obj\Debug\net8.0\ResumeAPI.AssemblyInfoInputs.cache

@@ -1,4 +1,6 @@
-﻿using ResumeBlazorWASMApp.Models;
+﻿using Blazored.LocalStorage;
+using Blazored.LocalStorage.StorageOptions;
+using ResumeBlazorWASMApp.Models;
 
 namespace ResumeBlazorWASMApp.Services;
 
@@ -6,9 +8,11 @@ public class CandidateService
 {
     public static List<Candidate> EligibleCandidates { get; set; } = new List<Candidate>();
 
-    public static void AddEligibleCandidate(Candidate candidate)
+    public static async Task AddEligibleCandidate(Candidate candidate, ILocalStorageService localStorage)
     {
         EligibleCandidates.Add(candidate);
+        await localStorage.SetItemAsync("eligibleCandidates", EligibleCandidates);
+       
     }
 
     public static void DeleteEligibleCandidate(Candidate candidate)
@@ -23,6 +27,7 @@ public class CandidateService
 
     public static void LoadEligibleCandidates(List<Candidate> candidates)
     {
+        Console.WriteLine($"Loading {candidates.Count} candidates into the service.");
         EligibleCandidates = candidates;
     }
 }
