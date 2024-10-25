@@ -1,0 +1,2 @@
+C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\bin\Release\net6.0\publish\global.json
+C:\Users\amori\Original\ResumeBlazorWASMApp\ResumeBlazorWASMApp\bin\Release\net6.0\publish\web.config
