@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "O86i6II9NFs=",
+  "dgSpecHash": "rG302SGF19M=",
   "success": true,
   "projectFilePath": "C:\\Users\\amori\\Original\\ResumeBlazorWASMApp\\ResumeBlazorWASMApp\\ResumeBlazorWASMApp.csproj",
   "expectedPackageFiles": [
@@ -15,8 +15,8 @@
     "C:\\Users\\amori\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\6.0.35\\microsoft.aspnetcore.components.analyzers.6.0.35.nupkg.sha512",
     "C:\\Users\\amori\\.nuget\\packages\\microsoft.aspnetcore.components.forms\\6.0.35\\microsoft.aspnetcore.components.forms.6.0.35.nupkg.sha512",
     "C:\\Users\\amori\\.nuget\\packages\\microsoft.aspnetcore.components.web\\6.0.35\\microsoft.aspnetcore.components.web.6.0.35.nupkg.sha512",
-    "C:\\Users\\amori\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly\\6.0.8\\microsoft.aspnetcore.components.webassembly.6.0.8.nupkg.sha512",
-    "C:\\Users\\amori\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.devserver\\8.0.10\\microsoft.aspnetcore.components.webassembly.devserver.8.0.10.nupkg.sha512",
+    "C:\\Users\\amori\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly\\6.0.10\\microsoft.aspnetcore.components.webassembly.6.0.10.nupkg.sha512",
+    "C:\\Users\\amori\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.devserver\\6.0.10\\microsoft.aspnetcore.components.webassembly.devserver.6.0.10.nupkg.sha512",
     "C:\\Users\\amori\\.nuget\\packages\\microsoft.aspnetcore.metadata\\6.0.35\\microsoft.aspnetcore.metadata.6.0.35.nupkg.sha512",
     "C:\\Users\\amori\\.nuget\\packages\\microsoft.extensions.configuration\\6.0.0\\microsoft.extensions.configuration.6.0.0.nupkg.sha512",
     "C:\\Users\\amori\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
@@ -38,7 +38,7 @@
     "C:\\Users\\amori\\.nuget\\packages\\microsoft.identitymodel.tokens\\7.5.1\\microsoft.identitymodel.tokens.7.5.1.nupkg.sha512",
     "C:\\Users\\amori\\.nuget\\packages\\microsoft.io.recyclablememorystream\\3.0.0\\microsoft.io.recyclablememorystream.3.0.0.nupkg.sha512",
     "C:\\Users\\amori\\.nuget\\packages\\microsoft.jsinterop\\6.0.35\\microsoft.jsinterop.6.0.35.nupkg.sha512",
-    "C:\\Users\\amori\\.nuget\\packages\\microsoft.jsinterop.webassembly\\6.0.8\\microsoft.jsinterop.webassembly.6.0.8.nupkg.sha512",
+    "C:\\Users\\amori\\.nuget\\packages\\microsoft.jsinterop.webassembly\\6.0.10\\microsoft.jsinterop.webassembly.6.0.10.nupkg.sha512",
     "C:\\Users\\amori\\.nuget\\packages\\microsoft.net.illink.analyzers\\7.0.100-1.23401.1\\microsoft.net.illink.analyzers.7.0.100-1.23401.1.nupkg.sha512",
     "C:\\Users\\amori\\.nuget\\packages\\microsoft.net.illink.tasks\\7.0.100-1.23401.1\\microsoft.net.illink.tasks.7.0.100-1.23401.1.nupkg.sha512",
     "C:\\Users\\amori\\.nuget\\packages\\microsoft.net.sdk.webassembly.pack\\8.0.7\\microsoft.net.sdk.webassembly.pack.8.0.7.nupkg.sha512",
