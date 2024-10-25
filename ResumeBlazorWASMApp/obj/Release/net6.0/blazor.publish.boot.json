@@ -1,7 +1,7 @@
 {
   "entryAssembly": "ResumeBlazorWASMApp",
   "resources": {
-    "hash": "sha256-HLcf7JIat97gMge6SgYVfMnImgt7pL8kkGFGpGueErE=",
+    "hash": "sha256-zvOw0VYqNm7jMWofOM4xLcCOAokiX1vWB3N2fPiMXQ4=",
     "runtime": {
       "dotnet.6.0.32.iczu7vlnaz.js": "sha256-6fa9WVfvYrd56Fl6GQXGO40czbLt6gcYgnZxXB+Sn5A=",
       "dotnet.timezones.blat": "sha256-ALK3ufXwNaP1t4mRlACcINalB2grQvfkrI/8lo7nNq0=",
@@ -43,7 +43,7 @@
       "MimeMapping.dll": "sha256-aDT1phBFbtQuu2dKG0fMtPeNJLuPRJ+CH2/3h8BGAzs=",
       "netstandard.dll": "sha256-TD8rEam5h5EgMD95C6NvB/6tAnMOhkm6UGoOaSnqa2s=",
       "Newtonsoft.Json.dll": "sha256-IsZJ91/OW+fHzNqIgEc7Y072ns8z9dGritiSyvR9Wgc=",
-      "ResumeBlazorWASMApp.dll": "sha256-JDXN8y2zsoaGdroawJgs7Xx3kTqT2PiV+zw2JJ4Eva8=",
+      "ResumeBlazorWASMApp.dll": "sha256-2/yh4rz4HYmrTNCv2aX4MsLD0yNV16tr+X0Vat+fRUc=",
       "Supabase.Core.dll": "sha256-0J7JrvsCWPIGGOHvg6eQdlbowQJX88M1w8PLuGp/yvs=",
       "Supabase.dll": "sha256-Kon62RCQ4pqGTawYsp9LgAVwT/66ptahk8JIgsdBQvk=",
       "Supabase.Functions.dll": "sha256-BtNMx8dlAOsu+eIsvIQnzsvJGN6CC8OyJyOEdjYRNqo=",
