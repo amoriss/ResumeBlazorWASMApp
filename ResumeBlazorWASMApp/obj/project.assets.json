@@ -14,12 +14,12 @@
           "lib/net6.0/Blazored.LocalStorage.dll": {}
         }
       },
-      "Blazorise/1.6.1": {
+      "Blazorise/1.6.2": {
         "type": "package",
         "dependencies": {
           "Blazorise.Licensing": "1.2.0",
-          "Microsoft.AspNetCore.Components": "6.0.33",
-          "Microsoft.AspNetCore.Components.Web": "6.0.33",
+          "Microsoft.AspNetCore.Components": "6.0.35",
+          "Microsoft.AspNetCore.Components.Web": "6.0.35",
           "Microsoft.Extensions.Logging.Abstractions": "6.0.4"
         },
         "compile": {
@@ -39,12 +39,12 @@
           "buildMultiTargeting/Blazorise.props": {}
         }
       },
-      "Blazorise.Bootstrap/1.6.1": {
+      "Blazorise.Bootstrap/1.6.2": {
         "type": "package",
         "dependencies": {
-          "Blazorise": "1.6.1",
-          "Microsoft.AspNetCore.Components": "6.0.33",
-          "Microsoft.AspNetCore.Components.Web": "6.0.33",
+          "Blazorise": "1.6.2",
+          "Microsoft.AspNetCore.Components": "6.0.35",
+          "Microsoft.AspNetCore.Components.Web": "6.0.35",
           "Microsoft.Extensions.Logging.Abstractions": "6.0.4"
         },
         "compile": {
@@ -60,12 +60,12 @@
           "buildMultiTargeting/Blazorise.Bootstrap.props": {}
         }
       },
-      "Blazorise.Bootstrap5/1.6.1": {
+      "Blazorise.Bootstrap5/1.6.2": {
         "type": "package",
         "dependencies": {
-          "Blazorise": "1.6.1",
-          "Microsoft.AspNetCore.Components": "6.0.33",
-          "Microsoft.AspNetCore.Components.Web": "6.0.33",
+          "Blazorise": "1.6.2",
+          "Microsoft.AspNetCore.Components": "6.0.35",
+          "Microsoft.AspNetCore.Components.Web": "6.0.35",
           "Microsoft.Extensions.Logging.Abstractions": "6.0.4"
         },
         "compile": {
@@ -81,12 +81,12 @@
           "buildMultiTargeting/Blazorise.Bootstrap5.props": {}
         }
       },
-      "Blazorise.Icons.FontAwesome/1.6.1": {
+      "Blazorise.Icons.FontAwesome/1.6.2": {
         "type": "package",
         "dependencies": {
-          "Blazorise": "1.6.1",
-          "Microsoft.AspNetCore.Components": "6.0.33",
-          "Microsoft.AspNetCore.Components.Web": "6.0.33",
+          "Blazorise": "1.6.2",
+          "Microsoft.AspNetCore.Components": "6.0.35",
+          "Microsoft.AspNetCore.Components.Web": "6.0.35",
           "Microsoft.Extensions.Logging.Abstractions": "6.0.4"
         },
         "compile": {
@@ -111,10 +111,10 @@
           "lib/net6.0/Blazorise.Licensing.dll": {}
         }
       },
-      "Microsoft.AspNetCore.Authorization/6.0.33": {
+      "Microsoft.AspNetCore.Authorization/6.0.35": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AspNetCore.Metadata": "6.0.33",
+          "Microsoft.AspNetCore.Metadata": "6.0.35",
           "Microsoft.Extensions.Logging.Abstractions": "6.0.4",
           "Microsoft.Extensions.Options": "6.0.0"
         },
@@ -129,11 +129,11 @@
           }
         }
       },
-      "Microsoft.AspNetCore.Components/6.0.33": {
+      "Microsoft.AspNetCore.Components/6.0.35": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AspNetCore.Authorization": "6.0.33",
-          "Microsoft.AspNetCore.Components.Analyzers": "6.0.33"
+          "Microsoft.AspNetCore.Authorization": "6.0.35",
+          "Microsoft.AspNetCore.Components.Analyzers": "6.0.35"
         },
         "compile": {
           "lib/net6.0/Microsoft.AspNetCore.Components.dll": {
@@ -146,16 +146,16 @@
           }
         }
       },
-      "Microsoft.AspNetCore.Components.Analyzers/6.0.33": {
+      "Microsoft.AspNetCore.Components.Analyzers/6.0.35": {
         "type": "package",
         "build": {
           "buildTransitive/netstandard2.0/Microsoft.AspNetCore.Components.Analyzers.targets": {}
         }
       },
-      "Microsoft.AspNetCore.Components.Forms/6.0.33": {
+      "Microsoft.AspNetCore.Components.Forms/6.0.35": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AspNetCore.Components": "6.0.33"
+          "Microsoft.AspNetCore.Components": "6.0.35"
         },
         "compile": {
           "lib/net6.0/Microsoft.AspNetCore.Components.Forms.dll": {
@@ -168,13 +168,13 @@
           }
         }
       },
-      "Microsoft.AspNetCore.Components.Web/6.0.33": {
+      "Microsoft.AspNetCore.Components.Web/6.0.35": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AspNetCore.Components": "6.0.33",
-          "Microsoft.AspNetCore.Components.Forms": "6.0.33",
+          "Microsoft.AspNetCore.Components": "6.0.35",
+          "Microsoft.AspNetCore.Components.Forms": "6.0.35",
           "Microsoft.Extensions.DependencyInjection": "6.0.1",
-          "Microsoft.JSInterop": "6.0.33",
+          "Microsoft.JSInterop": "6.0.35",
           "System.IO.Pipelines": "6.0.3"
         },
         "compile": {
@@ -211,13 +211,13 @@
           "build/net6.0/Microsoft.AspNetCore.Components.WebAssembly.props": {}
         }
       },
-      "Microsoft.AspNetCore.Components.WebAssembly.DevServer/6.0.8": {
+      "Microsoft.AspNetCore.Components.WebAssembly.DevServer/8.0.10": {
         "type": "package",
         "build": {
           "build/Microsoft.AspNetCore.Components.WebAssembly.DevServer.targets": {}
         }
       },
-      "Microsoft.AspNetCore.Metadata/6.0.33": {
+      "Microsoft.AspNetCore.Metadata/6.0.35": {
         "type": "package",
         "compile": {
           "lib/net6.0/Microsoft.AspNetCore.Metadata.dll": {
@@ -560,7 +560,7 @@
           }
         }
       },
-      "Microsoft.JSInterop/6.0.33": {
+      "Microsoft.JSInterop/6.0.35": {
         "type": "package",
         "compile": {
           "lib/net6.0/Microsoft.JSInterop.dll": {
@@ -621,7 +621,7 @@
           }
         }
       },
-      "MudBlazor/7.8.0": {
+      "MudBlazor/7.14.0": {
         "type": "package",
         "build": {
           "build/MudBlazor.targets": {},
@@ -644,7 +644,7 @@
           }
         }
       },
-      "PdfPig/0.1.8": {
+      "PdfPig/0.1.9": {
         "type": "package",
         "compile": {
           "lib/net6.0/UglyToad.PdfPig.Core.dll": {
@@ -995,12 +995,12 @@
           "lib/net6.0/Blazored.LocalStorage.dll": {}
         }
       },
-      "Blazorise/1.6.1": {
+      "Blazorise/1.6.2": {
         "type": "package",
         "dependencies": {
           "Blazorise.Licensing": "1.2.0",
-          "Microsoft.AspNetCore.Components": "6.0.33",
-          "Microsoft.AspNetCore.Components.Web": "6.0.33",
+          "Microsoft.AspNetCore.Components": "6.0.35",
+          "Microsoft.AspNetCore.Components.Web": "6.0.35",
           "Microsoft.Extensions.Logging.Abstractions": "6.0.4"
         },
         "compile": {
@@ -1020,12 +1020,12 @@
           "buildMultiTargeting/Blazorise.props": {}
         }
       },
-      "Blazorise.Bootstrap/1.6.1": {
+      "Blazorise.Bootstrap/1.6.2": {
         "type": "package",
         "dependencies": {
-          "Blazorise": "1.6.1",
-          "Microsoft.AspNetCore.Components": "6.0.33",
-          "Microsoft.AspNetCore.Components.Web": "6.0.33",
+          "Blazorise": "1.6.2",
+          "Microsoft.AspNetCore.Components": "6.0.35",
+          "Microsoft.AspNetCore.Components.Web": "6.0.35",
           "Microsoft.Extensions.Logging.Abstractions": "6.0.4"
         },
         "compile": {
@@ -1041,12 +1041,12 @@
           "buildMultiTargeting/Blazorise.Bootstrap.props": {}
         }
       },
-      "Blazorise.Bootstrap5/1.6.1": {
+      "Blazorise.Bootstrap5/1.6.2": {
         "type": "package",
         "dependencies": {
-          "Blazorise": "1.6.1",
-          "Microsoft.AspNetCore.Components": "6.0.33",
-          "Microsoft.AspNetCore.Components.Web": "6.0.33",
+          "Blazorise": "1.6.2",
+          "Microsoft.AspNetCore.Components": "6.0.35",
+          "Microsoft.AspNetCore.Components.Web": "6.0.35",
           "Microsoft.Extensions.Logging.Abstractions": "6.0.4"
         },
         "compile": {
@@ -1062,12 +1062,12 @@
           "buildMultiTargeting/Blazorise.Bootstrap5.props": {}
         }
       },
-      "Blazorise.Icons.FontAwesome/1.6.1": {
+      "Blazorise.Icons.FontAwesome/1.6.2": {
         "type": "package",
         "dependencies": {
-          "Blazorise": "1.6.1",
-          "Microsoft.AspNetCore.Components": "6.0.33",
-          "Microsoft.AspNetCore.Components.Web": "6.0.33",
+          "Blazorise": "1.6.2",
+          "Microsoft.AspNetCore.Components": "6.0.35",
+          "Microsoft.AspNetCore.Components.Web": "6.0.35",
           "Microsoft.Extensions.Logging.Abstractions": "6.0.4"
         },
         "compile": {
@@ -1092,10 +1092,10 @@
           "lib/net6.0/Blazorise.Licensing.dll": {}
         }
       },
-      "Microsoft.AspNetCore.Authorization/6.0.33": {
+      "Microsoft.AspNetCore.Authorization/6.0.35": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AspNetCore.Metadata": "6.0.33",
+          "Microsoft.AspNetCore.Metadata": "6.0.35",
           "Microsoft.Extensions.Logging.Abstractions": "6.0.4",
           "Microsoft.Extensions.Options": "6.0.0"
         },
@@ -1110,11 +1110,11 @@
           }
         }
       },
-      "Microsoft.AspNetCore.Components/6.0.33": {
+      "Microsoft.AspNetCore.Components/6.0.35": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AspNetCore.Authorization": "6.0.33",
-          "Microsoft.AspNetCore.Components.Analyzers": "6.0.33"
+          "Microsoft.AspNetCore.Authorization": "6.0.35",
+          "Microsoft.AspNetCore.Components.Analyzers": "6.0.35"
         },
         "compile": {
           "lib/net6.0/Microsoft.AspNetCore.Components.dll": {
@@ -1127,16 +1127,16 @@
           }
         }
       },
-      "Microsoft.AspNetCore.Components.Analyzers/6.0.33": {
+      "Microsoft.AspNetCore.Components.Analyzers/6.0.35": {
         "type": "package",
         "build": {
           "buildTransitive/netstandard2.0/Microsoft.AspNetCore.Components.Analyzers.targets": {}
         }
       },
-      "Microsoft.AspNetCore.Components.Forms/6.0.33": {
+      "Microsoft.AspNetCore.Components.Forms/6.0.35": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AspNetCore.Components": "6.0.33"
+          "Microsoft.AspNetCore.Components": "6.0.35"
         },
         "compile": {
           "lib/net6.0/Microsoft.AspNetCore.Components.Forms.dll": {
@@ -1149,13 +1149,13 @@
           }
         }
       },
-      "Microsoft.AspNetCore.Components.Web/6.0.33": {
+      "Microsoft.AspNetCore.Components.Web/6.0.35": {
         "type": "package",
         "dependencies": {
-          "Microsoft.AspNetCore.Components": "6.0.33",
-          "Microsoft.AspNetCore.Components.Forms": "6.0.33",
+          "Microsoft.AspNetCore.Components": "6.0.35",
+          "Microsoft.AspNetCore.Components.Forms": "6.0.35",
           "Microsoft.Extensions.DependencyInjection": "6.0.1",
-          "Microsoft.JSInterop": "6.0.33",
+          "Microsoft.JSInterop": "6.0.35",
           "System.IO.Pipelines": "6.0.3"
         },
         "compile": {
@@ -1192,13 +1192,13 @@
           "build/net6.0/Microsoft.AspNetCore.Components.WebAssembly.props": {}
         }
       },
-      "Microsoft.AspNetCore.Components.WebAssembly.DevServer/6.0.8": {
+      "Microsoft.AspNetCore.Components.WebAssembly.DevServer/8.0.10": {
         "type": "package",
         "build": {
           "build/Microsoft.AspNetCore.Components.WebAssembly.DevServer.targets": {}
         }
       },
-      "Microsoft.AspNetCore.Metadata/6.0.33": {
+      "Microsoft.AspNetCore.Metadata/6.0.35": {
         "type": "package",
         "compile": {
           "lib/net6.0/Microsoft.AspNetCore.Metadata.dll": {
@@ -1541,7 +1541,7 @@
           }
         }
       },
-      "Microsoft.JSInterop/6.0.33": {
+      "Microsoft.JSInterop/6.0.35": {
         "type": "package",
         "compile": {
           "lib/net6.0/Microsoft.JSInterop.dll": {
@@ -1602,7 +1602,7 @@
           }
         }
       },
-      "MudBlazor/7.8.0": {
+      "MudBlazor/7.14.0": {
         "type": "package",
         "build": {
           "build/MudBlazor.targets": {},
@@ -1625,7 +1625,7 @@
           }
         }
       },
-      "PdfPig/0.1.8": {
+      "PdfPig/0.1.9": {
         "type": "package",
         "compile": {
           "lib/net6.0/UglyToad.PdfPig.Core.dll": {
@@ -1975,18 +1975,19 @@
         "lib/net8.0/Blazored.LocalStorage.dll"
       ]
     },
-    "Blazorise/1.6.1": {
-      "sha512": "QvZ52qEvwGlwn02DeFmXlzQXjqkYchYrZUnI0CdUp+zwXOln6oRNbOeXLNaJb1NfQt9pCwHQcypMd9UNref5tg==",
+    "Blazorise/1.6.2": {
+      "sha512": "RqNpIqmamWprykwZEmMg+afwxbc48II3Uf2CItkwWnpzvhgnb0KQDCl77m+3AHs6yBPrGIq6YseudGX4YretkQ==",
       "type": "package",
-      "path": "blazorise/1.6.1",
+      "path": "blazorise/1.6.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Blazorise.png",
         "LICENSE.md",
-        "blazorise.1.6.1.nupkg.sha512",
+        "blazorise.1.6.2.nupkg.sha512",
         "blazorise.nuspec",
         "build/Blazorise.props",
+        "build/Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
         "build/Microsoft.AspNetCore.StaticWebAssets.props",
         "buildMultiTargeting/Blazorise.props",
         "buildTransitive/Blazorise.props",
@@ -2034,18 +2035,19 @@
         "staticwebassets/vendors/sha512.js"
       ]
     },
-    "Blazorise.Bootstrap/1.6.1": {
-      "sha512": "5px7ylqzGW+QIizttJgt4Bx2vOim3DzxTkuJB6nfTL0sE7MoWR/A4qbAqzqZt5idIPShp+4MgTGa4VX+GhIoQw==",
+    "Blazorise.Bootstrap/1.6.2": {
+      "sha512": "iu2fi48L4fN9OIdsNZ4UZxMDWcF0LQsiB+vNW2ZSZGGh6c98lR1JPaB0IxHbZQBnOcg68oa2ap3QYgrxE/LQcw==",
       "type": "package",
-      "path": "blazorise.bootstrap/1.6.1",
+      "path": "blazorise.bootstrap/1.6.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Blazorise.png",
         "LICENSE.md",
-        "blazorise.bootstrap.1.6.1.nupkg.sha512",
+        "blazorise.bootstrap.1.6.2.nupkg.sha512",
         "blazorise.bootstrap.nuspec",
         "build/Blazorise.Bootstrap.props",
+        "build/Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
         "build/Microsoft.AspNetCore.StaticWebAssets.props",
         "buildMultiTargeting/Blazorise.Bootstrap.props",
         "buildTransitive/Blazorise.Bootstrap.props",
@@ -2058,18 +2060,19 @@
         "staticwebassets/tooltip.js"
       ]
     },
-    "Blazorise.Bootstrap5/1.6.1": {
-      "sha512": "VGyoryRunEEJvCtQwZcnEboYa2S1pXXlSywQ73ELJZLNUFZh2E1HkHv+ksXVTTZFi9ciDx4UQZ7yj/FDk4eSCA==",
+    "Blazorise.Bootstrap5/1.6.2": {
+      "sha512": "k52ecU6J/GdTRvamb90pwxoE6URSxJaRgr2aT2eS8WGeBw7mG0nBrTZ17BkruRALH0pDKacMlqALBtKGm/wTcA==",
       "type": "package",
-      "path": "blazorise.bootstrap5/1.6.1",
+      "path": "blazorise.bootstrap5/1.6.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Blazorise.png",
         "LICENSE.md",
-        "blazorise.bootstrap5.1.6.1.nupkg.sha512",
+        "blazorise.bootstrap5.1.6.2.nupkg.sha512",
         "blazorise.bootstrap5.nuspec",
         "build/Blazorise.Bootstrap5.props",
+        "build/Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
         "build/Microsoft.AspNetCore.StaticWebAssets.props",
         "buildMultiTargeting/Blazorise.Bootstrap5.props",
         "buildTransitive/Blazorise.Bootstrap5.props",
@@ -2082,18 +2085,19 @@
         "staticwebassets/tooltip.js"
       ]
     },
-    "Blazorise.Icons.FontAwesome/1.6.1": {
-      "sha512": "apJtyUSuLPjoyDx14YG9O14GHL9lRG5m1/2tN2r975EHbwF6hfr2zvV9a6c6aJ2C8cNE9XXIHPZcLPZg7/nRGw==",
+    "Blazorise.Icons.FontAwesome/1.6.2": {
+      "sha512": "pHw8ukfky6Zj/mu/zKivYvKx0EPAIqFnYrwHjcaeC4T+xxOV3WIDSPacl5zWdY7rMzYiwn0qzgcTYy40UpUv8g==",
       "type": "package",
-      "path": "blazorise.icons.fontawesome/1.6.1",
+      "path": "blazorise.icons.fontawesome/1.6.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Blazorise.png",
         "LICENSE.md",
-        "blazorise.icons.fontawesome.1.6.1.nupkg.sha512",
+        "blazorise.icons.fontawesome.1.6.2.nupkg.sha512",
         "blazorise.icons.fontawesome.nuspec",
         "build/Blazorise.Icons.FontAwesome.props",
+        "build/Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
         "build/Microsoft.AspNetCore.StaticWebAssets.props",
         "buildMultiTargeting/Blazorise.Icons.FontAwesome.props",
         "buildTransitive/Blazorise.Icons.FontAwesome.props",
@@ -2145,10 +2149,10 @@
         "lib/net8.0/Blazorise.Licensing.dll"
       ]
     },
-    "Microsoft.AspNetCore.Authorization/6.0.33": {
-      "sha512": "3/73x14WtMqCcBvE27b3EevlDXeMpcUeRwEqhqsWnR5dg8A2pMDPh42AM2blx5JA7gV1I2be5I199a0UzR6N7w==",
+    "Microsoft.AspNetCore.Authorization/6.0.35": {
+      "sha512": "NT0nOkrcui2gr/THfAm7aTreRrOF7nFvZgQAYaafaJCOVk4gwkOs4hfvb0dD3f4llY9difyJsaj0yxkMJq+P+g==",
       "type": "package",
-      "path": "microsoft.aspnetcore.authorization/6.0.33",
+      "path": "microsoft.aspnetcore.authorization/6.0.35",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2160,14 +2164,14 @@
         "lib/net6.0/Microsoft.AspNetCore.Authorization.xml",
         "lib/netstandard2.0/Microsoft.AspNetCore.Authorization.dll",
         "lib/netstandard2.0/Microsoft.AspNetCore.Authorization.xml",
-        "microsoft.aspnetcore.authorization.6.0.33.nupkg.sha512",
+        "microsoft.aspnetcore.authorization.6.0.35.nupkg.sha512",
         "microsoft.aspnetcore.authorization.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.Components/6.0.33": {
-      "sha512": "Nxdcp9gUfn00BAMz5fV+phLMl8Md/guwCwlAooyAN0WPSbzHYOkcdU+flRCvLzr79XU8Kxy6vdJ7w6M+j+HHRw==",
+    "Microsoft.AspNetCore.Components/6.0.35": {
+      "sha512": "FkItIHr4usoa1Y13ayuQRq8EgXHpWz4UaMGySDhRr/2hHik9lnhz0G59xx2SOjAE6eUbd3eQFSdp0iIg9bTV1w==",
       "type": "package",
-      "path": "microsoft.aspnetcore.components/6.0.33",
+      "path": "microsoft.aspnetcore.components/6.0.35",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2175,14 +2179,14 @@
         "THIRD-PARTY-NOTICES.txt",
         "lib/net6.0/Microsoft.AspNetCore.Components.dll",
         "lib/net6.0/Microsoft.AspNetCore.Components.xml",
-        "microsoft.aspnetcore.components.6.0.33.nupkg.sha512",
+        "microsoft.aspnetcore.components.6.0.35.nupkg.sha512",
         "microsoft.aspnetcore.components.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.Components.Analyzers/6.0.33": {
-      "sha512": "mhstKorVy+KgweVw/hZyP5I5PiM/sII4Aa2fWNhAUu9ke0Kdmr4rJ5Lh3R1oUP2GpRacj081obexdMuI8/M6ZA==",
+    "Microsoft.AspNetCore.Components.Analyzers/6.0.35": {
+      "sha512": "l9NrEcM7IDoXOr2mtjPkHYZ+E9arCYqPNSG4qLeRIJZU52GkOGGjVlcgNSSZfEHZppBXx+YgY9woxgSjAf1D/w==",
       "type": "package",
-      "path": "microsoft.aspnetcore.components.analyzers/6.0.33",
+      "path": "microsoft.aspnetcore.components.analyzers/6.0.35",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2191,14 +2195,14 @@
         "analyzers/dotnet/cs/Microsoft.AspNetCore.Components.Analyzers.dll",
         "build/netstandard2.0/Microsoft.AspNetCore.Components.Analyzers.targets",
         "buildTransitive/netstandard2.0/Microsoft.AspNetCore.Components.Analyzers.targets",
-        "microsoft.aspnetcore.components.analyzers.6.0.33.nupkg.sha512",
+        "microsoft.aspnetcore.components.analyzers.6.0.35.nupkg.sha512",
         "microsoft.aspnetcore.components.analyzers.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.Components.Forms/6.0.33": {
-      "sha512": "e2iIKofX4rBP47/XQpggMi8t2WnnvkZLm9Mujn2bfp/MFtRRyEHAuW1tDmvngK4vGtsHDQEpoFMqHUCQI5L+rA==",
+    "Microsoft.AspNetCore.Components.Forms/6.0.35": {
+      "sha512": "xEpA3XhlPYzcSyebOZdkHdOqfqrn/tNwug+c8hYzGFxjrzyBs0rM16eebo0VcpviW5yqzoYLC6ltySP6kjOgig==",
       "type": "package",
-      "path": "microsoft.aspnetcore.components.forms/6.0.33",
+      "path": "microsoft.aspnetcore.components.forms/6.0.35",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2206,14 +2210,14 @@
         "THIRD-PARTY-NOTICES.txt",
         "lib/net6.0/Microsoft.AspNetCore.Components.Forms.dll",
         "lib/net6.0/Microsoft.AspNetCore.Components.Forms.xml",
-        "microsoft.aspnetcore.components.forms.6.0.33.nupkg.sha512",
+        "microsoft.aspnetcore.components.forms.6.0.35.nupkg.sha512",
         "microsoft.aspnetcore.components.forms.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.Components.Web/6.0.33": {
-      "sha512": "vKk18Hyxt4lFR/A0WDv3SPKYWL4sPp3jxl/ZFL3JUSLQHdXiN2xEUQSyBDpOSfEJO3B1LHWb4ZA/Rd6SKf+R3g==",
+    "Microsoft.AspNetCore.Components.Web/6.0.35": {
+      "sha512": "qKVC4CFGTwpAzfQaVY6aSAbPDBt0hUE5HacH81BZH+Gc+KweKuHgG63QPB/l5BXVHm8hYe+1ItE3DGO8j5DdBw==",
       "type": "package",
-      "path": "microsoft.aspnetcore.components.web/6.0.33",
+      "path": "microsoft.aspnetcore.components.web/6.0.35",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2221,7 +2225,7 @@
         "THIRD-PARTY-NOTICES.txt",
         "lib/net6.0/Microsoft.AspNetCore.Components.Web.dll",
         "lib/net6.0/Microsoft.AspNetCore.Components.Web.xml",
-        "microsoft.aspnetcore.components.web.6.0.33.nupkg.sha512",
+        "microsoft.aspnetcore.components.web.6.0.35.nupkg.sha512",
         "microsoft.aspnetcore.components.web.nuspec"
       ]
     },
@@ -2242,10 +2246,10 @@
         "microsoft.aspnetcore.components.webassembly.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.Components.WebAssembly.DevServer/6.0.8": {
-      "sha512": "SxfEIikHa0hDeC/NW5BWA48vqs5v02LTGcfXlzxtWfC+vs9mwqPIQNz4gYrnahZDLy2/XtM3PSd0Y9lKdu8TjQ==",
+    "Microsoft.AspNetCore.Components.WebAssembly.DevServer/8.0.10": {
+      "sha512": "TMvQzVM58A8zZIDT+rqGAje+0PotB+UoU8kzvPyFiuS5uRFZHlyFfc8orHM2MkNCA9Wy6l3hwTksavxYfrz0sg==",
       "type": "package",
-      "path": "microsoft.aspnetcore.components.webassembly.devserver/6.0.8",
+      "path": "microsoft.aspnetcore.components.webassembly.devserver/8.0.10",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
@@ -2253,24 +2257,54 @@
         "Icon.png",
         "THIRD-PARTY-NOTICES.txt",
         "build/Microsoft.AspNetCore.Components.WebAssembly.DevServer.targets",
-        "microsoft.aspnetcore.components.webassembly.devserver.6.0.8.nupkg.sha512",
+        "microsoft.aspnetcore.components.webassembly.devserver.8.0.10.nupkg.sha512",
         "microsoft.aspnetcore.components.webassembly.devserver.nuspec",
+        "tools/ARM64/aspnetcorev2_inprocess.dll",
         "tools/BlazorDebugProxy/BrowserDebugHost.dll",
         "tools/BlazorDebugProxy/BrowserDebugHost.runtimeconfig.json",
         "tools/BlazorDebugProxy/BrowserDebugProxy.dll",
+        "tools/BlazorDebugProxy/Microsoft.CodeAnalysis.CSharp.Scripting.dll",
         "tools/BlazorDebugProxy/Microsoft.CodeAnalysis.CSharp.dll",
+        "tools/BlazorDebugProxy/Microsoft.CodeAnalysis.Scripting.dll",
         "tools/BlazorDebugProxy/Microsoft.CodeAnalysis.dll",
+        "tools/BlazorDebugProxy/Microsoft.FileFormats.dll",
+        "tools/BlazorDebugProxy/Microsoft.NET.WebAssembly.Webcil.dll",
+        "tools/BlazorDebugProxy/Microsoft.SymbolStore.dll",
         "tools/BlazorDebugProxy/Newtonsoft.Json.dll",
+        "tools/Microsoft.AspNetCore.Antiforgery.dll",
+        "tools/Microsoft.AspNetCore.Antiforgery.xml",
         "tools/Microsoft.AspNetCore.Authentication.Abstractions.dll",
         "tools/Microsoft.AspNetCore.Authentication.Abstractions.xml",
         "tools/Microsoft.AspNetCore.Authentication.Core.dll",
         "tools/Microsoft.AspNetCore.Authentication.Core.xml",
+        "tools/Microsoft.AspNetCore.Authentication.dll",
+        "tools/Microsoft.AspNetCore.Authentication.xml",
+        "tools/Microsoft.AspNetCore.Authorization.Policy.dll",
+        "tools/Microsoft.AspNetCore.Authorization.Policy.xml",
         "tools/Microsoft.AspNetCore.Authorization.dll",
         "tools/Microsoft.AspNetCore.Authorization.xml",
+        "tools/Microsoft.AspNetCore.Components.Authorization.dll",
+        "tools/Microsoft.AspNetCore.Components.Authorization.xml",
+        "tools/Microsoft.AspNetCore.Components.Endpoints.dll",
+        "tools/Microsoft.AspNetCore.Components.Endpoints.xml",
+        "tools/Microsoft.AspNetCore.Components.Forms.dll",
+        "tools/Microsoft.AspNetCore.Components.Forms.xml",
+        "tools/Microsoft.AspNetCore.Components.Web.dll",
+        "tools/Microsoft.AspNetCore.Components.Web.xml",
         "tools/Microsoft.AspNetCore.Components.WebAssembly.Server.dll",
         "tools/Microsoft.AspNetCore.Components.WebAssembly.Server.xml",
+        "tools/Microsoft.AspNetCore.Components.dll",
+        "tools/Microsoft.AspNetCore.Components.xml",
         "tools/Microsoft.AspNetCore.Connections.Abstractions.dll",
         "tools/Microsoft.AspNetCore.Connections.Abstractions.xml",
+        "tools/Microsoft.AspNetCore.Cryptography.Internal.dll",
+        "tools/Microsoft.AspNetCore.Cryptography.Internal.xml",
+        "tools/Microsoft.AspNetCore.DataProtection.Abstractions.dll",
+        "tools/Microsoft.AspNetCore.DataProtection.Abstractions.xml",
+        "tools/Microsoft.AspNetCore.DataProtection.Extensions.dll",
+        "tools/Microsoft.AspNetCore.DataProtection.Extensions.xml",
+        "tools/Microsoft.AspNetCore.DataProtection.dll",
+        "tools/Microsoft.AspNetCore.DataProtection.xml",
         "tools/Microsoft.AspNetCore.Diagnostics.Abstractions.dll",
         "tools/Microsoft.AspNetCore.Diagnostics.Abstractions.xml",
         "tools/Microsoft.AspNetCore.Diagnostics.dll",
@@ -2283,6 +2317,8 @@
         "tools/Microsoft.AspNetCore.Hosting.Server.Abstractions.xml",
         "tools/Microsoft.AspNetCore.Hosting.dll",
         "tools/Microsoft.AspNetCore.Hosting.xml",
+        "tools/Microsoft.AspNetCore.Html.Abstractions.dll",
+        "tools/Microsoft.AspNetCore.Html.Abstractions.xml",
         "tools/Microsoft.AspNetCore.Http.Abstractions.dll",
         "tools/Microsoft.AspNetCore.Http.Abstractions.xml",
         "tools/Microsoft.AspNetCore.Http.Extensions.dll",
@@ -2299,12 +2335,16 @@
         "tools/Microsoft.AspNetCore.Routing.Abstractions.xml",
         "tools/Microsoft.AspNetCore.Routing.dll",
         "tools/Microsoft.AspNetCore.Routing.xml",
+        "tools/Microsoft.AspNetCore.Server.HttpSys.dll",
+        "tools/Microsoft.AspNetCore.Server.HttpSys.xml",
         "tools/Microsoft.AspNetCore.Server.IIS.dll",
         "tools/Microsoft.AspNetCore.Server.IIS.xml",
         "tools/Microsoft.AspNetCore.Server.IISIntegration.dll",
         "tools/Microsoft.AspNetCore.Server.IISIntegration.xml",
         "tools/Microsoft.AspNetCore.Server.Kestrel.Core.dll",
         "tools/Microsoft.AspNetCore.Server.Kestrel.Core.xml",
+        "tools/Microsoft.AspNetCore.Server.Kestrel.Transport.NamedPipes.dll",
+        "tools/Microsoft.AspNetCore.Server.Kestrel.Transport.NamedPipes.xml",
         "tools/Microsoft.AspNetCore.Server.Kestrel.Transport.Quic.dll",
         "tools/Microsoft.AspNetCore.Server.Kestrel.Transport.Quic.xml",
         "tools/Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.dll",
@@ -2327,10 +2367,14 @@
         "tools/Microsoft.Extensions.Configuration.dll",
         "tools/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
         "tools/Microsoft.Extensions.DependencyInjection.dll",
+        "tools/Microsoft.Extensions.Diagnostics.Abstractions.dll",
+        "tools/Microsoft.Extensions.Diagnostics.dll",
         "tools/Microsoft.Extensions.Features.dll",
         "tools/Microsoft.Extensions.Features.xml",
         "tools/Microsoft.Extensions.FileProviders.Abstractions.dll",
         "tools/Microsoft.Extensions.FileProviders.Composite.dll",
+        "tools/Microsoft.Extensions.FileProviders.Embedded.dll",
+        "tools/Microsoft.Extensions.FileProviders.Embedded.xml",
         "tools/Microsoft.Extensions.FileProviders.Physical.dll",
         "tools/Microsoft.Extensions.FileSystemGlobbing.dll",
         "tools/Microsoft.Extensions.Hosting.Abstractions.dll",
@@ -2349,25 +2393,30 @@
         "tools/Microsoft.Extensions.Primitives.dll",
         "tools/Microsoft.Extensions.WebEncoders.dll",
         "tools/Microsoft.Extensions.WebEncoders.xml",
+        "tools/Microsoft.JSInterop.dll",
+        "tools/Microsoft.JSInterop.xml",
         "tools/Microsoft.Net.Http.Headers.dll",
         "tools/Microsoft.Net.Http.Headers.xml",
         "tools/System.Diagnostics.EventLog.dll",
         "tools/System.IO.Pipelines.dll",
+        "tools/System.Security.Cryptography.Pkcs.dll",
+        "tools/System.Security.Cryptography.Xml.dll",
         "tools/blazor-devserver.deps.json",
         "tools/blazor-devserver.dll",
         "tools/blazor-devserver.exe",
         "tools/blazor-devserver.runtimeconfig.json",
         "tools/blazor-devserver.xml",
-        "tools/runtimes/win/lib/net6.0/System.Diagnostics.EventLog.Messages.dll",
-        "tools/runtimes/win/lib/net6.0/System.Diagnostics.EventLog.dll",
+        "tools/runtimes/win/lib/net8.0/System.Diagnostics.EventLog.Messages.dll",
+        "tools/runtimes/win/lib/net8.0/System.Diagnostics.EventLog.dll",
+        "tools/runtimes/win/lib/net8.0/System.Security.Cryptography.Pkcs.dll",
         "tools/x64/aspnetcorev2_inprocess.dll",
         "tools/x86/aspnetcorev2_inprocess.dll"
       ]
     },
-    "Microsoft.AspNetCore.Metadata/6.0.33": {
-      "sha512": "KTjopnVL5zwvWQF0hazAiPKIXFFKnvugDtjUz3qtSWk2Hv+ArHoxg7YWhPMgov/6SMaYjL5g6sjYf6TqipDmGw==",
+    "Microsoft.AspNetCore.Metadata/6.0.35": {
+      "sha512": "QWyGfWlvZ9O/I+4mcIYsUOH8+MkXpKEByR9REmxOWdZf1KnIJg77UKZjIxAwcL3MvABTNHdaTf3n8X8qxxbcjA==",
       "type": "package",
-      "path": "microsoft.aspnetcore.metadata/6.0.33",
+      "path": "microsoft.aspnetcore.metadata/6.0.35",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2379,7 +2428,7 @@
         "lib/net6.0/Microsoft.AspNetCore.Metadata.xml",
         "lib/netstandard2.0/Microsoft.AspNetCore.Metadata.dll",
         "lib/netstandard2.0/Microsoft.AspNetCore.Metadata.xml",
-        "microsoft.aspnetcore.metadata.6.0.33.nupkg.sha512",
+        "microsoft.aspnetcore.metadata.6.0.35.nupkg.sha512",
         "microsoft.aspnetcore.metadata.nuspec"
       ]
     },
@@ -2856,10 +2905,10 @@
         "microsoft.io.recyclablememorystream.nuspec"
       ]
     },
-    "Microsoft.JSInterop/6.0.33": {
-      "sha512": "ZFr+bVjSvKUPrQOUBO3rMhU/IPGziexaGH9jW2nv2kIDgJwgOOGkL+59T/98vuWW8M+TFqeuTkVdTPdVC0L0MA==",
+    "Microsoft.JSInterop/6.0.35": {
+      "sha512": "P7H/qHsxiLRs6lS2/RSGzXWQDkIC6f496OahhVKpmTomnW6o9baSRai4xe65VkJVhdN9nV+jzUNrmxR3lYKDjQ==",
       "type": "package",
-      "path": "microsoft.jsinterop/6.0.33",
+      "path": "microsoft.jsinterop/6.0.35",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2867,7 +2916,7 @@
         "THIRD-PARTY-NOTICES.TXT",
         "lib/net6.0/Microsoft.JSInterop.dll",
         "lib/net6.0/Microsoft.JSInterop.xml",
-        "microsoft.jsinterop.6.0.33.nupkg.sha512",
+        "microsoft.jsinterop.6.0.35.nupkg.sha512",
         "microsoft.jsinterop.nuspec"
       ]
     },
@@ -3019,10 +3068,10 @@
         "mimemapping.nuspec"
       ]
     },
-    "MudBlazor/7.8.0": {
-      "sha512": "DivLaZKVkL4z8jVeqa1P2n3u5Dny8l/K1nCLrzp8hI+efdE2Rd1KDkMqoaGdjgV9jCEJ3D35r1+/w6V4yPzuaw==",
+    "MudBlazor/7.14.0": {
+      "sha512": "hpuNSlI6/BVCe4H6X4BoHijxMffFE1ldunvFzAFZRTGuSGoYC7N6IIUv64MN3F/hkiRllx3gtivTZjivymxIpQ==",
       "type": "package",
-      "path": "mudblazor/7.8.0",
+      "path": "mudblazor/7.14.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3039,7 +3088,7 @@
         "lib/net7.0/MudBlazor.xml",
         "lib/net8.0/MudBlazor.dll",
         "lib/net8.0/MudBlazor.xml",
-        "mudblazor.7.8.0.nupkg.sha512",
+        "mudblazor.7.14.0.nupkg.sha512",
         "mudblazor.nuspec",
         "staticwebassets/MudBlazor.min.css",
         "staticwebassets/MudBlazor.min.js"
@@ -3075,97 +3124,14 @@
         "packageIcon.png"
       ]
     },
-    "PdfPig/0.1.8": {
-      "sha512": "lrqrQPAwziQV2E5uImAg1i3SpxDn5XdJ8q3sjRBgEdx1quq1ZftnKNyfp3sTY0J7OxpA14ryGBSSUdoGLGCHjw==",
+    "PdfPig/0.1.9": {
+      "sha512": "VU27oq5O0rpD+zWiD639xXkSHtsNXqbPpYV0pzYg9VPhDibH1cq1i67f9DuW2WnzDVEti0HipLcZxDhdayIzGg==",
       "type": "package",
-      "path": "pdfpig/0.1.8",
+      "path": "pdfpig/0.1.9",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "lib/net451/UglyToad.PdfPig.Core.dll",
-        "lib/net451/UglyToad.PdfPig.Core.pdb",
-        "lib/net451/UglyToad.PdfPig.Core.xml",
-        "lib/net451/UglyToad.PdfPig.DocumentLayoutAnalysis.dll",
-        "lib/net451/UglyToad.PdfPig.DocumentLayoutAnalysis.pdb",
-        "lib/net451/UglyToad.PdfPig.DocumentLayoutAnalysis.xml",
-        "lib/net451/UglyToad.PdfPig.Fonts.dll",
-        "lib/net451/UglyToad.PdfPig.Fonts.pdb",
-        "lib/net451/UglyToad.PdfPig.Fonts.xml",
-        "lib/net451/UglyToad.PdfPig.Package.dll",
-        "lib/net451/UglyToad.PdfPig.Package.pdb",
-        "lib/net451/UglyToad.PdfPig.Package.xml",
-        "lib/net451/UglyToad.PdfPig.Tokenization.dll",
-        "lib/net451/UglyToad.PdfPig.Tokenization.pdb",
-        "lib/net451/UglyToad.PdfPig.Tokenization.xml",
-        "lib/net451/UglyToad.PdfPig.Tokens.dll",
-        "lib/net451/UglyToad.PdfPig.Tokens.pdb",
-        "lib/net451/UglyToad.PdfPig.Tokens.xml",
-        "lib/net451/UglyToad.PdfPig.dll",
-        "lib/net451/UglyToad.PdfPig.pdb",
-        "lib/net451/UglyToad.PdfPig.xml",
-        "lib/net452/UglyToad.PdfPig.Core.dll",
-        "lib/net452/UglyToad.PdfPig.Core.pdb",
-        "lib/net452/UglyToad.PdfPig.Core.xml",
-        "lib/net452/UglyToad.PdfPig.DocumentLayoutAnalysis.dll",
-        "lib/net452/UglyToad.PdfPig.DocumentLayoutAnalysis.pdb",
-        "lib/net452/UglyToad.PdfPig.DocumentLayoutAnalysis.xml",
-        "lib/net452/UglyToad.PdfPig.Fonts.dll",
-        "lib/net452/UglyToad.PdfPig.Fonts.pdb",
-        "lib/net452/UglyToad.PdfPig.Fonts.xml",
-        "lib/net452/UglyToad.PdfPig.Package.dll",
-        "lib/net452/UglyToad.PdfPig.Package.pdb",
-        "lib/net452/UglyToad.PdfPig.Package.xml",
-        "lib/net452/UglyToad.PdfPig.Tokenization.dll",
-        "lib/net452/UglyToad.PdfPig.Tokenization.pdb",
-        "lib/net452/UglyToad.PdfPig.Tokenization.xml",
-        "lib/net452/UglyToad.PdfPig.Tokens.dll",
-        "lib/net452/UglyToad.PdfPig.Tokens.pdb",
-        "lib/net452/UglyToad.PdfPig.Tokens.xml",
-        "lib/net452/UglyToad.PdfPig.dll",
-        "lib/net452/UglyToad.PdfPig.pdb",
-        "lib/net452/UglyToad.PdfPig.xml",
-        "lib/net46/UglyToad.PdfPig.Core.dll",
-        "lib/net46/UglyToad.PdfPig.Core.pdb",
-        "lib/net46/UglyToad.PdfPig.Core.xml",
-        "lib/net46/UglyToad.PdfPig.DocumentLayoutAnalysis.dll",
-        "lib/net46/UglyToad.PdfPig.DocumentLayoutAnalysis.pdb",
-        "lib/net46/UglyToad.PdfPig.DocumentLayoutAnalysis.xml",
-        "lib/net46/UglyToad.PdfPig.Fonts.dll",
-        "lib/net46/UglyToad.PdfPig.Fonts.pdb",
-        "lib/net46/UglyToad.PdfPig.Fonts.xml",
-        "lib/net46/UglyToad.PdfPig.Package.dll",
-        "lib/net46/UglyToad.PdfPig.Package.pdb",
-        "lib/net46/UglyToad.PdfPig.Package.xml",
-        "lib/net46/UglyToad.PdfPig.Tokenization.dll",
-        "lib/net46/UglyToad.PdfPig.Tokenization.pdb",
-        "lib/net46/UglyToad.PdfPig.Tokenization.xml",
-        "lib/net46/UglyToad.PdfPig.Tokens.dll",
-        "lib/net46/UglyToad.PdfPig.Tokens.pdb",
-        "lib/net46/UglyToad.PdfPig.Tokens.xml",
-        "lib/net46/UglyToad.PdfPig.dll",
-        "lib/net46/UglyToad.PdfPig.pdb",
-        "lib/net46/UglyToad.PdfPig.xml",
-        "lib/net461/UglyToad.PdfPig.Core.dll",
-        "lib/net461/UglyToad.PdfPig.Core.pdb",
-        "lib/net461/UglyToad.PdfPig.Core.xml",
-        "lib/net461/UglyToad.PdfPig.DocumentLayoutAnalysis.dll",
-        "lib/net461/UglyToad.PdfPig.DocumentLayoutAnalysis.pdb",
-        "lib/net461/UglyToad.PdfPig.DocumentLayoutAnalysis.xml",
-        "lib/net461/UglyToad.PdfPig.Fonts.dll",
-        "lib/net461/UglyToad.PdfPig.Fonts.pdb",
-        "lib/net461/UglyToad.PdfPig.Fonts.xml",
-        "lib/net461/UglyToad.PdfPig.Package.dll",
-        "lib/net461/UglyToad.PdfPig.Package.pdb",
-        "lib/net461/UglyToad.PdfPig.Package.xml",
-        "lib/net461/UglyToad.PdfPig.Tokenization.dll",
-        "lib/net461/UglyToad.PdfPig.Tokenization.pdb",
-        "lib/net461/UglyToad.PdfPig.Tokenization.xml",
-        "lib/net461/UglyToad.PdfPig.Tokens.dll",
-        "lib/net461/UglyToad.PdfPig.Tokens.pdb",
-        "lib/net461/UglyToad.PdfPig.Tokens.xml",
-        "lib/net461/UglyToad.PdfPig.dll",
-        "lib/net461/UglyToad.PdfPig.pdb",
-        "lib/net461/UglyToad.PdfPig.xml",
+        "README.md",
         "lib/net462/UglyToad.PdfPig.Core.dll",
         "lib/net462/UglyToad.PdfPig.Core.pdb",
         "lib/net462/UglyToad.PdfPig.Core.xml",
@@ -3187,27 +3153,27 @@
         "lib/net462/UglyToad.PdfPig.dll",
         "lib/net462/UglyToad.PdfPig.pdb",
         "lib/net462/UglyToad.PdfPig.xml",
-        "lib/net47/UglyToad.PdfPig.Core.dll",
-        "lib/net47/UglyToad.PdfPig.Core.pdb",
-        "lib/net47/UglyToad.PdfPig.Core.xml",
-        "lib/net47/UglyToad.PdfPig.DocumentLayoutAnalysis.dll",
-        "lib/net47/UglyToad.PdfPig.DocumentLayoutAnalysis.pdb",
-        "lib/net47/UglyToad.PdfPig.DocumentLayoutAnalysis.xml",
-        "lib/net47/UglyToad.PdfPig.Fonts.dll",
-        "lib/net47/UglyToad.PdfPig.Fonts.pdb",
-        "lib/net47/UglyToad.PdfPig.Fonts.xml",
-        "lib/net47/UglyToad.PdfPig.Package.dll",
-        "lib/net47/UglyToad.PdfPig.Package.pdb",
-        "lib/net47/UglyToad.PdfPig.Package.xml",
-        "lib/net47/UglyToad.PdfPig.Tokenization.dll",
-        "lib/net47/UglyToad.PdfPig.Tokenization.pdb",
-        "lib/net47/UglyToad.PdfPig.Tokenization.xml",
-        "lib/net47/UglyToad.PdfPig.Tokens.dll",
-        "lib/net47/UglyToad.PdfPig.Tokens.pdb",
-        "lib/net47/UglyToad.PdfPig.Tokens.xml",
-        "lib/net47/UglyToad.PdfPig.dll",
-        "lib/net47/UglyToad.PdfPig.pdb",
-        "lib/net47/UglyToad.PdfPig.xml",
+        "lib/net471/UglyToad.PdfPig.Core.dll",
+        "lib/net471/UglyToad.PdfPig.Core.pdb",
+        "lib/net471/UglyToad.PdfPig.Core.xml",
+        "lib/net471/UglyToad.PdfPig.DocumentLayoutAnalysis.dll",
+        "lib/net471/UglyToad.PdfPig.DocumentLayoutAnalysis.pdb",
+        "lib/net471/UglyToad.PdfPig.DocumentLayoutAnalysis.xml",
+        "lib/net471/UglyToad.PdfPig.Fonts.dll",
+        "lib/net471/UglyToad.PdfPig.Fonts.pdb",
+        "lib/net471/UglyToad.PdfPig.Fonts.xml",
+        "lib/net471/UglyToad.PdfPig.Package.dll",
+        "lib/net471/UglyToad.PdfPig.Package.pdb",
+        "lib/net471/UglyToad.PdfPig.Package.xml",
+        "lib/net471/UglyToad.PdfPig.Tokenization.dll",
+        "lib/net471/UglyToad.PdfPig.Tokenization.pdb",
+        "lib/net471/UglyToad.PdfPig.Tokenization.xml",
+        "lib/net471/UglyToad.PdfPig.Tokens.dll",
+        "lib/net471/UglyToad.PdfPig.Tokens.pdb",
+        "lib/net471/UglyToad.PdfPig.Tokens.xml",
+        "lib/net471/UglyToad.PdfPig.dll",
+        "lib/net471/UglyToad.PdfPig.pdb",
+        "lib/net471/UglyToad.PdfPig.xml",
         "lib/net6.0/UglyToad.PdfPig.Core.dll",
         "lib/net6.0/UglyToad.PdfPig.Core.pdb",
         "lib/net6.0/UglyToad.PdfPig.Core.xml",
@@ -3229,6 +3195,27 @@
         "lib/net6.0/UglyToad.PdfPig.dll",
         "lib/net6.0/UglyToad.PdfPig.pdb",
         "lib/net6.0/UglyToad.PdfPig.xml",
+        "lib/net8.0/UglyToad.PdfPig.Core.dll",
+        "lib/net8.0/UglyToad.PdfPig.Core.pdb",
+        "lib/net8.0/UglyToad.PdfPig.Core.xml",
+        "lib/net8.0/UglyToad.PdfPig.DocumentLayoutAnalysis.dll",
+        "lib/net8.0/UglyToad.PdfPig.DocumentLayoutAnalysis.pdb",
+        "lib/net8.0/UglyToad.PdfPig.DocumentLayoutAnalysis.xml",
+        "lib/net8.0/UglyToad.PdfPig.Fonts.dll",
+        "lib/net8.0/UglyToad.PdfPig.Fonts.pdb",
+        "lib/net8.0/UglyToad.PdfPig.Fonts.xml",
+        "lib/net8.0/UglyToad.PdfPig.Package.dll",
+        "lib/net8.0/UglyToad.PdfPig.Package.pdb",
+        "lib/net8.0/UglyToad.PdfPig.Package.xml",
+        "lib/net8.0/UglyToad.PdfPig.Tokenization.dll",
+        "lib/net8.0/UglyToad.PdfPig.Tokenization.pdb",
+        "lib/net8.0/UglyToad.PdfPig.Tokenization.xml",
+        "lib/net8.0/UglyToad.PdfPig.Tokens.dll",
+        "lib/net8.0/UglyToad.PdfPig.Tokens.pdb",
+        "lib/net8.0/UglyToad.PdfPig.Tokens.xml",
+        "lib/net8.0/UglyToad.PdfPig.dll",
+        "lib/net8.0/UglyToad.PdfPig.pdb",
+        "lib/net8.0/UglyToad.PdfPig.xml",
         "lib/netstandard2.0/UglyToad.PdfPig.Core.dll",
         "lib/netstandard2.0/UglyToad.PdfPig.Core.pdb",
         "lib/netstandard2.0/UglyToad.PdfPig.Core.xml",
@@ -3250,7 +3237,7 @@
         "lib/netstandard2.0/UglyToad.PdfPig.dll",
         "lib/netstandard2.0/UglyToad.PdfPig.pdb",
         "lib/netstandard2.0/UglyToad.PdfPig.xml",
-        "pdfpig.0.1.8.nupkg.sha512",
+        "pdfpig.0.1.9.nupkg.sha512",
         "pdfpig.nuspec",
         "pdfpig.png"
       ]
@@ -3627,17 +3614,17 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "Blazored.LocalStorage >= 4.5.0",
-      "Blazorise >= 1.6.1",
-      "Blazorise.Bootstrap >= 1.6.1",
-      "Blazorise.Bootstrap5 >= 1.6.1",
-      "Blazorise.Icons.FontAwesome >= 1.6.1",
+      "Blazorise >= 1.6.2",
+      "Blazorise.Bootstrap >= 1.6.2",
+      "Blazorise.Bootstrap5 >= 1.6.2",
+      "Blazorise.Icons.FontAwesome >= 1.6.2",
       "Microsoft.AspNetCore.Components.WebAssembly >= 6.0.8",
-      "Microsoft.AspNetCore.Components.WebAssembly.DevServer >= 6.0.8",
+      "Microsoft.AspNetCore.Components.WebAssembly.DevServer >= 8.0.10",
       "Microsoft.NET.ILLink.Analyzers >= 7.0.100-1.23401.1",
       "Microsoft.NET.ILLink.Tasks >= 7.0.100-1.23401.1",
       "Microsoft.NET.Sdk.WebAssembly.Pack >= 8.0.7",
-      "MudBlazor >= 7.8.0",
-      "PdfPig >= 0.1.8",
+      "MudBlazor >= 7.14.0",
+      "PdfPig >= 0.1.9",
       "Supabase >= 1.1.1",
       "Supabase.Gotrue >= 6.0.3"
     ]
@@ -3693,19 +3680,19 @@
           },
           "Blazorise": {
             "target": "Package",
-            "version": "[1.6.1, )"
+            "version": "[1.6.2, )"
           },
           "Blazorise.Bootstrap": {
             "target": "Package",
-            "version": "[1.6.1, )"
+            "version": "[1.6.2, )"
           },
           "Blazorise.Bootstrap5": {
             "target": "Package",
-            "version": "[1.6.1, )"
+            "version": "[1.6.2, )"
           },
           "Blazorise.Icons.FontAwesome": {
             "target": "Package",
-            "version": "[1.6.1, )"
+            "version": "[1.6.2, )"
           },
           "Microsoft.AspNetCore.Components.WebAssembly": {
             "target": "Package",
@@ -3714,7 +3701,7 @@
           "Microsoft.AspNetCore.Components.WebAssembly.DevServer": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "[6.0.8, )"
+            "version": "[8.0.10, )"
           },
           "Microsoft.NET.ILLink.Analyzers": {
             "suppressParent": "All",
@@ -3736,11 +3723,11 @@
           },
           "MudBlazor": {
             "target": "Package",
-            "version": "[7.8.0, )"
+            "version": "[7.14.0, )"
           },
           "PdfPig": {
             "target": "Package",
-            "version": "[0.1.8, )"
+            "version": "[0.1.9, )"
           },
           "Supabase": {
             "target": "Package",

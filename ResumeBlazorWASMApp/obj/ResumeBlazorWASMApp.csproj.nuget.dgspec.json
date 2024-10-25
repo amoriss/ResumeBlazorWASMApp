@@ -52,19 +52,19 @@
             },
             "Blazorise": {
               "target": "Package",
-              "version": "[1.6.1, )"
+              "version": "[1.6.2, )"
             },
             "Blazorise.Bootstrap": {
               "target": "Package",
-              "version": "[1.6.1, )"
+              "version": "[1.6.2, )"
             },
             "Blazorise.Bootstrap5": {
               "target": "Package",
-              "version": "[1.6.1, )"
+              "version": "[1.6.2, )"
             },
             "Blazorise.Icons.FontAwesome": {
               "target": "Package",
-              "version": "[1.6.1, )"
+              "version": "[1.6.2, )"
             },
             "Microsoft.AspNetCore.Components.WebAssembly": {
               "target": "Package",
@@ -73,7 +73,7 @@
             "Microsoft.AspNetCore.Components.WebAssembly.DevServer": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.8, )"
+              "version": "[8.0.10, )"
             },
             "Microsoft.NET.ILLink.Analyzers": {
               "suppressParent": "All",
@@ -95,11 +95,11 @@
             },
             "MudBlazor": {
               "target": "Package",
-              "version": "[7.8.0, )"
+              "version": "[7.14.0, )"
             },
             "PdfPig": {
               "target": "Package",
-              "version": "[0.1.8, )"
+              "version": "[0.1.9, )"
             },
             "Supabase": {
               "target": "Package",
