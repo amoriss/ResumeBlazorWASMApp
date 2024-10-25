@@ -1,7 +1,7 @@
 {
   "entryAssembly": "ResumeBlazorWASMApp",
   "resources": {
-    "hash": "sha256-38pKjRt2ukLZdUd/o1ONZYrD+kIdGteePHdIElR8xBU=",
+    "hash": "sha256-L+oWV9TF52owWMxZCRuioB5TBQ9Udit0A6bNVNWYfOo=",
     "runtime": {
       "dotnet.6.0.32.iczu7vlnaz.js": "sha256-6fa9WVfvYrd56Fl6GQXGO40czbLt6gcYgnZxXB+Sn5A=",
       "dotnet.timezones.blat": "sha256-ALK3ufXwNaP1t4mRlACcINalB2grQvfkrI/8lo7nNq0=",
@@ -230,10 +230,10 @@
       "mscorlib.dll": "sha256-ZcDPjThCN2BCEYQdojjXnlhAZFrqNEw/MX36GSJuFxw=",
       "netstandard.dll": "sha256-r5+y+NJTXzpyR9AaNMHpdVOOO50F+qLZjI83TNl3mwI=",
       "System.Private.CoreLib.dll": "sha256-f7ZZcXOXHgUqdmMScZ0DLX2KHCo02/IdYkvwk4mFL+0=",
-      "ResumeBlazorWASMApp.dll": "sha256-XAs+yX9+E5D1QzJofCkLG8x+tDRRI2ZX38psaItSDks="
+      "ResumeBlazorWASMApp.dll": "sha256-yrAq1tADIFPFnAUS5+1lf2l1J+wmh7xCDqtH5OsQ4wc="
     },
     "pdb": {
-      "ResumeBlazorWASMApp.pdb": "sha256-KM0ppvtee1TlyOnenzgSqlIp4n1X11ohJ7Ke09MtwHE="
+      "ResumeBlazorWASMApp.pdb": "sha256-WstAFXOD1yD8sb94yd7cdC8Xhnr2fRGbpk/G3Emve9o="
     },
     "runtimeAssets": {
       "dotnet.wasm": {
